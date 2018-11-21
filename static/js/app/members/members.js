@@ -9,7 +9,7 @@ $(function() {
         "supplier":"供应商",
         "mingsu":"民宿主",
         "f1":"VIP会员",
-    };    
+    };
 
     var columns = [{
             field: '',
@@ -36,9 +36,9 @@ $(function() {
                     if(res2){
                         return res2
                     }else{
-                       return "-" 
-                    }                
-                }       
+                       return "-"
+                    }
+                }
             }
         }, {
             title: "用户类型",
@@ -64,18 +64,18 @@ $(function() {
                             return data.city + data.area + data.address;
                         }else{
                             return data.province + data.city + data.area + data.address;
-                        }                        
+                        }
                     }else{
                         if(data.province == data.city ){
                             return data.city + data.area;
                         }else {
                             return data.province + data.city + data.area;
-                        }                        
-                    }                    
+                        }
+                    }
                 }else{
                     return '-'
                 }
-                
+
             }
         }, {
             title: "注册时间",
@@ -92,7 +92,7 @@ $(function() {
         pageCode: '805120',
         searchParams: {
             kind: "C",
-            companyCode:OSS.companyCode
+            companyCode:getCompanyCode()
         }
     });
 
@@ -114,7 +114,7 @@ $(function() {
         }
         window.location.href = "./borrow.html?userId=" + selRecords[0].userId;
 
-    });    
+    });
 
     $('#reportBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
@@ -124,7 +124,7 @@ $(function() {
         }
         window.location.href = "../oansBefore/audit_report.html?userId=" + selRecords[0].userId;
 
-    });  
+    });
 
     $('#netReportBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
@@ -134,8 +134,8 @@ $(function() {
         }
         window.location.href = "../oansBefore/audit_netReport.html?userId=" + selRecords[0].userId;
 
-    });      
-    
+    });
+
 
     $('#activeBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
@@ -177,6 +177,6 @@ $(function() {
             return;
         }
         window.location.href = "./custom_detail.html?Code=" + selRecords[0].code+'&userId='+selRecords[0].userId;
-    });    
-      
+    });
+
 });

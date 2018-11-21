@@ -72,7 +72,7 @@ $(function () {
         title: '户名',
         formatter:function(v,data){
             if(data.bankcard){
-              return data.bankcard.realName  
+              return data.bankcard.realName
             }
         }
     }, {
@@ -80,7 +80,7 @@ $(function () {
         title: '签约银行',
         formatter:function(v,data){
             if(data.bankcard){
-              return data.bankcard.bankName 
+              return data.bankcard.bankName
             }
         }
     }, {
@@ -89,7 +89,7 @@ $(function () {
         formatter:function(v,data){
             if(data.bankcard){
               return data.bankcard.bankcardNumber
-            }            
+            }
         }
     }, {
         field: 'signDatetime',
@@ -113,7 +113,7 @@ $(function () {
     buildList({
         columns: columns,
         searchParams:{
-            companyCode: OSS.companyCode,
+            companyCode: getCompanyCode(),
             status: 7,
             isArchive: 0
         },
@@ -130,7 +130,7 @@ $(function () {
             toastr.info("请选择记录");
             return;
         }
-        
+
         var data = { code: selRecords[0].code, result: 1, updater: getUserName(),remark:"放款成功" };
         confirm("确认放款？").then(function() {
             reqApi({
@@ -139,16 +139,16 @@ $(function () {
             }).then(function() {
                 sucList();
             });
-        },function(){});        
-       
-    });    
-    
+        },function(){});
+
+    });
+
     $('#failedBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {
             toastr.info("请选择记录");
             return;
-        }    
+        }
 
         var dw = dialog({
             content: '<form class="pop-form" id="popForm" novalidate="novalidate">' +
@@ -192,9 +192,9 @@ $(function () {
             }]
         });
 
-        dw.__center();  
+        dw.__center();
 
-        $('#formContainer').find('li:last-child').css({'text-align':'center','margin-left':'40px;'})      
+        $('#formContainer').find('li:last-child').css({'text-align':'center','margin-left':'40px;'})
 
     });
 

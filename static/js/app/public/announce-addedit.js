@@ -7,7 +7,7 @@ $(function() {
     var useKind = {};
 
     reqApi({
-        code: '805906',
+        code: '623907',
         json: {
             parentKey: 'user_kind'
         }

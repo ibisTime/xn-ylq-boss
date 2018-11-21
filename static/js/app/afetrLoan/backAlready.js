@@ -16,7 +16,7 @@ $(function () {
             data1[v] = data.user.mobile
             $('#applyUser').renderDropdown2(data1)
              return data.user.mobile
-        } ,      
+        } ,
         search: true
     }, {
         field: 'amount',
@@ -64,13 +64,13 @@ $(function () {
     buildList({
         columns: columns,
         searchParams:{
-            companyCode: OSS.companyCode,
+            companyCode: getCompanyCode(),
             status: 4,
             isArchive: 0
         },
         pageCode: '623085'
     });
- 
+
      $('#filedBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {
@@ -92,8 +92,8 @@ $(function () {
 
         },function(){});
 
-    });    
-    
+    });
 
-    
+
+
 });

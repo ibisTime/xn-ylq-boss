@@ -100,7 +100,7 @@ $(function () {
     buildList({
         columns: columns,
         searchParams:{
-            companyCode: OSS.companyCode,
+            companyCode: getCompanyCode(),
             status: 3,
             isArchive: 0,
             isOverdue: 0
@@ -112,15 +112,15 @@ $(function () {
             delete data['mobile'];
         }
     });
- 
+
     $('#renewalBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {
             toastr.info("请选择记录");
             return;
         }
-        
-        
+
+
         window.location.href = "../afetrLoan/renewalRecords.html?Code=" + selRecords[0].code+"&v=1";
     });
     // 合同管理

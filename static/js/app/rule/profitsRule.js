@@ -23,7 +23,7 @@ $(function() {
         columns: columns,
         searchParams:{
             type:"1",
-            companyCode: OSS.companyCode,
+            companyCode: getCompanyCode(),
             orderDir: "asc"
         },
         pageCode: '808915'

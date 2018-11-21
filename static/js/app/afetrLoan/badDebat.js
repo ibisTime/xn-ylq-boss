@@ -12,7 +12,7 @@ $(function () {
             data1[v] = data.user.realName;
             $('#applyUser').renderDropdown2(data1);
              return data.user.realName
-        } ,      
+        } ,
         search: true
     },{
         field: 'code',
@@ -80,12 +80,12 @@ $(function () {
     buildList({
         columns: columns,
         searchParams:{
-            companyCode: OSS.companyCode,
+            companyCode: getCompanyCode(),
             status: 6
         },
         pageCode: '623085'
     });
-    
+
     $('#addRemarkBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {

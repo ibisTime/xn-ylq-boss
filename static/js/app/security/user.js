@@ -34,7 +34,7 @@ $(function() {
         pageCode: '805120',
         searchParams: {
             kind: 'P',
-            companyCode:OSS.companyCode
+            companyCode:getCompanyCode()
         }
     });
 

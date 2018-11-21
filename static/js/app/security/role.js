@@ -30,7 +30,10 @@ $(function() {
         router: 'role',
         columns: columns,
         pageCode: '805020',
-        deleteCode: '805024'
+        deleteCode: '805024',
+        searchParams: {
+            companyCode: getCompanyCode()
+        }
     });
     $('#changeBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');

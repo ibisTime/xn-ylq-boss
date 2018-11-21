@@ -60,7 +60,7 @@ $(function () {
             if(data.bankcard){
                 return data.bankcard.bankcardNumber
             }
-            
+
         }
     }, {
         field: 'signDatetime',
@@ -81,7 +81,7 @@ $(function () {
     buildList({
         columns: columns,
         searchParams:{
-            companyCode: OSS.companyCode,
+            companyCode: getCompanyCode(),
             status: 0,
             isArchive: 0
         },
@@ -98,10 +98,10 @@ $(function () {
             toastr.info("请选择记录");
             return;
         }
-        
-        
+
+
         window.location.href = "./moneyCheck_check.html?Code=" + selRecords[0].code+"&v=1";
-    });    
+    });
 
     $('#cancelBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
@@ -111,7 +111,7 @@ $(function () {
         }
 
         window.location.href = "./moneyCheck_cancel.html?Code=" + selRecords[0].code+"&v=1";
-        
+
 
     });
 

@@ -112,7 +112,7 @@ $(function () {
     buildList({
         columns: columns,
         searchParams:{
-            companyCode: OSS.companyCode,
+            companyCode: getCompanyCode(),
             status: 4,
             isArchive: 0,
             isOverdue: 0
@@ -123,7 +123,7 @@ $(function () {
             delete data['mobile'];
     }
     });
- 
+
      $('#filedBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {

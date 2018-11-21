@@ -11,20 +11,20 @@ $(function() {
 		}
 		$("#roleCode").html(html);
 	});
-	
+
 	$("#userId").html(getQueryString("userId"));
 	$("#loginName").html(decodeURI(getQueryString("loginName")));
-	
+
 	//查询当前用户的角色
 	var data = {"userId":$("#userId").html()};
 	reqApi({
-		code: '805121',
+		code: '630117',
 		json: data
 	}).done(function(data) {
 		$("#roleCode").val(data.roleCode);
 		$("#remark").val(data.remark);
 	});
-	
+
 	//提交
 	$('#subBtn').click(function() {
 		if(!$("#jsForm").valid()){
@@ -39,12 +39,12 @@ $(function() {
 			sucDetail();
 		});
 	});
-	
+
 	//返回
 	$('#backBtn').click(function() {
 		goBack();
 	});
-	
+
 	//入参合法性校验
 	$("#jsForm").validate({
 		rules: {

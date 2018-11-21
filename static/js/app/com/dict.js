@@ -31,7 +31,7 @@ Dict.findObj = function(data, key, k) {
 Dict.getName = function(type, key) {
 	var res;
 	reqApi({
-		code: '805906',
+		code: '623907',
 		cache: true,
 		sync: true,
 		json: {
@@ -61,7 +61,7 @@ Dict.getName1 = function (type, key, value) {
 Dict.getName2 = function(type, code, key) {
 	var res;
 	reqApi({
-		code: code || '805906',
+		code: code || '623907',
 		cache: true,
 		sync: true,
 		json: {
@@ -82,7 +82,7 @@ Dict.getName2 = function(type, code, key) {
 Dict.getNameForList = function(type,code) {
 	var res;
 	reqApi({
-		code: code ||'805906',
+		code: code ||'623907',
 		cache: true,
 		sync: true,
 		json: {
@@ -106,7 +106,7 @@ Dict.getNameForList = function(type,code) {
 Dict.getNameForList1 = function(type,code,key1) {
 	var k;
 	reqApi({
-		code: code ||'805906',
+		code: code ||'623907',
 		cache: true,
 		sync: true,
 		json: {

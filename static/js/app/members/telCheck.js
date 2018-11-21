@@ -19,7 +19,7 @@ $(function() {
             title: "状态",
             field: "status",
             type: "select",
-            listCode: 805906,
+            listCode: 623907,
             params: {
                 parentKey:'mobile_modify_status'
             },
@@ -55,7 +55,7 @@ $(function() {
         }
         window.location.href = "./telCheck_detail.html?id=" + selRecords[0].id+"&v=1";
 
-    });    
-  
-      
+    });
+
+
 });

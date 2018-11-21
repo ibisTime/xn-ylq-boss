@@ -72,7 +72,7 @@ $(function() {
     buildList({
         columns: columns,
         searchParams: {
-            companyCode: OSS.companyCode,
+            companyCode: getCompanyCode(),
             orderColumn: 'ui_order',
             orderDir: 'asc'
         },

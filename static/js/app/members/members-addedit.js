@@ -7,18 +7,18 @@ $(function() {
         "supplier":"供应商",
         "mingsu":"民宿主",
         "f1":"VIP会员",
-    };    
+    };
 
     var typeData = {}
     reqApi({
         code:'808007'
     }).done(function(d) {
-                    
+
         d.forEach(function(v,i){
             typeData[v.code] = v.name;
         })
     });
-    
+
     var fields = [
     // {
     //     field: 'kind',
@@ -56,9 +56,9 @@ $(function() {
     //                     return userRefereeType[res1]+ '/' +res2
     //                 }
     //             }else{
-    //                return "-" 
-    //             }                
-    //         }        
+    //                return "-"
+    //             }
+    //         }
     //     }
     // }
     , {
@@ -68,11 +68,11 @@ $(function() {
         key: "user_level",
         listCode: "807706",
         keyName:'dkey',
-        valueName:'dvalue',        
+        valueName:'dvalue',
         formatter: function(v,data){
            return data.level
         }
-        
+
     }, {
         title: "状态",
         field: "status",
@@ -90,17 +90,17 @@ $(function() {
         field: 'remark',
         readonly: true,
     }];
-    
+
     buildDetail({
         fields: fields,
         code:{
             userId:userId
         },
-        detailCode: "805121",
+        detailCode: "630117",
         editCode: '001302',
         beforeSubmit: function(data){
             data.userId = userId;
-            
+
             return data;
         }
     });

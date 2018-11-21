@@ -13,7 +13,7 @@ $(function(){
 	if (top.location != self.location){
 		top.location=self.location;
 	}
-	
+
 	function login() {
 		if (!$('#loginName').val()) {
 			toastr.info('请输入用户名');
@@ -32,18 +32,20 @@ $(function(){
 			}else{
 				data.kind = 'P';
 			}
-			
+
 			$.each(t, function() {
 				data[this.name] = this.value;
 			});
-			
+            data.companyCode = '';
+
 			reqApi({
-				code: '805050',
+				code: '630101',
 				json: data
 			}).then(function(data) {
 				location.href = "main.html";
 				window.sessionStorage.setItem('token', data.token || data.userId);
 				window.sessionStorage.setItem('userId', data.userId);
+                window.sessionStorage.setItem('companyCode', data.companyCode);
 			});
 		}
 	}
@@ -58,7 +60,7 @@ $(function(){
 			login();
 		}
 	});
-	
+
 	// swiper
 	var mySwiper = new Swiper('.swiper-container', {
         spaceBetween: 0,
@@ -87,7 +89,7 @@ $(function(){
             return html;
         }
     });
-	
+
 	function count(el, second) {
 		el.prop('disabled', true);
 		var timer = setInterval(function() {
@@ -100,7 +102,7 @@ $(function(){
 			}
 		}, 1000);
 	}
-	
+
 	$('#smsBtn').on('click', function() {
 		if (!$('#loginName1').val()) {
 			alert('请输入用户名');
@@ -118,7 +120,7 @@ $(function(){
 			});
 		}
 	});
-	
+
 	$('#confirmBtn').on('click', function() {
 		if (!$('#loginName1').val()) {
 			alert('请输入用户名');
@@ -143,6 +145,6 @@ $(function(){
 			});
 		}
 	});
-	
+
 
 });

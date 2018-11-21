@@ -69,18 +69,18 @@ function reqApi(options,updateType) {
 	        token: sessionStorage.getItem('token') || '',
 	        updater: sessionStorage.getItem('userName'),
 	        systemCode: OSS.system,
-	        companyCode: OSS.companyCode
+	        companyCode: sessionStorage.getItem('companyCode')
 	         //updaterId: sessionStorage.getItem('userId'),
 	    };
     }else{
     	var commonParams = {
 	        token: sessionStorage.getItem('token') || '',
 	        systemCode: OSS.system,
-	        companyCode: OSS.companyCode
+	        companyCode: sessionStorage.getItem('companyCode')
 	         //updaterId: sessionStorage.getItem('userId'),
 	    };
     }
-    
+
     var params = {
         code: options.code,
         json: JSON.stringify($.extend(commonParams, options.json))
@@ -94,8 +94,8 @@ function reqApi(options,updateType) {
             async: !options.sync, // 同步
             url: url,
             type: 'POST',
-            //contentType: "application/json",  
-            //dataType: "json",  
+            //contentType: "application/json",
+            //dataType: "json",
             data: params
         });
     }
@@ -121,7 +121,7 @@ function reqApi1(options) {
             token: sessionStorage.getItem('token') || '',
             updater: sessionStorage.getItem('userName'),
             systemCode: OSS.system,
-            companyCode: OSS.company
+            companyCode: sessionStorage.getItem('companyCode')
         }, options.json))
     };
 
@@ -129,8 +129,8 @@ function reqApi1(options) {
         async: !options.sync, // 同步
         url: url,
         type: 'POST',
-        //contentType: "application/json",  
-        //dataType: "json",  
+        //contentType: "application/json",
+        //dataType: "json",
         data: params
     });
 }

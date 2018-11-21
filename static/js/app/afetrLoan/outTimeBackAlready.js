@@ -12,7 +12,7 @@ $(function () {
             data1[v] = data.user.realName
             $('#applyUser').renderDropdown2(data1)
              return data.user.realName
-        } ,      
+        } ,
         search: true
     },{
         field: 'mobile',
@@ -90,14 +90,14 @@ $(function () {
     buildList({
         columns: columns,
         searchParams:{
-            companyCode: OSS.companyCode,
+            companyCode: getCompanyCode(),
             status: 4,
             isArchive: 0,
             isOverdue: 1
         },
         pageCode: '623085'
     });
- 
+
      $('#filedBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {

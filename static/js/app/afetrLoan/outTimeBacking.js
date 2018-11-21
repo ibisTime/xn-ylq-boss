@@ -12,7 +12,7 @@ $(function () {
             data1[v] = data.user.realName;
             $('#applyUser').renderDropdown2(data1);
              return data.user.realName
-        } ,      
+        } ,
         search: true
     },{
         field: 'mobile',
@@ -73,7 +73,7 @@ $(function () {
     buildList({
         columns: columns,
         searchParams:{
-            companyCode: OSS.companyCode,
+            companyCode: getCompanyCode(),
             status: 5,
             isOverdue: 1,
             isArchive: 0
@@ -81,28 +81,28 @@ $(function () {
         pageCode: '623085',
         singleSelect: false
     });
- 
+
     $('#renewalBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {
             toastr.info("请选择记录");
             return;
         }
-        
-        
+
+
         window.location.href = "./renewalRecords.html?Code=" + selRecords[0].code+"&v=1";
-    });  
- 
+    });
+
     $('#confirmBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {
             toastr.info("请选择记录");
             return;
         }
-        
-        
+
+
         window.location.href = "./outTime_confirm.html?Code=" + selRecords[0].code+"&v=1";
-    });    
+    });
 
     $('#reportBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
@@ -112,8 +112,8 @@ $(function () {
         }
         window.location.href = "../oansBefore/audit_report.html?userId=" + selRecords[0].user.userId;
 
-    });     
-    
+    });
+
 
     $('#pressBtn').off('click').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
@@ -121,7 +121,7 @@ $(function () {
             toastr.info("请选择记录");
             return;
         }
-        
+
         var data = { code: selRecords[0].code};
         confirm("确认发短信对该用户进行催缴？").then(function() {
             reqApi({
@@ -130,9 +130,9 @@ $(function () {
             }).then(function() {
                 sucList();
             });
-        },function(){});  
-      
-       
+        },function(){});
+
+
     });
 
     $('#piliangKoukuanBtn').click(function() {

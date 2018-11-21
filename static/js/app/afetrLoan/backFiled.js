@@ -16,7 +16,7 @@ $(function () {
             data1[v] = data.user.mobile
             $('#applyUser').renderDropdown2(data1)
              return data.user.mobile
-        } ,      
+        } ,
         search: true
     }, {
         field: 'amount',
@@ -71,13 +71,13 @@ $(function () {
     buildList({
         columns: columns,
         searchParams:{
-            companyCode: OSS.companyCode,
+            companyCode: getCompanyCode(),
             isArchive: 1
         },
         pageCode: '623085'
     });
- 
- 
 
-    
+
+
+
 });

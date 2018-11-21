@@ -4,7 +4,7 @@ $(function() {
         // "P": "平台用户"
     };
     var data1 = {},data2 = {};
-  
+
 
     var columns = [{
         field: '',
@@ -96,7 +96,7 @@ $(function() {
         columns: columns,
         pageCode: '623030',
         searchParams: {
-            // companyCode:OSS.companyCode
+            // companyCode:getCompanyCode()
             statusList: [3]
         },
         beforeSearch: function (data) {
@@ -113,7 +113,7 @@ $(function() {
         }
         window.location.href = "audit_report.html?userId=" + selRecords[0].user.userId;
 
-    }); 
+    });
 
     $('#checkBtn').off('click').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
@@ -125,14 +125,14 @@ $(function() {
         if (selRecords[0].status != 2) {
                     toastr.info(selRecords[0].user.mobile + "不是待审核状态!");
                     return;
-                }        
+                }
 
         var dataCode = selRecords[0].code;
         window.location.href = "audit_check.html?userId=" + selRecords[0].userId+"&code="+selRecords[0].code+"&v=1";
 
-    });       
+    });
 
-    
+
     $('#detailBtn').off("click").click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {
@@ -140,9 +140,9 @@ $(function() {
             return;
         }
 
-         
-            
+
+
         window.location.href = "./query_addedit.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1";
-    });    
-       
+    });
+
 });

@@ -4,10 +4,10 @@ $(function(){
 		location.href = 'signin.html';
 		return;
 	}
-	
+
 	// 获取用户
 	reqApi({
-		code: '805121',
+		code: '630117',
 		cache: true,
 		sync: true,
 		json: {
@@ -30,10 +30,10 @@ $(function(){
 	}).then(function (data) {
 		sessionStorage.setItem('roleLevel', data.level);
     });
-	
+
 	// 设置根目录
 	window.parentCode = 'YLQSM201600000000000000';
-	
+
 	var data={"parentCode":window.parentCode,"type":"1", 'roleCode': sessionStorage.getItem('roleCode')};
 	reqApi({
 		code: '805026',
@@ -51,18 +51,18 @@ $(function(){
             		"\" title=\""+item.name + "\" /><h2>"+item.name+"</h2></a></li>");
         });
 		$(".nav").find('a:first').addClass('selected');
-		
+
 		//顶部导航切换
 		$(".nav li a").click(function(){
 			$(".nav li a.selected").removeClass("selected");
 			$(this).addClass("selected");
 		});
-		
+
 		if (window.parent.noRenderLeftMenu) {
 			initLefMenu(firstMenuCode);
 		}
 	});
-	
+
 	$("#logout").click(function(){
 		ajaxGet(OSS.mainUrl + '/logOut', {
 			token: window.sessionStorage.getItem('token')
@@ -81,7 +81,7 @@ $(function(){
 		parent.frames["rightFrame"].window.location.href = 'security/user_pwd_change.html';
 	});
 });
-		
+
 
 //重新加载左侧页面
 function initLefMenu(parentCode){

@@ -1,7 +1,7 @@
 $(function() {
-	
+
 	var code = getQueryString('code');
-	
+
 	var fields = [{
 		field: 'kind',
 		type: 'hidden',
@@ -24,12 +24,12 @@ $(function() {
 		field: 'remark',
 		maxlength: 250
 	}];
-	
+
 	buildDetail({
 		fields: fields,
 		code: code,
-		detailCode: '805121',
+		detailCode: '630117',
 		addCode: '805042'
 	});
-	
+
 });

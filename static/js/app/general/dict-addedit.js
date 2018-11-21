@@ -1,6 +1,6 @@
 $(function() {
 	var code = getQueryString('code');
-	
+
 	var fields = [{
 		title: '类型',
 		field: 'type',
@@ -11,7 +11,7 @@ $(function() {
 		field: 'parentKey',
 		required: true,
 		type: 'select',
-		listCode: '805906',
+		listCode: '623907',
 		params: {
 			type: 0
 		},
@@ -35,7 +35,7 @@ $(function() {
 		field: 'remark',
 		maxlength: 250
 	}];
-	
+
 	buildDetail({
 		fields: fields,
 		code: code,
@@ -43,7 +43,7 @@ $(function() {
 		editCode: '805902',
 		detailCode: '805907'
 	});
-	
+
 	$('#parentKey').on('change', function() {
 		$('#type').val(this.value == 0 ? '0' : '1');
 	});

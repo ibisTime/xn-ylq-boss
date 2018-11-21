@@ -16,7 +16,7 @@ $(function() {
             data1[v] = data.user.mobile
             $('#applyUser').renderDropdown2(data1)
              return data.user.mobile
-        } ,      
+        } ,
         search: true
     }, {
         field: 'amount',
@@ -71,16 +71,16 @@ $(function() {
     buildList({
         columns: columns,
         searchParams:{
-            companyCode: OSS.companyCode,
+            companyCode: getCompanyCode(),
             applyUser: userId
         },
         pageCode: '623085'
     });
-    
+
 
     $('.tools .toolbar').html('<li style="display:block;" id="backBtn"><span><img src="/static/images/t01.png"></span>返回</li>');
     $('#backBtn').click(function() {
         goBack()
-    });    
-         
+    });
+
 });

@@ -33,7 +33,7 @@ $(function() {
         fields: fields,
         code: code,
         searchParams: {
-            companyCode: OSS.companyCode
+            companyCode: getCompanyCode()
         },
         detailCode: '623011',
         addCode: '623000',

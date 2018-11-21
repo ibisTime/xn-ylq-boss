@@ -1,5 +1,5 @@
 $(function() {
-	
+
 	var columns = [{
 		field : '',
 		title : '',
@@ -9,7 +9,7 @@ $(function() {
 		title : '种类',
 		search: true,
 		type: 'select',
-		listCode: '805906',
+		listCode: '623907',
 		params: {
 			type: 0
 		},
@@ -36,8 +36,8 @@ $(function() {
 		router: 'dict',
 		columns: columns,
 		searchParams:{
-            companyCode:OSS.companyCode	
-        },		
+        companyCode:getCompanyCode()
+    },
 		pageCode: '805905',
 		deleteCode: '805901'
 	});

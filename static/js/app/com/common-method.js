@@ -536,6 +536,10 @@ function getSystemId() {
   return sessionStorage.getItem('systemCode');
 }
 
+function getCompanyCode() {
+    return sessionStorage.getItem('companyCode');
+}
+
 $(function() {
   //下拉框
   setTimeout(function() {

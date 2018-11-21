@@ -25,7 +25,7 @@ $(function() {
         pageCode: "802025",
         searchParams: {
             type: "1",
-            companyCode:OSS.company 
+            companyCode: getCompanyCode()
         }
     });
 });
