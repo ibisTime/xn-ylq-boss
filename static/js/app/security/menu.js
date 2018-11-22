@@ -1,5 +1,5 @@
 $(function() {
-	
+
 	var columns = [{
 		field : '',
 		title : '',
@@ -8,6 +8,9 @@ $(function() {
 		field : 'name',
 		title : '菜单名称',
 		search: true
+    }, {
+        field : 'code',
+        title : '菜单编号'
 	}, {
 		field : 'url',
 		title : '菜单url'

@@ -179,4 +179,52 @@ $(function() {
         window.location.href = "./custom_detail.html?Code=" + selRecords[0].code+'&userId='+selRecords[0].userId;
     });
 
+    $('#setCreditScoreBtn').click(function() {
+        var selRecords = $('#tableList').bootstrapTable('getSelections');
+        if (selRecords.length <= 0) {
+            toastr.info("请选择记录");
+            return;
+        }
+
+        var dw = dialog({
+            content: '<form class="pop-form" id="popForm" novalidate="novalidate">' +
+                '<ul class="form-info" id="formContainer"><li style="text-align:center;font-size: 15px;">设置信用分</li></ul>' +
+                '</form>'
+        });
+
+        dw.showModal();
+
+        buildDetail({
+            fields: [{
+                field: 'creditScore',
+                title: '信用分',
+                required: true,
+                number: true
+            }],
+            container: $('#formContainer'),
+            buttons: [ {
+                title: '确定',
+                handler: function() {
+                    var data = $('#popForm').serializeObject();
+                    data.userId = selRecords[0].userId;
+                    reqApi({
+                        code: '623024',
+                        json: data
+                    }).done(function(data) {
+                        sucList();
+                        dw.close().remove();
+                    });
+                }
+            }, {
+                title: '取消',
+                handler: function() {
+                    dw.close().remove();
+                }
+            }]
+        });
+
+        dw.__center();
+
+    });
+
 });

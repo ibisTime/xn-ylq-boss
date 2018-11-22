@@ -52,7 +52,7 @@ $(function() {
         type: "select",
         key: "product_status",
         keyCode: "623907",
-        formatter: Dict.getNameForList("product_status", "623907"),
+        formatter: Dict.getNameForList("product_status"),
         search: true
     }, {
         field: 'uiLocation',
@@ -60,7 +60,7 @@ $(function() {
         type: 'select',
         key: 'product_location',
         keyCode: '623907',
-        formatter: Dict.getNameForList("product_location", '623907'),
+        formatter: Dict.getNameForList("product_location"),
     }, {
         field: 'uiOrder',
         title: 'UI顺序',
@@ -72,9 +72,7 @@ $(function() {
     buildList({
         columns: columns,
         searchParams: {
-            companyCode: getCompanyCode(),
-            orderColumn: 'ui_order',
-            orderDir: 'asc'
+            companyCode: getCompanyCode()
         },
         pageCode: '623010',
         deleteCode: '808011',

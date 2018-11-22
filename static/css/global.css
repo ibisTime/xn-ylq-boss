@@ -428,6 +428,7 @@ textarea.error {
 .form-info li {
     margin-bottom: 13px;
     clear: both;
+    text-align: center;
 }
 
 .form-info input[type=checkbox] + input[type=checkbox] {

@@ -1,7 +1,7 @@
 $(function() {
-	
+
 	var code = getQueryString('code');
-	
+
 	var fields = [{
 		field : 'parentCode',
 		title : '父菜单编号',
@@ -11,7 +11,7 @@ $(function() {
 			type: '1'
 		},
 		keyName: 'code',
-		valueName: '{{code.DATA}} {{name.DATA}}',
+		valueName: '{{code.DATA}} {{name.DATA}} {{url.DATA}}',
 		required: true
 	}, {
 		field: 'name',
@@ -39,7 +39,7 @@ $(function() {
 		title: '备注',
 		maxlength: 250
 	}];
-	
+
 	buildDetail({
 		fields: fields,
 		code: code,
@@ -47,5 +47,5 @@ $(function() {
 		addCode: '805003',
 		editCode: '805005'
 	});
-	
+
 });
