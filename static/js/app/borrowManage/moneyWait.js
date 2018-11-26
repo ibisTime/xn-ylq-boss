@@ -113,7 +113,6 @@ $(function () {
     buildList({
         columns: columns,
         searchParams:{
-            companyCode: getCompanyCode(),
             statusList: [1,8],
             isArchive: 0
         },
@@ -131,11 +130,15 @@ $(function () {
             toastr.info("请选择记录");
             return;
         }
+        var codeList = [];
 
-        var data = { code: selRecords[0].code, result: 1, updater: getUserName(),remark:"放款成功" };
+        for (var i = 0; i < selRecords.length; i++) {
+            codeList.push(selRecords[i].code)
+        }
+        var data = { codeList: codeList, result: 1, updater: getUserName(),remark:"放款成功" };
         confirm("确认放款？").then(function() {
             reqApi({
-                code: '623071',
+                code: '623072',
                 json: data
             }).then(function() {
                 sucList();

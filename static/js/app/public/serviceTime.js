@@ -1,7 +1,7 @@
 $(function() {
     var code;
     reqApi({
-        code: "805917",
+        code: "623917",
         json: {
             ckey: "time",
             type:"1"
@@ -28,7 +28,7 @@ $(function() {
     var options = {
         fields: fields,
         code: code,
-        detailCode: '805916',
+        detailCode: '623916',
         buttons: [{
             title: "确定",
             handler: function() {
@@ -38,7 +38,7 @@ $(function() {
                     data["note"] = $("#note").val();
                     data["id"] = $("#id").val();
                     reqApi({
-                        code: "805911",
+                        code: "623911",
                         json: data
                     }).done(function() {
                         toastr.info("操作成功");

@@ -20,7 +20,6 @@ $(function() {
         columns: columns,
         pageCode: "623915",
         searchParams: {
-            companyCode:getCompanyCode(),
             type: 1
         }
     });

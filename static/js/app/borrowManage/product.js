@@ -72,7 +72,6 @@ $(function() {
     buildList({
         columns: columns,
         searchParams: {
-            companyCode: getCompanyCode()
         },
         pageCode: '623010',
         deleteCode: '808011',

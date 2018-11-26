@@ -71,7 +71,6 @@ $(function () {
     buildList({
         columns: columns,
         searchParams:{
-            companyCode: getCompanyCode(),
             isArchive: 1
         },
         pageCode: '623085'

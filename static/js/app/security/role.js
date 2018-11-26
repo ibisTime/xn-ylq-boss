@@ -32,7 +32,6 @@ $(function() {
         pageCode: '805020',
         deleteCode: '805024',
         searchParams: {
-            companyCode: getCompanyCode()
         }
     });
     $('#changeBtn').click(function() {

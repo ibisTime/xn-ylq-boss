@@ -92,7 +92,6 @@ $(function() {
         pageCode: '805120',
         searchParams: {
             kind: "C",
-            companyCode:getCompanyCode()
         }
     });
 

@@ -31,10 +31,9 @@ $(function() {
     buildList({
         router: 'user',
         columns: columns,
-        pageCode: '805120',
+        pageCode: '630065',
         searchParams: {
-            kind: 'P',
-            companyCode:getCompanyCode()
+            updater: '',
         }
     });
 

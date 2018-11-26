@@ -1,16 +1,16 @@
 $(function() {
-	
+
 	var code = getQueryString('code');
 	var view = getQueryString('v');
-    
-	
+
+
 	var fields = [ {
         field: 'code1',
         title: '还款编号',
         readonly: view,
         formatter:function(v,data){
             return data.code;
-        }        
+        }
     }, {
         field: 'refNo',
         title: '借款编号',
@@ -27,7 +27,7 @@ $(function() {
         title: '还款类型',
         key: "repay_apply_type",
         keyCode:"623907",
-        formatter: Dict.getNameForList("repay_apply_type","623907"),        
+        formatter: Dict.getNameForList("repay_apply_type","623907"),
         readonly: view
     }, {
         field: 'amount',
@@ -63,7 +63,7 @@ $(function() {
         title: '审核说明',
         required: true
 
-    }]; 
+    }];
 
 
     var options = {
@@ -80,9 +80,9 @@ $(function() {
                 data['code'] = code;
                 data['approver'] = getUserName();
                 data["approveResult"] = "1";
-                data["approveNote"] = $("#approveNote").val();             
+                data["approveNote"] = $("#approveNote").val();
                 reqApi({
-                    code: "623076",
+                    code: "623181",
                     json: data
                 }).done(function() {
                     sucDetail();
@@ -99,7 +99,7 @@ $(function() {
                 data["approveResult"] = "0";
                 data["approveNote"] = $("#approveNote").val();
                 reqApi({
-                    code: "623076",
+                    code: "623181",
                     json: data
                 }).done(function() {
                     sucDetail();
@@ -113,6 +113,6 @@ $(function() {
         }
     }];
 
-    buildDetail(options);        
+    buildDetail(options);
 
 });

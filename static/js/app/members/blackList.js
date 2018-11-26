@@ -38,9 +38,10 @@ $(function() {
     ];
     buildList({
         columns: columns,
-        pageCode: '805205',
+        pageCode: '805120',
         searchParams: {
-            status: 1
+            kind: "C",
+            isBlackList: '1'
         }
     });
 
@@ -67,7 +68,7 @@ $(function() {
 
     });
 
-   
-  
-      
+
+
+
 });

@@ -112,7 +112,6 @@ $(function () {
     buildList({
         columns: columns,
         searchParams:{
-            companyCode: getCompanyCode(),
             status: 4,
             isArchive: 0,
             isOverdue: 0

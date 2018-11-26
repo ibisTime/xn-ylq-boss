@@ -35,9 +35,6 @@ $(function() {
 	buildList({
 		router: 'dict',
 		columns: columns,
-		searchParams:{
-        companyCode:getCompanyCode()
-    },
 		pageCode: '805905',
 		deleteCode: '805901'
 	});

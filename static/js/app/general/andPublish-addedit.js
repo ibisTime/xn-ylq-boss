@@ -18,12 +18,11 @@ $(function() {
     buildDetail({
         fields: fields,
         code: code,
-        addCode: "805910",
-        detailCode: '805916',
-        editCode: '805911',
+        detailCode: '623916',
+        editCode: '623910',
         beforeSubmit:function(data){
             data.remark = $('#remark').text();
             return data
-        }        
+        }
     });
 });

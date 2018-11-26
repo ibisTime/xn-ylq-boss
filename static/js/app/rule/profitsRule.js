@@ -23,7 +23,6 @@ $(function() {
         columns: columns,
         searchParams:{
             type:"1",
-            companyCode: getCompanyCode(),
             orderDir: "asc"
         },
         pageCode: '808915'

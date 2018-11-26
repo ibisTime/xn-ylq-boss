@@ -80,7 +80,6 @@ $(function () {
     buildList({
         columns: columns,
         searchParams:{
-            companyCode: getCompanyCode(),
             status: 6
         },
         pageCode: '623085'

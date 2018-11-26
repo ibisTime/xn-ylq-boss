@@ -889,7 +889,6 @@ function buildList(options) {
         });
       }
       var data = codeParams;
-
       reqApi({code: options.deleteCode, json: data}).done(function(data) {
         sucList();
       });

@@ -428,6 +428,8 @@ textarea.error {
 .form-info li {
     margin-bottom: 13px;
     clear: both;
+}
+#popForm .form-info li{
     text-align: center;
 }
 

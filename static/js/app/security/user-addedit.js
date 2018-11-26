@@ -28,8 +28,8 @@ $(function() {
 	buildDetail({
 		fields: fields,
 		code: code,
-		detailCode: '630117',
-		addCode: '805042'
+		detailCode: '805022',
+		addCode: '630057'
 	});
 
 });

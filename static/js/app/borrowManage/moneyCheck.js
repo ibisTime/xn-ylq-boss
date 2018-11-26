@@ -81,7 +81,6 @@ $(function () {
     buildList({
         columns: columns,
         searchParams:{
-            companyCode: getCompanyCode(),
             status: 0,
             isArchive: 0
         },

@@ -96,7 +96,7 @@ $(function() {
         columns: columns,
         pageCode: '623030',
         searchParams: {
-            // companyCode:getCompanyCode()
+            //
             statusList: [3]
         },
         beforeSearch: function (data) {

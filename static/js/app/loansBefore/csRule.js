@@ -24,8 +24,7 @@ $(function() {
         columns: columns,
         pageCode: "802025",
         searchParams: {
-            type: "1",
-            companyCode: getCompanyCode()
+            type: "1"
         }
     });
 });

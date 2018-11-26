@@ -20,6 +20,6 @@ $(function() {
         searchParams:{
             type:"QINIU"
         },
-        pageCode: '805915'
+        pageCode: '623915'
     });
 });

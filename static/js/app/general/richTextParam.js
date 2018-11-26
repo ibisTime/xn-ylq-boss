@@ -20,6 +20,6 @@ $(function() {
         searchParams:{
             type:"richText"
         },
-        pageCode: '805915'
+        pageCode: '623915'
     });
 });
