@@ -220,6 +220,12 @@ function getMenuUrl(url, name) {
   return null;
 }
 
+// 菜单按钮排序
+function sortSubMenus(result) {
+    result.sort((a, b) => a['orderNo'].localeCompare(b['orderNo']));
+    return result;
+}
+
 /**
  * jquery URL传递 暂时没有
  * @param key
@@ -258,6 +264,7 @@ function showPermissionControl() {
       roleCode: getRoleId()
     };
     reqApi({code: '805026', json: pData, sync: true}).then(function(data) {
+      data = sortSubMenus(data);
       $('.tools .toolbar').empty();
       for (var i = 0; i < data.length; i++) {
         var menuUrl = data[i].url;

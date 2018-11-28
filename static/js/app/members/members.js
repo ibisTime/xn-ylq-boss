@@ -40,13 +40,13 @@ $(function() {
                     }
                 }
             }
-        }, {
-            title: "用户类型",
-            field: "kind",
-            type: "select",
-            formatter: function(v,data){
-                return userKind[data.kind]
-            }
+        // }, {
+        //     title: "用户类型",
+        //     field: "kind",
+        //     type: "select",
+        //     formatter: function(v,data){
+        //         return userKind[data.kind]
+        //     }
         }, {
             title: "状态",
             field: "status",

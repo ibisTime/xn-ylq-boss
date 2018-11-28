@@ -1,7 +1,8 @@
 $('title', window.parent.document).html(OSS.systemName);
 $(function(){
+    var timestamp = new Date().getTime();
 	if (!sessionStorage.getItem('token')) {
-		location.href = 'signin.html';
+		location.href = 'signin.html?timestamp=' + timestamp;
 		return;
 	}
 
@@ -72,7 +73,7 @@ $(function(){
 				window.sessionStorage.setItem('userId', '');
 				window.sessionStorage.setItem('userName', '');
 				window.sessionStorage.setItem('roleCode', '');
-				location.href = 'signin.html?kind=' + (sessionStorage.getItem('loginKind') || '01')
+				location.href = 'signin.html?kind=' + (sessionStorage.getItem('loginKind') || '01') + '&timestamp=' + timestamp;
 			}
 		});
 	});

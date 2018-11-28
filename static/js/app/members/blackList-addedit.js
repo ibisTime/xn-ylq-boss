@@ -1,11 +1,7 @@
 $(function() {
     var id = getQueryString('id');
-    
+
     var fields = [{
-            title: '申请记录编号',
-            field: 'id',
-            readonly: true
-        },{
             title: "新手机",
             field: "newMobile",
             readonly: true
@@ -35,7 +31,7 @@ $(function() {
                 data['id'] = id;
                 data['approver'] = getUserName();
                 data["approveResult"] = "1";
-                data["approveNote"] = $("#approverNote").val();             
+                data["approveNote"] = $("#approverNote").val();
                 reqApi({
                     code: "805071",
                     json: data
@@ -68,6 +64,6 @@ $(function() {
         }
     }];
 
-    
+
     buildDetail(options);
 });

@@ -42,7 +42,7 @@ $(function(){
 				code: '630101',
 				json: data
 			}).then(function(data) {
-				location.href = "main.html";
+                location.href = "main.html?timestamp=" + new Date().getTime();
 				window.sessionStorage.setItem('token', data.token || data.userId);
 				window.sessionStorage.setItem('userId', data.userId);
                 window.sessionStorage.setItem('companyCode', data.companyCode);

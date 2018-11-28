@@ -62,18 +62,17 @@ $(function() {
     //     }
     // }
     , {
-        title: "用户类型",
-        field: "level",
-        type: "select",
-        key: "user_level",
-        listCode: "807706",
-        keyName:'dkey',
-        valueName:'dvalue',
-        formatter: function(v,data){
-           return data.level
-        }
-
-    }, {
+    //     title: "用户类型",
+    //     field: "level",
+    //     type: "select",
+    //     key: "user_level",
+    //     listCode: "807706",
+    //     keyName:'dkey',
+    //     valueName:'dvalue',
+    //     formatter: function(v,data){
+    //        return data.level
+    //     }
+    // }, {
         title: "状态",
         field: "status",
         type: "select",
