@@ -7,11 +7,25 @@ $(function() {
 		type: 'hidden',
 		value: 'P'
 	}, {
-		title: '用户名',
+		title: '登录名',
 		field: 'loginName',
 		required: true,
 		maxlength: 30
 	}, {
+        title: '登录密码',
+        field: 'loginPwd',
+        type: 'password',
+        required: true
+    }, {
+        title: '姓名',
+        field: 'realName',
+        required: true
+    }, {
+        title: '手机号',
+        field: 'mobile',
+        mobile: true,
+        required: true
+    }, {
 		title: '角色',
 		field: 'roleCode',
 		required: true,
@@ -28,8 +42,11 @@ $(function() {
 	buildDetail({
 		fields: fields,
 		code: code,
-		detailCode: '805022',
-		addCode: '630057'
+		detailCode: '630067',
+		addCode: '630050',
+        beforeSubmit: (data) => {
+		    return data;
+        }
 	});
 
 });

@@ -39,7 +39,7 @@ $(function() {
             });
         },
         readonly: view
-    },{
+    }, {
         field: 'sxAmount',
         title: '授信金额',
         readonly: view,

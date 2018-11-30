@@ -55,14 +55,7 @@ $(function() {
         formatter: Dict.getNameForList("product_status"),
         search: true
     }, {
-        field: 'uiLocation',
-        title: '位置',
-        type: 'select',
-        key: 'product_location',
-        keyCode: '623907',
-        formatter: Dict.getNameForList("product_location"),
-    }, {
-        field: 'uiOrder',
+        field: 'orderNo',
         title: 'UI顺序',
     }, {
         field: 'remark',
@@ -84,17 +77,19 @@ $(function() {
             return;
         }
 
-        if (selRecords.length > 1) {
-            toastr.info("不能多选");
-            return;
-        }
-
         if (selRecords[0].status == 1) {
-            toastr.info("已上架");
+            toastr.info("已开启");
             return;
         }
 
-        window.location.href = "product_up2.html?Code=" + selRecords[0].code;
+        confirm("确认开启？").then(function() {
+            reqApi({
+                code: '623002',
+                json: { "code": selRecords[0].code }
+            }).then(function() {
+                sucList();
+            });
+        }, function() {});
 
     });
 
@@ -105,18 +100,14 @@ $(function() {
             return;
         }
 
-        if (selRecords.length > 1) {
-            toastr.info("不能多选");
-            return;
-        }
         if (selRecords[0].status !== "1") {
-            toastr.info("该商品还未上架");
+            toastr.info("未开启");
             return;
         }
-        confirm("确认下架？").then(function() {
+        confirm("确认关闭？").then(function() {
             reqApi({
                 code: '623003',
-                json: { "code": selRecords[0].code, "uiOrder": selRecords[0].uiOrder }
+                json: { "code": selRecords[0].code }
             }).then(function() {
                 sucList();
             });
@@ -136,9 +127,8 @@ $(function() {
             return;
         }
 
-        window.location.href = "product_detail2.html?Code=" + selRecords[0].code + "&v=1";
+        window.location.href = "product_detail2.html?code=" + selRecords[0].code + "&v=1";
     });
-
 
     //修改
     $('#editBtn').off("click").click(function() {
@@ -148,24 +138,8 @@ $(function() {
             return;
         }
 
-        if (selRecords[0].status == 3) {
-            toastr.info("已上架状态不能修改");
-            return;
-        }
+        window.location.href = "product_addedit.html?code=" + selRecords[0].code + "&dc=" + selRecords[0].companyCode;
 
-        window.location.href = "product_addedit.html?Code=" + selRecords[0].code + "&dc=" + selRecords[0].companyCode;
-
-    });
-
-    //产品参数
-    $('#productParamBtn').click(function() {
-        var selRecords = $('#tableList').bootstrapTable('getSelections');
-        if (selRecords.length <= 0) {
-            toastr.info("请选择记录");
-            return;
-        }
-
-        window.location.href = "productParam.html?Code=" + selRecords[0].code + "&pName=" + selRecords[0].name;
     });
 
 });

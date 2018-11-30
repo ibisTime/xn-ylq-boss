@@ -23,7 +23,7 @@ $(function() {
 			type: '1'
 		},
 		keyName: 'code',
-		valueName: '{{code.DATA}} {{name.DATA}}',
+		valueName: '{{code.DATA}} {{name.DATA}} {{url.DATA}}',
 		search: true
 	}, {
 		field : 'type',

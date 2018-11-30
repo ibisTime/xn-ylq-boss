@@ -40,12 +40,6 @@ $(function() {
         formatter: function(v, data){
             return data.user.mobile;
         }
-    },  {
-        field: 'amount',
-        title: '借款金额',
-        formatter: function(v,data){
-            return moneyFormat(data.product.amount)
-        }
     }, {
         field: 'sxAmount',
         title: '授信金额',
@@ -96,8 +90,7 @@ $(function() {
         columns: columns,
         pageCode: '623030',
         searchParams: {
-            //
-            statusList: [3]
+            statusList: [2]
         },
         beforeSearch: function (data) {
             data['applyUser'] = data['mobile'];
@@ -122,16 +115,8 @@ $(function() {
             return;
         }
 
-        if (selRecords[0].status != 2) {
-                    toastr.info(selRecords[0].user.mobile + "不是待审核状态!");
-                    return;
-                }
-
-        var dataCode = selRecords[0].code;
-        window.location.href = "audit_check.html?userId=" + selRecords[0].userId+"&code="+selRecords[0].code+"&v=1";
-
+        window.location.href = "audit_check.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1";
     });
-
 
     $('#detailBtn').off("click").click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
@@ -139,8 +124,6 @@ $(function() {
             toastr.info("请选择记录");
             return;
         }
-
-
 
         window.location.href = "./query_addedit.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1";
     });

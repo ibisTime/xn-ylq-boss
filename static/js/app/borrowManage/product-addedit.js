@@ -10,7 +10,7 @@ $(function() {
         search: true,
     }, {
         field: 'level',
-        title: '商品等级',
+        title: '商品颜色',
         type: "select",
         listCode: "623907",
         params: {
@@ -62,6 +62,11 @@ $(function() {
     }, {
         field: 'slogan',
         title: '广告语',
+        required: true,
+    }, {
+        field: 'orderNo',
+        title: 'UI顺序',
+        'Z+': true,
         required: true,
     }, {
         field: 'remark',
