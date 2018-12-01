@@ -9,21 +9,25 @@ $(function() {
         value: '0'
     }, {
         field: "name",
-        title: "姓名"
+        title: "姓名",
+        required: true
     }, {
         field: 'mobile',
         title: '手机号',
-        mobile: true
+        mobile: true,
+        required: true
     }, {
-        field: "stratTime",
+        field: "startTime",
         title: "开始时间",
-        help: '例：“1”表示每日1点开始',
-        'Z+': true
+        type: 'select',
+        data: OSS.notifyTimeList,
+        required: true
     }, {
         field: "endTime",
         title: "结束时间",
-        help: '例：“24”表示每日24点结束',
-        'Z+': true
+        type: 'select',
+        data: OSS.notifyTimeList,
+        required: true
     }];
 
     buildDetail({

@@ -40,12 +40,12 @@ $(function() {
         },
         readonly: view
     },{
-        field: 'sxAmount',
+        field: 'creditScore',
         title: '授信金额',
         readonly: view,
         amount:true,
         formatter:function(v,data){
-            return moneyFormat(data.sxAmount)
+            return moneyFormat(data.creditScore)
         }
     }, {
         field: 'applyDatetime',

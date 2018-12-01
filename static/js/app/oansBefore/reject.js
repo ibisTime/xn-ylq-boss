@@ -41,10 +41,10 @@ $(function() {
             return data.user.mobile;
         }
     }, {
-        field: 'sxAmount',
+        field: 'creditScore',
         title: '授信金额',
         formatter: function(v,data){
-            return moneyFormat(data.sxAmount)
+            return moneyFormat(data.creditScore)
         }
     }, {
         field: 'overdueCode',

@@ -1,14 +1,14 @@
 $(function() {
-	
+
 	var code = getQueryString('code');
 	var view = getQueryString('v');
-	
+
 	var fields = [ {
         field: 'code1',
         title: '还款编号',
         formatter:function(v,data){
             return data.code;
-        }        
+        }
     }, {
         field: 'refNo',
         title: '借款编号',
@@ -16,7 +16,7 @@ $(function() {
         field: 'loanType',
         title: '放款方式',
         formatter: function(v,data){
-          return  Dict.getNameForList1('loan_type','623907',data.borrow.loanType)
+            return data.borrow ? Dict.getNameForList1('loan_type', '', data.borrow.loanType) : '';
         }
     }, {
         field: 'type',
@@ -24,7 +24,7 @@ $(function() {
         type: "select",
         key: "repay_apply_type",
         keyCode:"623907",
-        formatter: Dict.getNameForList("repay_apply_type","623907"),         
+        formatter: Dict.getNameForList("repay_apply_type","623907"),
     }, {
         field: 'amount',
         title: '还款金额',
@@ -34,7 +34,7 @@ $(function() {
         title: '还款人',
         formatter:function(v,data){
             return data.user.mobile;
-        }        
+        }
     },{
         field: 'applyDatetime',
         title: '还款时间',
@@ -60,7 +60,7 @@ $(function() {
         field: 'approveNote',
         title: '审核说明',
     }];
-	
+
 	buildDetail({
 		fields: fields,
 		code: code,
@@ -68,4 +68,4 @@ $(function() {
 		detailCode: '623089',
 	});
 
-});     
+});

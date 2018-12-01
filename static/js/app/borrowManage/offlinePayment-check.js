@@ -1,8 +1,6 @@
 $(function() {
-
 	var code = getQueryString('code');
 	var view = getQueryString('v');
-
 
 	var fields = [ {
         field: 'code1',
@@ -19,7 +17,7 @@ $(function() {
         field: 'loanType',
         title: '放款方式',
         formatter: function(v,data){
-          return  Dict.getNameForList1('loan_type','623907',data.borrow.loanType)
+          return data.borrow ? Dict.getNameForList1('loan_type','',data.borrow.loanType) : '';
         },
         readonly: view
     }, {

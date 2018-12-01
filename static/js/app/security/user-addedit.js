@@ -1,12 +1,7 @@
 $(function() {
-
 	var code = getQueryString('code');
 
 	var fields = [{
-		field: 'kind',
-		type: 'hidden',
-		value: 'P'
-	}, {
 		title: '登录名',
 		field: 'loginName',
 		required: true,
@@ -42,11 +37,7 @@ $(function() {
 	buildDetail({
 		fields: fields,
 		code: code,
-		detailCode: '630067',
-		addCode: '630050',
-        beforeSubmit: (data) => {
-		    return data;
-        }
+		addCode: '630300'
 	});
 
 });

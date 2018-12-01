@@ -7,9 +7,15 @@ $(function() {
         title: '',
         checkbox: true
     }, {
+        title: '登录名',
         field: 'loginName',
-        title: '用户名',
         search: true
+    }, {
+        title: '姓名',
+        field: 'realName'
+    }, {
+        title: '手机号',
+        field: 'mobile'
     }, {
         field: 'status',
         title: '状态',
@@ -31,7 +37,7 @@ $(function() {
     buildList({
         router: 'user',
         columns: columns,
-        pageCode: '630065',
+        pageCode: '630308',
         searchParams: {
             updater: '',
         }

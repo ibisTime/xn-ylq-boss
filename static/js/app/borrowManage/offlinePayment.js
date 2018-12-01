@@ -16,7 +16,7 @@ $(function () {
         field: 'loanType',
         title: '放款方式',
         formatter: function(v,data){
-          return  Dict.getNameForList1('loan_type', '', data.borrow.loanType)
+          return data.borrow ? Dict.getNameForList1('loan_type', '', data.borrow.loanType) : '';
         }
     }, {
         field: 'type',
@@ -24,6 +24,7 @@ $(function () {
         key: "repay_apply_type",
         keyCode:"623907",
         formatter: Dict.getNameForList("repay_apply_type"),
+        search: true
     }, {
         field: 'amount',
         title: '还款金额',
@@ -56,9 +57,6 @@ $(function () {
 
     buildList({
         columns: columns,
-        searchParams:{
-            type: 0
-        },
         pageCode: '623088'
     });
 

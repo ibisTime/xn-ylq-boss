@@ -65,13 +65,13 @@ $(function() {
         title: '备注',
         readonly: view,
     },{
-        field: 'sxAmount',
+        field: 'creditScore',
         title: '授信金额',
         required: true,
+        'Z+': true,
         formatter:function(v,data){
-            return moneyFormat(data.sxAmount)
-        },
-        maxlength: 250
+            return v ? moneyFormat(v, '0') : '0';
+        }
     },{
         field: 'approveNote',
         title: '审核意见',
@@ -95,7 +95,7 @@ $(function() {
                 data['approver'] = getUserName();
                 data["approveResult"] = "1";
                 data["approveNote"] = $("#approveNote").val();
-                data["sxAmount"] =  moneyParse($("#sxAmount").val());
+                data["creditScore"] =  moneyParse($("#creditScore").val());
                 reqApi({
                     code: "623023",
                     json: data
@@ -113,7 +113,7 @@ $(function() {
                 data['approver'] = getUserName();
                 data["approveResult"] = "0";
                 data["approveNote"] = $("#approveNote").val();
-                data["sxAmount"] =  moneyParse($("#sxAmount").val());
+                data["creditScore"] =  moneyParse($("#creditScore").val());
                 reqApi({
                     code: "623023",
                     json: data

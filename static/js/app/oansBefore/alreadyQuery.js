@@ -39,7 +39,7 @@ $(function() {
             return data.user.mobile;
         }
     }, {
-        field: 'sxAmount',
+        field: 'creditScore',
         title: '授信金额',
         formatter: moneyFormat
     }, {

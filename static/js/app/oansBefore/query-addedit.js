@@ -40,12 +40,12 @@ $(function() {
         },
         readonly: view
     },{
-        field: 'sxAmount',
+        field: 'creditScore',
         title: '授信金额',
         readonly: view,
         amount:true,
         formatter:function(v,data){
-            return moneyFormat(data.sxAmount)
+            return moneyFormat(data.creditScore)
         }
     }, {
         field: 'applyDatetime',
@@ -57,9 +57,8 @@ $(function() {
     }, {
         field: 'status',
         title: '状态',
-        // formatter: Dict.getNameForList("apply_status","623907"),
         formatter: function(v,data){
-            return "审核不通过"
+            return "待批复";
         },
         readonly: view,
     }, {

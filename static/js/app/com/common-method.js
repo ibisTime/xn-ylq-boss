@@ -3422,3 +3422,10 @@ function updateTableInfo(id) {
   searchs[pathName] = params;
   sessionStorage.setItem('tableInfo', JSON.stringify(searchs));
 }
+
+function showLoading() {
+    $("#loadingSpin").removeClass("hidden");
+}
+function hideLoading() {
+    $("#loadingSpin").addClass("hidden");
+}

@@ -1,7 +1,7 @@
 $(function() {
     var userKind = {
-        "C": "C端用户",
-        // "P": "平台用户"
+        'C': 'C端用户',
+        // 'P': '平台用户'
     };
     var data1 = {},data2 = {};
 
@@ -41,10 +41,10 @@ $(function() {
             return data.user.mobile;
         }
     }, {
-        field: 'sxAmount',
+        field: 'creditScore',
         title: '授信金额',
         formatter: function(v,data){
-            return moneyFormat(data.sxAmount)
+            return moneyFormat(data.creditScore)
         }
     }, {
         field: 'overdueCode',
@@ -66,18 +66,10 @@ $(function() {
     }, {
         field: 'status',
         title: '状态',
-        // type: "select",
-        // listCode: "623907",
-        // params:{
-        //     parentKey:"apply_status",
-        // },
-        // keyName:"dkey",
-        // valueName:"dvalue",
+        type: 'select',
         formatter: function(v,data){
-            // return data.status
-            return "审核不通过"
+            return '待批复';
         }
-        // search: true
     },{
         field: 'approveNote',
         title: '审核说明'
@@ -101,31 +93,31 @@ $(function() {
     $('#reportBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {
-            toastr.info("请选择记录");
+            toastr.info('请选择记录');
             return;
         }
-        window.location.href = "audit_report.html?userId=" + selRecords[0].user.userId;
+        window.location.href = 'audit_report.html?userId=' + selRecords[0].user.userId;
 
     });
 
     $('#checkBtn').off('click').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {
-            toastr.info("请选择记录");
+            toastr.info('请选择记录');
             return;
         }
 
-        window.location.href = "audit_check.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1";
+        window.location.href = './query_check.html?userId=' + selRecords[0].user.userId+'&code='+selRecords[0].code+'&v=1';
     });
 
-    $('#detailBtn').off("click").click(function() {
+    $('#detailBtn').off('click').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {
-            toastr.info("请选择记录");
+            toastr.info('请选择记录');
             return;
         }
 
-        window.location.href = "./query_addedit.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1";
+        window.location.href = './query_addedit.html?userId=' + selRecords[0].user.userId+'&code='+selRecords[0].code+'&v=1';
     });
 
 });

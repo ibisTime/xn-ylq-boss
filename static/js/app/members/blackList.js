@@ -46,9 +46,9 @@ $(function() {
 
         confirm('确定将该用户移出黑名单？').then(function() {
             reqApi({
-                code: '805201',
+                code: '805150',
                 json: {
-                    id: selRecords[0].id,
+                    userId: selRecords[0].userId,
                     updater: getUserName()
                 }
             }).then(function() {

@@ -12,11 +12,13 @@ $(function () {
     }, {
         field: "startTime",
         title: "开始时间",
-        help: '例：“1”表示每日1点开始'
+        type: 'select',
+        data: OSS.notifyTimeList
     }, {
         field: "endTime",
         title: "结束时间",
-        help: '例：“24”表示每日24点结束'
+        type: 'select',
+        data: OSS.notifyTimeList
     }, {
         field: "remark",
         title: "备注"
