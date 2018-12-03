@@ -3,23 +3,24 @@ $(function() {
     var view = getQueryString('v');
 
     var fields = [{
-        field: "count",
-        title: "期数",
+        field: 'count',
+        title: '期数',
         'Z+': true,
+        required: true
     }, {
         field: 'cycle',
         title: '分期周期',
-        'Z+': true
+        'Z+': true,
+        required: true
     }, {
-        field: "rate",
-        title: "分期日利率",
-        number: true
+        field: 'rate',
+        title: '分期日利率',
+        number: true,
+        required: true
     }, {
-        field: "orderNo",
-        title: "序号"
-    }, {
-        field: "remark",
-        title: "备注"
+        field: 'orderNo',
+        title: '序号',
+        required: true
     }];
 
     buildDetail({
@@ -28,6 +29,6 @@ $(function() {
         view: view,
         editCode: '623172',
         addCode: '623170',
-        detailCode: "623176"
+        detailCode: '623176'
     });
 });

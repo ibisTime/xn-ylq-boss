@@ -56,10 +56,10 @@ $(function() {
         search: true
     }, {
         field: 'orderNo',
-        title: 'UI顺序',
+        title: 'UI顺序'
     }, {
         field: 'remark',
-        title: '备注',
+        title: '备注'
     }];
 
     buildList({

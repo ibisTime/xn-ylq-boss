@@ -75,14 +75,14 @@ $(function() {
             toastr.info("请选择记录");
             return;
         }
-        var status = selRecords[0].status,
-            toStatus;
-        status == 0 ? toStatus = 2 : toStatus = 0;
+        if(selRecords[0].status === '1') {
+            toastr.info("该用户状态已锁定");
+            return;
+        }
         reqApi({
-            code: '805091',
+            code: '630106',
             json: {
-                userId: selRecords[0].userId,
-                toStatus: toStatus
+                userId: selRecords[0].userId
             }
         }).then(function() {
             sucList();
@@ -95,11 +95,14 @@ $(function() {
             toastr.info("请选择记录");
             return;
         }
+        if(selRecords[0].status === '0') {
+            toastr.info("该用户状态正常");
+            return;
+        }
         reqApi({
-            code: '805091',
+            code: '630106',
             json: {
-                userId: selRecords[0].userId,
-                toStatus: '0'
+                userId: selRecords[0].userId
             }
         }).then(function() {
             sucList();

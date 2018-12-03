@@ -26,7 +26,7 @@ $(function() {
         required: true,
     }, {
         field: 'duration',
-        title: '借款时长',
+        title: '借款时长(天)',
         required: true,
     }, {
         field: 'yqRate1',

@@ -23,7 +23,7 @@ $(function() {
         amount: true,
     }, {
         field: 'duration',
-        title: '借款时长',
+        title: '借款时长(天)',
         required: true,
     }, {
         field: 'yqRate1',
@@ -47,10 +47,13 @@ $(function() {
         title: '快速信审费(元)',
         formatter: moneyFormat
     }, {
-        field: 'updateDatetime',
-        title: '最后更新时间',
+        field: 'slogan',
+        title: '广告语',
         required: true,
-        formatter: dateTimeFormat
+    }, {
+        field: 'orderNo',
+        title: 'UI顺序',
+        required: true,
     }, {
         field: 'status',
         title: '状态',
@@ -61,21 +64,10 @@ $(function() {
         search: true,
         required: true,
     }, {
-        field: 'slogan',
-        title: '广告语',
+        field: 'updateDatetime',
+        title: '最后更新时间',
         required: true,
-    }, {
-        field: 'uiLocation',
-        title: '位置',
-        type: 'select',
-        key: 'product_location',
-        required: true,
-        keyCode: '623907',
-        formatter: Dict.getNameForList("product_location", '623907'),
-    }, {
-        field: 'uiOrder',
-        title: 'UI顺序',
-        required: true,
+        formatter: dateTimeFormat
     }, {
         field: 'remark',
         title: '备注',

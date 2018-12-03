@@ -5,17 +5,13 @@ $(function() {
             checkbox: true
         },{
             field: 'remark',
-            title: '参数说明'
-        },{
-            field: 'cvalue',
-            title: '参数值',
+            title: '说明'
         }
     ];
     buildList({
-        router: 'textParam',
         columns: columns,
         searchParams:{
-            type:"text"
+            type: "richText"
         },
         pageCode: '623915'
     });

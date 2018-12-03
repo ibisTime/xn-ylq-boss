@@ -130,10 +130,10 @@ $(function () {
             return;
         }
 
-
-        confirm("确定注销/激活该用户？").then(function () {
+        var msg = selRecords[0].status === '0' ? '确定注销该用户？' : '确定激活该用户？';
+        confirm(msg).then(function () {
             reqApi({
-                code: '805091',
+                code: '805084',
                 json: {
                     userId: selRecords[0].userId,
                     updater: getUserName()

@@ -46,6 +46,7 @@ $(function(){
 				window.sessionStorage.setItem('token', data.token || data.userId);
 				window.sessionStorage.setItem('userId', data.userId);
                 window.sessionStorage.setItem('companyCode', data.companyCode);
+                window.sessionStorage.setItem('rootMenuCode', data.rootMenuCode);
 			});
 		}
 	}

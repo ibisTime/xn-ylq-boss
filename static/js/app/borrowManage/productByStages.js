@@ -1,6 +1,4 @@
 $(function () {
-
-
     var columns = [{
         field: '',
         title: '',
@@ -15,8 +13,8 @@ $(function () {
         field: "rate",
         title: "分期日利率"
     }, {
-        field: "remark",
-        title: "备注"
+        field: 'orderNo',
+        title: '序号'
     }];
     buildList({
         columns: columns,

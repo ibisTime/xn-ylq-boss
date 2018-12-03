@@ -93,7 +93,6 @@ $(function () {
             return;
         }
 
-
         window.location.href = "./outTime_confirm.html?Code=" + selRecords[0].code+"&v=1";
     });
 

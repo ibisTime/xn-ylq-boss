@@ -37,15 +37,14 @@ $(function() {
             title: "登录名",
             field: "userId",
             type: "select",
-            listCode: "805120",
+            pageCode: "805120",
             params: {
-                limit: 10,
-                start: 1,
                 kind: "C",
                 updater: ""
             },
             keyName: "userId",
             valueName: "loginName",
+            searchName: 'mobile',
             formatter: function(v, data) {
                 return data.user.loginName;
             }

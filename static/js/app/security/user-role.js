@@ -18,7 +18,7 @@ $(function() {
 	//查询当前用户的角色
 	var data = {"userId":$("#userId").html()};
 	reqApi({
-		code: '630067',
+		code: '630117',
 		json: data
 	}).done(function(data) {
 		$("#roleCode").val(data.roleCode);

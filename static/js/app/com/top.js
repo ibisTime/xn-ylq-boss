@@ -33,7 +33,7 @@ $(function(){
     });
 
 	// 设置根目录
-	window.parentCode = 'YLQSM201600000000000000';
+	window.parentCode = window.sessionStorage.getItem('rootMenuCode');
 
 	var data={"parentCode":window.parentCode,"type":"1", 'roleCode': sessionStorage.getItem('roleCode')};
 	reqApi({
@@ -49,7 +49,8 @@ $(function(){
             $(".nav").append("<li><a id=\"menu"+i+"\" data-code='"+item.code+
             		"' href=\"javascript:void(0)\" onclick=\"initLefMenu('"+item.code+
             		"');return false;\" target=\"leftFrame\"><img src=\""+__uri('../images/icon01.png')+
-            		"\" title=\""+item.name + "\" /><h2>"+item.name+"</h2></a></li>");
+            		"\" title=\""+item.name +
+                "\" /><h2>"+item.name+"</h2></a></li>");
         });
 		$(".nav").find('a:first').addClass('selected');
 
