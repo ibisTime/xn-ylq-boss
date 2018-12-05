@@ -49,9 +49,7 @@ $(function() {
     }, {
         field: 'status',
         title: '状态',
-        // formatter: Dict.getNameForList("apply_status","623907"),
         formatter: function(v,data){
-            // return data.status
             if(data.status == "2"){
                 return "待审核"
             }else{

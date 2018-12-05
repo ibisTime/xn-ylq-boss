@@ -54,6 +54,9 @@ $(function() {
         twoDate: true,
         search: true,
         visible: false
+    }, {
+        field: 'refNo',
+        title: '关联编号'
     }];
     buildList({
         columns: columns,

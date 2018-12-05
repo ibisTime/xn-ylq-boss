@@ -547,6 +547,19 @@ function getCompanyCode() {
     return sessionStorage.getItem('companyCode');
 }
 
+// 获取借条模块权限
+function getIsJt() {
+    return sessionStorage.getItem('isJt') === '1';
+}
+// 获取导流模块权限
+function getIsDl() {
+    return sessionStorage.getItem('isDl') === '1';
+}
+// 获取风控模块权限
+function getIsFk() {
+    return sessionStorage.getItem('isFk') === '1';
+}
+
 $(function() {
   //下拉框
   setTimeout(function() {
@@ -663,7 +676,10 @@ function buildList(options) {
     if (item.amount) {
       item.formatter = moneyFormat;
     }
-    if (item.search) {
+    if (item.type === 'hidden') {
+        item.visible = false;
+    }
+    if (item.search && item.type !== 'hidden') {
       if (item.key || item.type == 'select') {
         html += '<li class="search-form-li"><label>' + item.title + '</label><select ' + (item.multiple
           ? 'multiple'
@@ -2070,7 +2086,7 @@ function uploadInit() {
   }
 
   reqApi({
-		code: '805951',
+		code: '630091',
 		json: {},
 		cache: true,
 		sync: true

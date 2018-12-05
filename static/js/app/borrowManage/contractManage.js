@@ -7,7 +7,7 @@ $(function () {
     }, {
         field: 'applyUser',
         title: '申请人',
-        type: 'select',
+        type: getIsFk() ? 'select' : 'hidden',
         search: true,
         pageCode: '805120',
         keyName: 'userId',

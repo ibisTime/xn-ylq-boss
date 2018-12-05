@@ -20,15 +20,12 @@ $(function () {
         formatter: function(v, data){
             return data.user.mobile;
         }
-    }, {
-        field: 'overdueCode',
-        title: '代码',
-        formatter: function (v, data) {
-            return data.user.overdueCode
-        }
-    }, {
-        field: 'approver',
-        title: '审核人'
+    // }, {
+    //     field: 'overdueCode',
+    //     title: '代码',
+    //     formatter: function (v, data) {
+    //         return data.user.overdueCode
+    //     }
     },  {
         field: 'fkDatetime',
         title: '放款时间',
@@ -82,6 +79,9 @@ $(function () {
         key: "borrow_status",
         keyCode:"623907",
         formatter: Dict.getNameForList("borrow_status","623907")
+    }, {
+        field: 'updater',
+        title: '最后一次更新人'
     }, {
         field: 'remark',
         title: '备注'

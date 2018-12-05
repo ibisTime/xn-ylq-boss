@@ -1,4 +1,10 @@
 $('title', window.parent.document).html(OSS.systemName);
+$('#topLogo').html('<img src="' + getLogo() + '" title="系统首页"/>');
+
+function getLogo() {
+    return OSS.picBaseUrl + '/' + sessionStorage.getItem('appLogo') + '?imageMogr2/auto-orient/thumbnail/!70x90r';
+}
+
 $(function(){
     var timestamp = new Date().getTime();
 	if (!sessionStorage.getItem('token')) {

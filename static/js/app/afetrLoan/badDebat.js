@@ -9,9 +9,9 @@ $(function () {
         title: '申请人',
         type: 'select',
         formatter:function(v,data){
-            data1[v] = data.user.realName;
+            data1[v] = data.user.mobile;
             $('#applyUser').renderDropdown2(data1);
-             return data.user.realName
+             return data.user.mobile
         } ,
         search: true
     },{
@@ -20,15 +20,12 @@ $(function () {
         formatter: function(v, data){
             return data.code;
         }
-    }, {
-        field: 'overdueCode',
-        title: '代码',
-        formatter: function (v, data) {
-            return data.user.overdueCode
-        }
-    }, {
-        field: 'approver',
-        title: '审核人'
+    // }, {
+    //     field: 'overdueCode',
+    //     title: '代码',
+    //     formatter: function (v, data) {
+    //         return data.user.overdueCode
+    //     }
     },{
         field: 'fkDatetime',
         title: '放款时间',
@@ -72,6 +69,9 @@ $(function () {
         key: "borrow_status",
         keyCode:"623907",
         formatter: Dict.getNameForList("borrow_status","623907")
+    }, {
+        field: 'updater',
+        title: '最后一次更新人'
     }, {
         field: 'remark',
         title: '备注'

@@ -7,7 +7,7 @@ $(function () {
     },  {
         field: 'applyUser',
         title: '申请人',
-        type: 'select',
+        type: getIsFk() ? 'select' : 'hidden',
         formatter:function(v,data){
             data1[v] = data.user.realName;
             $('#applyUser').renderDropdown2(data1);
@@ -20,15 +20,12 @@ $(function () {
         formatter: function(v, data){
             return data.user.mobile;
         }
-    }, {
-        field: 'overdueCode',
-        title: '代码',
-        formatter: function (v, data) {
-            return data.user.overdueCode
-        }
-    }, {
-        field: 'approver',
-        title: '审核人'
+    // }, {
+    //     field: 'overdueCode',
+    //     title: '代码',
+    //     formatter: function (v, data) {
+    //         return data.user.overdueCode
+    //     }
     },  {
         field: 'fkDatetime',
         title: '放款时间',
@@ -68,6 +65,9 @@ $(function () {
         field: 'totalAmount',
         title: '应收',
         formatter: moneyFormat
+    }, {
+        field: 'updater',
+        title: '最后一次更新人'
     }];
 
     buildList({
@@ -170,9 +170,16 @@ $(function () {
             return;
         }
 
-
-
         window.location.href = "./outTimeBacking_addedit.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1";
     });
 
+    $('#overdueStagingBtn').click(function() {
+        var selRecords = $('#tableList').bootstrapTable('getSelections');
+        if (selRecords.length <= 0) {
+            toastr.info("请选择记录");
+            return;
+        }
+
+        window.location.href = "./outTimeBacking_overdueStaging.html?code="+selRecords[0].code;
+    });
 });

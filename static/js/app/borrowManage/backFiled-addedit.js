@@ -1,9 +1,9 @@
 $(function() {
-    
+
     var code = getQueryString('code');
     var view = getQueryString('v');
     var borrowCount,overdueCode,renewalCount;
-    
+
     var fields = [ {
         field: 'code1',
         title: '借款编号',
@@ -16,17 +16,17 @@ $(function() {
         formatter:function(v,data){
             borrowCount = data.user.borrowCount;
             overdueCode = data.user.overdueCode;
-            renewalCount = data.user.renewalCount;            
+            renewalCount = data.user.renewalCount;
             return data.user.mobile
         },
         afterSet:function(data){
             var html='<div class="tools" style="float: right;margin-left: 20px;">'+
                             '<span style="float: left;margin-left: 20px;">借款次数:'+ borrowCount+' </span>'+
                             '<span style="float: left;margin-left: 20px;">逾期代码: '+ overdueCode +' </span>'+
-                            '<span style="float: left;margin-left: 20px;">续期次数: '+  renewalCount +' </span>'+             
-                     '</div>';            
-            $('#mobile').append(html);            
-        },        
+                            '<span style="float: left;margin-left: 20px;">续期次数: '+  renewalCount +' </span>'+
+                     '</div>';
+            $('#mobile').append(html);
+        },
     }, {
         field: 'amount',
         title: '借款金额',
@@ -75,7 +75,7 @@ $(function() {
         title: '支付类型',
         key: "pay_type",
         keyCode:"623907",
-        formatter: Dict.getNameForList("pay_type","623907")        
+        formatter: Dict.getNameForList("pay_type","623907")
     }, {
         field: 'renewalCount',
         title: '订单续期(次)',
@@ -114,7 +114,7 @@ $(function() {
         field: 'remark',
         title: '备注',
     }];
-    
+
     buildDetail({
         fields: fields,
         code: code,

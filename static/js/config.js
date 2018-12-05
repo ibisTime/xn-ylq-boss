@@ -3,10 +3,12 @@ var OSS = {};
 OSS.mainUrl = '/mainUrl';
 // system
 OSS.system = 'CD-YLQ000014';
+// system
+OSS.systemName = sessionStorage.getItem('appName') + '管理平台';
 //公司编号
 // OSS.companyCode = 'CD-YLQ000014';
 // picUrl
-OSS.picBaseUrl = 'http://oucrrtx1y.bkt.clouddn.com';
+OSS.picBaseUrl = sessionStorage.getItem('qiniuUrl');
 // picShow
 OSS.picShow = '?imageMogr2/auto-orient/thumbnail/!100x100r';
 //系统userid

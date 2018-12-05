@@ -7,7 +7,7 @@ $(function () {
     }, {
         field: 'applyUser',
         title: '申请人',
-        type: 'select',
+        type: getIsFk() ? 'select' : 'hidden',
         search: true,
         pageCode: '805120',
         keyName: 'userId',
@@ -34,15 +34,6 @@ $(function () {
         formatter: function(v, data){
             return data.user.mobile;
         }
-    }, {
-        field: 'overdueCode',
-        title: '代码',
-        formatter: function (v, data) {
-            return data.user.overdueCode
-        }
-    }, {
-        field: 'approver',
-        title: '审核人'
     },{
         field: 'fkDatetime',
         title: '放款时间',
@@ -83,6 +74,9 @@ $(function () {
         formatter: Dict.getNameForList("loan_type","623907"),
         search: true
     }, {
+        field: 'renewalCount',
+        title: '续期次数'
+    }, {
         field: 'status',
         title: '状态',
         type: "select",
@@ -90,8 +84,8 @@ $(function () {
         keyCode:"623907",
         formatter: Dict.getNameForList("borrow_status","623907")
     }, {
-        field: 'renewalCount',
-        title: '续期次数'
+        field: 'updater',
+        title: '最后一次更新人'
     }, {
         field: 'remark',
         title: '备注'

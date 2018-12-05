@@ -12,7 +12,7 @@ $(function() {
     }, {
         field: 'applyUser',
         title: '申请人',
-        type: 'select',
+        type: getIsFk() ? 'select' : 'hidden',
         formatter: function(v, data){
             data1[v] = data.user.realName + '-' + data.user.mobile;
             $('#applyUser').renderDropdown2(data1);
@@ -25,12 +25,12 @@ $(function() {
         formatter: function(v, data){
             return data.user.mobile;
         }
-    },{
-        field: 'overdueCode',
-        title: '代码',
-        formatter: function (v, data) {
-            return data.user.overdueCode
-        }
+    // },{
+    //     field: 'overdueCode',
+    //     title: '代码',
+    //     formatter: function (v, data) {
+    //         return data.user.overdueCode
+    //     }
     }, {
         field: 'applyDatetime',
         title: '申请时间',

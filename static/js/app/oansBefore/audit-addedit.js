@@ -39,14 +39,6 @@ $(function() {
             });
         },
         readonly: view
-    },{
-        field: 'creditScore',
-        title: '授信金额',
-        readonly: view,
-        amount:true,
-        formatter:function(v,data){
-            return moneyFormat(data.creditScore)
-        }
     }, {
         field: 'applyDatetime',
         title: '申请时间',

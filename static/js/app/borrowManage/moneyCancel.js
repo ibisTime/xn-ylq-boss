@@ -12,7 +12,7 @@ $(function () {
     }, {
         field: 'applyUser',
         title: '申请人',
-        type: 'select',
+        type: getIsFk() ? 'select' : 'hidden',
         search: true,
         pageCode: '805120',
         keyName: 'userId',
@@ -60,9 +60,6 @@ $(function () {
         title: '签约时间',
         formatter: dateTimeFormat
     }, {
-        field: 'approver',
-        title: '审核人'
-    },{
         field: 'status',
         title: '状态',
         type: "select",
@@ -70,6 +67,9 @@ $(function () {
         keyCode:"623907",
         formatter: Dict.getNameForList("borrow_status","623907")
     }, {
+        field: 'updater',
+        title: '最后一次更新人'
+    },{
         field: 'approveNote',
         title: '审核意见'
     }, {

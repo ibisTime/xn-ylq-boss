@@ -12,7 +12,7 @@ $(function () {
     }, {
         field: 'applyUser',
         title: '申请人',
-        type: 'select',
+        type: getIsFk() ? 'select' : 'hidden',
         search: true,
         pageCode: '805120',
         keyName: 'userId',
@@ -39,12 +39,12 @@ $(function () {
         formatter: function(v, data){
             return data.user.mobile;
         }
-    },{
-        field: 'overdueCode',
-        title: '代码',
-        formatter: function (v, data) {
-            return data.user.overdueCode
-        }
+    // },{
+    //     field: 'overdueCode',
+    //     title: '代码',
+    //     formatter: function (v, data) {
+    //         return data.user.overdueCode
+    //     }
     }, {
         field: 'amount',
         title: '借款金额',
@@ -96,8 +96,8 @@ $(function () {
         title: '签约时间',
         formatter: dateTimeFormat
     }, {
-        field: 'approver',
-        title: '审核人'
+        field: 'updater',
+        title: '最后一次更新人'
     },{
         field: 'status',
         title: '状态',
@@ -153,6 +153,10 @@ $(function () {
             toastr.info("请选择记录");
             return;
         }
+        if (selRecords.length > 1) {
+            toastr.info("请选择一条记录");
+            return;
+        }
 
         var dw = dialog({
             content: '<form class="pop-form" id="popForm" novalidate="novalidate">' +
@@ -174,13 +178,14 @@ $(function () {
                 title: '不通过',
                 handler: function() {
                     if($('#popForm').valid()){
-                        var data = [];
-                        data.code = selRecords[0].code;
+                        var data = {};
+                        data.codeList = [];
+                        data.codeList.push(selRecords[0].code);
                         data.result = "0";
                         data.updater = getUserName();
                         data.remark = $("#remark").val();
                         reqApi({
-                            code: '623071',
+                            code: '623072',
                             json: data
                         }).done(function(data) {
                             sucList();

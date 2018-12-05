@@ -86,6 +86,10 @@ $(function() {
         formatter: dateTimeFormat,
         readonly: view
     }, {
+        field: 'refNo',
+        title: '关联编号',
+        readonly: view
+    }, {
         title: '备注',
         field: 'remark',
         readonly: view

@@ -1,10 +1,10 @@
 $(function() {
-	
+
 	var code = getQueryString('code');
     var userId = getQueryString('userId');
     var view = getQueryString('v');
     var borrowCount,overdueCode,renewalCount;
-	
+
 	var fields = [ {
         field: 'code1',
         title: '借款编号',
@@ -17,7 +17,7 @@ $(function() {
         formatter:function(v,data){
             borrowCount = data.user.borrowCount;
             overdueCode = data.user.overdueCode;
-            renewalCount = data.user.renewalCount;            
+            renewalCount = data.user.renewalCount;
             return data.user.mobile
         },
         afterSet:function(data){
@@ -35,7 +35,7 @@ $(function() {
             $('#reportBtn').click(function() {
                 window.location.href = "../oansBefore/audit_report.html?userId=" + userId;
             });
-        }    
+        }
     }, {
         field: 'amount',
         title: '借款金额',
@@ -86,7 +86,7 @@ $(function() {
         formatter:function(v,data){
             if(data.bankcard){
                 return data.bankcard.realName
-            }            
+            }
         },
         readonly:view,
     }, {
@@ -96,7 +96,7 @@ $(function() {
             // return Dict.getNameForList1('bank','623907',data.bankcard.bankName)
             if(data.bankcard){
                 return data.bankcard.bankName
-            }            
+            }
         },
         readonly:view,
     }, {
@@ -105,7 +105,7 @@ $(function() {
         formatter:function(v,data){
             if(data.bankcard){
                 return data.bankcard.bankcardNumber
-            }             
+            }
         },
         readonly:view,
     }, {
@@ -127,7 +127,7 @@ $(function() {
         field: 'remark',
         title: '备注',
     }];
-	
+
 	buildDetail({
 		fields: fields,
 		code: code,

@@ -32,7 +32,6 @@ $(function() {
             data2[v.code] = data1[v.type];
         });
 
-
         var fields = [{
             title: "登录名",
             field: "userId",
@@ -72,20 +71,20 @@ $(function() {
             title: "额度",
             field: "amount",
             amount: true,
-            readonly: view,
+            readonly: view
         }, {
             title: "起借额度",
             field: "startAmount",
             amount: true,
-            readonly: view,
+            readonly: view
         }, {
             title: '有效天数（天）',
             field: 'validDays',
-            readonly: view,
+            readonly: view
         }, {
             title: "获取条件(人/次)",
             field: "condition",
-            readonly: view,
+            readonly: view
         }, {
             title: '备注',
             field: 'remark'

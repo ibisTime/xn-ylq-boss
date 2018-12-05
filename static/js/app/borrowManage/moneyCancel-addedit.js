@@ -1,10 +1,10 @@
 $(function() {
-	
+
 	var code = getQueryString('code');
 	var view = getQueryString('v');
 	var userId = getQueryString('userId');
     var borrowCount,overdueCode,renewalCount;
-	
+
 	var fields = [ {
         field: 'code1',
         title: '借款编号',
@@ -17,7 +17,7 @@ $(function() {
         formatter:function(v,data){
             borrowCount = data.user.borrowCount;
             overdueCode = data.user.overdueCode;
-            renewalCount = data.user.renewalCount;            
+            renewalCount = data.user.renewalCount;
             return data.user.mobile
         },
         afterSet:function(data){
@@ -35,7 +35,7 @@ $(function() {
             $('#reportBtn').click(function() {
                 window.location.href = "../oansBefore/audit_report.html?userId=" + userId;
             });
-        },        
+        },
     }, {
         field: 'amount',
         title: '借款金额',
@@ -116,8 +116,8 @@ $(function() {
         keyCode:"623907",
         formatter: Dict.getNameForList("borrow_status","623907")
     }, {
-        field: 'approver',
-        title: '审核人',
+        field: 'updater',
+        title: '最后一次更新人'
     },{
         field: 'approveDatetime',
         title: '审核时间',
@@ -129,7 +129,7 @@ $(function() {
         field: 'remark',
         title: '备注',
     }];
-	
+
 	buildDetail({
 		fields: fields,
 		code: code,

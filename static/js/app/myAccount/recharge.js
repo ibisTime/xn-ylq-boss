@@ -18,6 +18,12 @@ $(function () {
             title: '',
             checkbox: true
         }, {
+            field: 'code1',
+            title: '编号',
+            formatter: (v, data) => {
+                return data.code;
+            }
+        }, {
             field: 'realName',
             title: '户名'
         }, {

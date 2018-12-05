@@ -1,10 +1,10 @@
 $(function() {
-	
+
 	var code = getQueryString('code');
     var userId = getQueryString('userId');
 	var view = getQueryString('v');
     var borrowCount,overdueCode,renewalCount,type,jdtReport;
-	
+
 	var fields = [ {
         field: 'code1',
         title: '借款编号',
@@ -119,20 +119,10 @@ $(function() {
         keyCode:"623907",
         formatter: Dict.getNameForList("borrow_status","623907")
     }, {
-        field: 'approver',
-        title: '审核人',
-    },{
-        field: 'approveDatetime',
-        title: '审核时间',
-        formatter: dateTimeFormat,
-    }, {
-        field: 'approveNote',
-        title: '审核说明',
-    }, {
         field: 'remark',
         title: '备注',
     }];
-	
+
 	buildDetail({
 		fields: fields,
 		code: code,

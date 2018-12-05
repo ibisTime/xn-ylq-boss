@@ -11,7 +11,7 @@ $(function() {
     },{
         field: 'applyUser',
         title: '申请人',
-        type: 'select',
+        type: getIsFk() ? 'select' : 'hidden',
         search: true,
         pageCode: '805120',
         keyName: 'userId',
@@ -42,12 +42,12 @@ $(function() {
         field: 'creditScore',
         title: '授信金额',
         formatter: moneyFormat
-    }, {
-        field: 'overdueCode',
-        title: '代码',
-        formatter: function (v, data) {
-            return data.user.overdueCode
-        }
+    // }, {
+    //     field: 'overdueCode',
+    //     title: '代码',
+    //     formatter: function (v, data) {
+    //         return data.user.overdueCode
+    //     }
     },{
         field: 'approver',
         title: '审核人'

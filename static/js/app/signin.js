@@ -38,15 +38,34 @@ $(function(){
 			});
             data.companyCode = '';
 
+            // 获取七牛地址
+            reqApi({
+                code: '623917',
+                json: {
+                    key: 'qiniu_domain',
+                    updater:'',
+                    companyCode: OSS.system
+                },
+                sync: true
+            }).then(function(data) {
+                window.sessionStorage.setItem('qiniuUrl', 'http://' + data.cvalue);
+            });
+
 			reqApi({
 				code: '630101',
-				json: data
+				json: data,
+                sync: true
 			}).then(function(data) {
-                location.href = "main.html?timestamp=" + new Date().getTime();
-				window.sessionStorage.setItem('token', data.token || data.userId);
-				window.sessionStorage.setItem('userId', data.userId);
+                window.sessionStorage.setItem('token', data.token || data.userId);
+                window.sessionStorage.setItem('userId', data.userId);
                 window.sessionStorage.setItem('companyCode', data.companyCode);
                 window.sessionStorage.setItem('rootMenuCode', data.rootMenuCode);
+                window.sessionStorage.setItem('isJt', data.isJt); // 借条模块
+                window.sessionStorage.setItem('isDl', data.isDl); // 导流模块
+                window.sessionStorage.setItem('isFk', data.isFk); // 风控模块
+                window.sessionStorage.setItem('appName', data.appName); //平台名称
+                window.sessionStorage.setItem('appLogo', data.appLogo); // logo
+                location.href = "main.html?timestamp=" + new Date().getTime();
 			});
 		}
 	}
