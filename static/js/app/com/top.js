@@ -1,5 +1,8 @@
 $('title', window.parent.document).html(OSS.systemName);
-$('#topLogo').html('<img src="' + getLogo() + '" title="系统首页"/>');
+if (sessionStorage.getItem('appLogo') != '' && sessionStorage.getItem('appLogo')) {
+    $('#topLogo').html('<img src="' + getLogo() + '" title="系统首页"/>');
+    $('head', window.parent.document).append('<link rel="shortcut icon" type="image/ico" href="' + getLogo() + '" />');
+}
 
 function getLogo() {
     return OSS.picBaseUrl + '/' + sessionStorage.getItem('appLogo') + '?imageMogr2/auto-orient/thumbnail/!70x90r';

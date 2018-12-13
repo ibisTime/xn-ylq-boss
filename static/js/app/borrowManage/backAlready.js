@@ -68,12 +68,12 @@ $(function () {
         formatter: function(v,data){
             return  Dict.getNameForList1('loan_type','623907',data.loanType)
         }
-    }, {
-        field: 'yqMoney',
-        title: '续期费用（元）',
-        formatter: function (v, data) {
-            return moneyFormat(data.renewalCount * (data.yqlxAmount+data.lxAmount+data.xsAmount+data.glAmount+data.fwAmount));
-        }
+    // }, {
+    //     field: 'yqMoney',
+    //     title: '续期费用（元）',
+    //     formatter: function (v, data) {
+    //         return moneyFormat(data.renewalCount * (data.yqlxAmount+data.lxAmount+data.xsAmount+data.glAmount+data.fwAmount));
+    //     }
     }, {
         field: 'realHkAmount',
         title: '还款金额（元）',
@@ -91,9 +91,9 @@ $(function () {
         //     }
         // }
         formatter: Dict.getNameForList('pay_type','623907')
-    }, {
-        field: 'renewalCount',
-        title: '续期次数'
+    // }, {
+    //     field: 'renewalCount',
+    //     title: '续期次数'
     }, {
         field: 'status',
         title: '状态',
@@ -130,10 +130,9 @@ $(function () {
             return;
         }
 
-
         confirm("确定归档该笔订单？").then(function() {
             reqApi({
-                code: '623074',
+                code: '623078',
                 json: {
                     code: selRecords[0].code,
                     updater: getUserName()
@@ -162,8 +161,6 @@ $(function () {
             toastr.info("请选择记录");
             return;
         }
-
-
 
         window.location.href = "./backAlready_addedit.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1";
     });

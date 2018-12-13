@@ -104,10 +104,9 @@ $(function () {
             return;
         }
 
-
         confirm("确定归档该笔订单？").then(function() {
             reqApi({
-                code: '623074',
+                code: '623078',
                 json: {
                     code: selRecords[0].code,
                     updater: getUserName()

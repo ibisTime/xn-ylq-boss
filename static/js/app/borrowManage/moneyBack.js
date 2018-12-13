@@ -73,9 +73,9 @@ $(function () {
         keyCode:"623907",
         formatter: Dict.getNameForList("loan_type","623907"),
         search: true
-    }, {
-        field: 'renewalCount',
-        title: '续期次数'
+    // }, {
+    //     field: 'renewalCount',
+    //     title: '续期次数'
     }, {
         field: 'status',
         title: '状态',
@@ -187,4 +187,25 @@ $(function () {
 
         window.location.href = "./moneyBack_normalStaging.html?code="+selRecords[0].code;
     });
+
+    $('#repaymentReminderBtn').click(function () {
+        var selRecords = $('#tableList').bootstrapTable('getSelections');
+        if (selRecords.length <= 0) {
+            toastr.info("请选择记录");
+            return;
+        }
+        if (selRecords.length > 1) {
+            toastr.info("请只选择一条记录");
+            return;
+        }
+
+        confirm('确认发短信对该用户进行还款提醒？').then(function() {
+            reqApi({
+                code: '623083',
+                json: data
+            }).then(function() {
+                sucList();
+            });
+        },function(){});
+    })
 });

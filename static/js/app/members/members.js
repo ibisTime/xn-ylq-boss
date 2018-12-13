@@ -35,6 +35,24 @@ $(function () {
             }
         }
     }, {
+        title: '是否黑名单',
+        field: 'isBlackList',
+        type: 'select',
+        data: {
+            '1': '是',
+            '0': '否'
+        },
+        search: true
+    }, {
+        title: '是否白名单',
+        field: 'isWhiteList',
+        type: 'select',
+        data: {
+            '1': '是',
+            '0': '否'
+        },
+        search: true
+    }, {
         title: "状态",
         field: "status",
         type: "select",
@@ -108,8 +126,7 @@ $(function () {
             toastr.info("请选择记录");
             return;
         }
-        window.location.href = "../oansBefore/audit_report.html?userId=" + selRecords[0].userId;
-
+        window.open("../report.html?userId=" + selRecords[0].userId);
     });
 
     $('#netReportBtn').click(function () {

@@ -80,8 +80,8 @@ $(function () {
         formatter: Dict.getNameForList("loan_type","623907"),
         search: true
     }, {
-        field: 'renewalCount',
-        title: '续期次数'
+        field: 'stageBatch',
+        title: '分期次数'
     }, {
         field: 'status',
         title: '状态',

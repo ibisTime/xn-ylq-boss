@@ -58,9 +58,9 @@ $(function () {
         field: 'yhAmount',
         title: '优惠金额',
         amount: true,
-    }, {
-        field: 'renewalCount',
-        title: '订单续期(次)',
+    // }, {
+    //     field: 'renewalCount',
+    //     title: '订单续期(次)',
     }, {
         field: 'signDatetime',
         title: '签约时间',

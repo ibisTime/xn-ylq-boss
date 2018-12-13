@@ -1,9 +1,9 @@
 $(function() {
-    
+
     var code = getQueryString('code');
     var view = getQueryString('v');
     var borrowCount,overdueCode,renewalCount;
-    
+
     var fields = [ {
         field: 'code1',
         title: '借款编号',
@@ -17,18 +17,18 @@ $(function() {
         formatter:function(v,data){
             borrowCount = data.user.borrowCount;
             overdueCode = data.user.overdueCode;
-            renewalCount = data.user.renewalCount;            
+            renewalCount = data.user.renewalCount;
             return data.user.mobile
         },
         afterSet:function(data){
             var html='<div class="tools" style="float: right;margin-left: 20px;">'+
                             '<span style="float: left;margin-left: 20px;">借款次数:'+ borrowCount+' </span>'+
-                            '<span style="float: left;margin-left: 20px;">逾期代码: '+ overdueCode +' </span>'+
-                            '<span style="float: left;margin-left: 20px;">续期次数: '+  renewalCount +' </span>'+             
-                     '</div>';            
-            $('#mobile').append(html);            
+                            // '<span style="float: left;margin-left: 20px;">逾期代码: '+ overdueCode +' </span>'+
+                            // '<span style="float: left;margin-left: 20px;">续期次数: '+  renewalCount +' </span>'+
+                     '</div>';
+            $('#mobile').append(html);
         },
-        readonly:view    
+        readonly:view
     }, {
         field: 'amount',
         title: '借款金额',
@@ -85,10 +85,10 @@ $(function() {
 
         },
         readonly:view,
-    }, {
-        field: 'renewalCount',
-        title: '订单续期(次)',
-        readonly:view,
+    // }, {
+    //     field: 'renewalCount',
+    //     title: '订单续期(次)',
+    //     readonly:view,
     }, {
         field: 'signDatetime',
         title: '签约时间',
@@ -111,12 +111,12 @@ $(function() {
         field: 'remark',
         title: '备注',
     }];
-    
+
     buildDetail({
         fields: fields,
         code: code,
         detailCode: '623086',
-        editCode: '623073',
+        editCode: '623079',
         beforeSubmit:function(data){
             data.updater = getUserName();
             return data;

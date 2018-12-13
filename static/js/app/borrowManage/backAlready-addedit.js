@@ -1,10 +1,10 @@
 $(function() {
-    
+
     var code = getQueryString('code');
     var userId = getQueryString('userId');
     var view = getQueryString('v');
     var borrowCount,overdueCode,renewalCount;
-    
+
     var fields = [ {
         field: 'code1',
         title: '借款编号',
@@ -24,8 +24,8 @@ $(function() {
             var html='<div class="tools" style="float: right;margin-left: 20px;">'+
                 '<div>'+
                 '<span style="float: left;margin-left: 20px;">借款次数:'+ borrowCount+' </span>'+
-                '<span style="float: left;margin-left: 20px;">逾期代码: '+ overdueCode +' </span>'+
-                '<span style="float: left;margin-left: 20px;">续期次数: '+  renewalCount +' </span>'+
+                // '<span style="float: left;margin-left: 20px;">逾期代码: '+ overdueCode +' </span>'+
+                // '<span style="float: left;margin-left: 20px;">续期次数: '+  renewalCount +' </span>'+
                 '</div>'+
                 '<ul class="toolbar"  style="float: left;">'+
                 '<li style="display:block;" id="reportBtn"><span><img src="/static/images/t01.png"></span>查看资信报告</li>'+
@@ -35,7 +35,7 @@ $(function() {
             $('#reportBtn').click(function() {
                 window.location.href = "../oansBefore/audit_report.html?userId=" + userId;
             });
-        },        
+        },
     }, {
         field: 'amount',
         title: '借款金额',
@@ -80,9 +80,9 @@ $(function() {
         field: 'payType',
         title: '支付类型',
         formatter:Dict.getNameForList('pay_type','623907')
-    }, {
-        field: 'renewalCount',
-        title: '订单续期(次)'
+    // }, {
+    //     field: 'renewalCount',
+    //     title: '订单续期(次)'
     }, {
         field: 'signDatetime',
         title: '签约时间',
@@ -118,7 +118,7 @@ $(function() {
         field: 'remark',
         title: '备注',
     }];
-    
+
     buildDetail({
         fields: fields,
         code: code,

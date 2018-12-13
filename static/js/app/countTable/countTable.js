@@ -62,27 +62,27 @@ $(function () {
         field: 'hkAmount',
         title: '实际还款总金额',
         formatter: moneyFormat
-    },{
-        field: 'xqNum',
-        title: '续期总单量'
-    },{
-        field: 'bfdkNum',
-        title: '宝付代扣续期单量'
-    },{
-        field: 'bfdkAmount',
-        title: '宝付代扣续期金额',
-        formatter: moneyFormat
-    },{
-        field: 'zfbdkNum',
-        title: '支付宝代扣续期单量'
-    },{
-        field: 'zfbdkAmount',
-        title: '支付宝代扣续期金额',
-        formatter: moneyFormat
-    },{
-        field: 'xqTotalAmount',
-        title: '续期总金额',
-        formatter: moneyFormat
+    // },{
+    //     field: 'xqNum',
+    //     title: '续期总单量'
+    // },{
+    //     field: 'bfdkNum',
+    //     title: '宝付代扣续期单量'
+    // },{
+    //     field: 'bfdkAmount',
+    //     title: '宝付代扣续期金额',
+    //     formatter: moneyFormat
+    // },{
+    //     field: 'zfbdkNum',
+    //     title: '支付宝代扣续期单量'
+    // },{
+    //     field: 'zfbdkAmount',
+    //     title: '支付宝代扣续期金额',
+    //     formatter: moneyFormat
+    // },{
+    //     field: 'xqTotalAmount',
+    //     title: '续期总金额',
+    //     formatter: moneyFormat
     },{
         field: 'yqhkNum',
         title: '逾期还款单量'

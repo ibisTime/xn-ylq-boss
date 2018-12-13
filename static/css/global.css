@@ -273,7 +273,6 @@ textarea.error {
 .place li:last-child {
     background: none;
 }
-
 /*搜索表单*/
 .right-info {
     padding: 8px;
@@ -1054,4 +1053,149 @@ li input[type="radio"] {
 .lay-input1{
     width: 175px !important;
     background-position: 145px center !important;
+}
+@keyframes antRotate {
+    100% {
+        transform: rotate(405deg);
+    }
+}
+@keyframes antSpinMove {
+    100% {
+        opacity: 1;
+    }
+}
+.ant-spin-nested-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+.ant-spin-nested-loading.modal-map-ant-spin-loading {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: inherit;
+    width: inherit;
+    bottom: 0;
+    z-index: 1002;
+}
+
+.ant-spin-nested-loading .ant-spin-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -15px;
+    margin-left: -14px;
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    animation: antRotate 1.2s infinite linear;
+}
+.ant-spin-nested-loading .ant-spin-dot i {
+    width: 9px;
+    height: 9px;
+    border-radius: 100%;
+    background-color: #2598d0;
+    transform: scale(.75);
+    display: block;
+    position: absolute;
+    opacity: 0.3;
+    animation: antSpinMove 1s infinite linear alternate;
+    transform-origin: 50% 50%;
+
+}
+.ant-spin-nested-loading .ant-spin-dot i:first-child {
+    left: 0;
+    top: 0;
+}
+
+.ant-spin-nested-loading .ant-spin-dot i:nth-child(2) {
+    right: 0;
+    top: 0;
+    animation-delay: 0.4s;
+}
+
+.ant-spin-nested-loading .ant-spin-dot i:nth-child(3) {
+    right: 0;
+    bottom: 0;
+    animation-delay: 0.8s;
+}
+
+.ant-spin-nested-loading .ant-spin-dot i:nth-child(4) {
+    left: 0;
+    bottom: 0;
+    animation-delay: 1.2s;
+}
+
+.ant-spin-nested-loading .ant-spin-blur {
+    overflow: hidden;
+    opacity: 0.7;
+    filter: blur(.5px);
+    filter: progid\: DXImageTransform\.Microsoft\.Blur(PixelRadius\=1,MakeShadow\=false);
+    -webkit-transform: translateZ(0);
+}
+
+.ant-spin-nested-loading .ant-spin-container {
+    transition: all 0.3s cubic-bezier(.645,.045,.355,1);
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+}
+.hidden{
+    display: none;
+}
+.fixed_i{
+    position: fixed !important;
+}
+
+/* 报告 */
+.report-loading .ant-spin-dot i{
+    background-color: rgb(0, 201, 186);
+}
+/*导航栏*/
+.report-place {
+    margin-top: -10px;
+    height: 40px;
+    background-color: #e9faf8;
+    box-shadow: 0 0 8px rgba(0, 201, 186, 0.5);
+    padding-left: 15px;
+}
+
+.report-place li {
+    float: left;
+    line-height: 40px;
+    padding-left: 7px;
+    padding-right: 12px;
+    background: url(../images/rlist.gif) no-repeat right;
+}
+.report-place li span{
+    display: inline-block;
+}
+.report-place li:last-child {
+    background: none;
+}
+/* 内容页 */
+.report-form-body{
+    margin-top: 30px;
+}
+.report-form-body .form-info li label{
+    width: 100px;
+}
+.report-form-body .pic-wrap{
+    width: 100%;
+    overflow: hidden;
+    padding-left: 30px;
+}
+.report-form-body .pic-wrap .item{
+    width: 200px;
+    float: left;
+    margin: 10px 20px;
+}
+.report-form-body .pic-wrap .item img{
+    width: 100%;
+    vertical-align: bottom;
 }

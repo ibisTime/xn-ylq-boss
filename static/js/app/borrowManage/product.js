@@ -11,8 +11,9 @@ $(function() {
     }, {
         field: 'level',
         title: '商品等级',
-        keyCode: "623907",
-        formatter: Dict.getNameForList("product_level", "623907"),
+        type: 'select',
+        key: "product_level",
+        formatter: Dict.getNameForList("product_level"),
         search: true
     }, {
         field: 'amount',

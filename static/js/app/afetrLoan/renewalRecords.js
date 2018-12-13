@@ -4,9 +4,9 @@ $(function () {
         field: '',
         title: '',
         checkbox: true
-    }, {
-        field: 'curNo',
-        title: '第几次续期',
+    // }, {
+    //     field: 'curNo',
+    //     title: '第几次续期',
     }, {
         field: 'startDate',
         title: '开始时间',
@@ -35,10 +35,10 @@ $(function () {
         field: 'lxAmount',
         title: '正常利息',
         amount: true
-    }, {
-        field: 'lxAmount',
-        title: '续期总金额',
-        amount: true
+    // }, {
+    //     field: 'lxAmount',
+    //     title: '续期总金额',
+    //     amount: true
     }, {
         field: 'payCode',
         title: '三方支付编号',
@@ -50,17 +50,17 @@ $(function () {
         field: 'payDatetime',
         title: '支付时间',
         formatter: dateTimeFormat
-    }, {
-        field: 'createDatetime',
-        title: '续期申请时间',
-        formatter: dateTimeFormat
+    // }, {
+    //     field: 'createDatetime',
+    //     title: '续期申请时间',
+    //     formatter: dateTimeFormat
     }];
 
     buildList({
         columns: columns,
         searchParams:{
             borrowCode: code
-        },        
+        },
         pageCode: '623090'
     });
 
@@ -74,6 +74,6 @@ $(function () {
     $('.tools .toolbar').html('<li style="display:block;" id="backBtn"><span><img src="/static/images/t01.png"></span>返回</li>');
     $('#backBtn').on('click', function() {
         goBack();
-    });    
-    
+    });
+
 });

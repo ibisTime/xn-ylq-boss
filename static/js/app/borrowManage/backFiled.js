@@ -52,9 +52,9 @@ $(function () {
         field: 'xsAmount',
         title: '快速信审费',
         amount: true,
-    }, {
-        field: 'renewalCount',
-        title: '订单续期(次)',
+    // }, {
+    //     field: 'renewalCount',
+    //     title: '订单续期(次)',
     }, {
         field: 'signDatetime',
         title: '签约时间',

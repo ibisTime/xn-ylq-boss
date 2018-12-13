@@ -6,6 +6,9 @@ $(function () {
     }, {
         field: "name",
         title: "名称"
+    }, {
+        field: "url",
+        title: "链接"
     }];
     buildList({
         columns: columns,

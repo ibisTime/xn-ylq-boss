@@ -63,8 +63,8 @@ $(function(){
                 window.sessionStorage.setItem('isJt', data.isJt); // 借条模块
                 window.sessionStorage.setItem('isDl', data.isDl); // 导流模块
                 window.sessionStorage.setItem('isFk', data.isFk); // 风控模块
-                window.sessionStorage.setItem('appName', data.appName); //平台名称
-                window.sessionStorage.setItem('appLogo', data.appLogo); // logo
+                window.sessionStorage.setItem('appName', data.appName ? data.appName : ''); //平台名称
+                window.sessionStorage.setItem('appLogo', data.appLogo ? data.appLogo : ''); // logo
                 location.href = "main.html?timestamp=" + new Date().getTime();
 			});
 		}

@@ -1,0 +1,27 @@
+<link rel="import" href="../head.html?__inline">
+<script src="../../js/app/presentation/mailList.js"></script>
+<style>
+    .right-info{
+        width: 500px;
+        margin: 20px 0 0 30px;
+    }
+    .tools{
+        height: 33px;
+        margin-bottom: 20px;
+    }
+</style>
+<div class="report-place">
+    <ul>
+        <li>认证报告</li>
+        <li>通讯录信息<span class="status"></span></li>
+    </ul>
+</div>
+<div class="right-info">
+    <div class="tools">
+        <ul class="toolbar">
+            <li style="display:block;" id="addRemarkBtn"><span><img src="/static/images/t01.png"></span>添加备注</li>
+        </ul>
+    </div>
+    <table id="tableList" data-show-export="true"></table>
+</div>
+<link rel="import" href="./foot.html?__inline">

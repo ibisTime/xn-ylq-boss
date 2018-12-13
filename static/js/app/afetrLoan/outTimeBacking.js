@@ -58,9 +58,9 @@ $(function () {
         formatter: function (v, data) {
             return moneyFormat(data.amount - data.lxAmount - data.xsAmount - data.glAmount - data.fwAmount + data.yhAmount);
         }
-    }, {
-        field: 'renewalCount',
-        title: '续期次数'
+    // }, {
+    //     field: 'renewalCount',
+    //     title: '续期次数'
     }, {
         field: 'totalAmount',
         title: '应收',

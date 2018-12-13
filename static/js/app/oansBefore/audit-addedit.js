@@ -22,8 +22,8 @@ $(function() {
                      '</div>';
             var html1='<div style="padding-left: 194px;width: 100%;overflow: hidden;">'+
                 '<span style="float: left;">借款次数:'+ borrowCount+' </span>'+
-                '<span style="float: left;">逾期代码: '+ overdueCode +' </span>'+
-                '<span style="float: left;">续期次数: '+  renewalCount +' </span>'+
+                // '<span style="float: left;">逾期代码: '+ overdueCode +' </span>'+
+                // '<span style="float: left;">续期次数: '+  renewalCount +' </span>'+
                 '</div>';
 
             $('#mobile').append(html);

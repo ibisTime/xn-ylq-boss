@@ -23,8 +23,8 @@ $(function() {
         afterSet:function(data){
             var html='<div class="tools" style="float: right;margin-left: 20px;">'+
                             '<span style="float: left;margin-left: 20px;">借款次数:'+ borrowCount+' </span>'+
-                            '<span style="float: left;margin-left: 20px;">逾期代码: '+ overdueCode +' </span>'+
-                            '<span style="float: left;margin-left: 20px;">续期次数: '+  renewalCount +' </span>'+
+                            // '<span style="float: left;margin-left: 20px;">逾期代码: '+ overdueCode +' </span>'+
+                            // '<span style="float: left;margin-left: 20px;">续期次数: '+  renewalCount +' </span>'+
                      '</div>';
             $('#mobile').append(html);
         },

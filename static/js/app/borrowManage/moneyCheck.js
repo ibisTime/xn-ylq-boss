@@ -121,7 +121,7 @@ $(function () {
             return;
         }
         window.location.href = "../oansBefore/audit_report.html?userId=" + selRecords[0].user.userId;
-
+        // window.location.href = "../oansBefore/audit_report.html"
     });
 
     $('#detailBtn').off("click").click(function() {

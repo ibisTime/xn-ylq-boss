@@ -22,8 +22,8 @@ $(function() {
         afterSet:function(data){
             var html='<div class="tools" style="float: right;margin-left: 20px;">'+
                             '<span style="float: left;margin-left: 20px;">借款次数:'+ borrowCount+' </span>'+
-                            '<span style="float: left;margin-left: 20px;">逾期代码: '+ overdueCode +' </span>'+
-                            '<span style="float: left;margin-left: 20px;">续期次数: '+  renewalCount +' </span>'+
+                            // '<span style="float: left;margin-left: 20px;">逾期代码: '+ overdueCode +' </span>'+
+                            // '<span style="float: left;margin-left: 20px;">续期次数: '+  renewalCount +' </span>'+
                      '</div>';
             $('#mobile').append(html);
         },
@@ -76,9 +76,9 @@ $(function() {
         key: "pay_type",
         keyCode:"623907",
         formatter: Dict.getNameForList("pay_type","623907")
-    }, {
-        field: 'renewalCount',
-        title: '订单续期(次)',
+    // }, {
+        // field: 'renewalCount',
+        // title: '订单续期(次)',
     }, {
         field: 'signDatetime',
         title: '签约时间',

@@ -15,16 +15,6 @@ $(function() {
             field: 'status',
             type: 'select',
             formatter: Dict.getNameForList('blacklist_status'),
-        }, {
-            title: '拉黑时间',
-            field: 'createDatetime',
-            formatter: dateTimeFormat
-        }, {
-            title: '操作人',
-            field: 'updater'
-        }, {
-            title: '备注',
-            field: 'remark'
         }
     ];
     buildList({

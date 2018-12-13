@@ -49,24 +49,24 @@ $(function() {
         formatter: dateTimeFormat,
         readonly: view
     },{
-        field: 'startDate',
-        title: '续期开始时间',
-        readonly: view,
-        formatter:function(v,data){
-            if(data.renewal){
-                return dateTimeFormat(data.renewal.startDate);
-            }
-        }
-    },{
-        field: 'endDate',
-        title: '续期结束时间',
-        formatter: dateTimeFormat,
-        readonly: view,
-        formatter:function(v,data){
-            if(data.renewal){
-                return dateTimeFormat(data.renewal.endDate);
-            }
-        }
+    //     field: 'startDate',
+    //     title: '续期开始时间',
+    //     readonly: view,
+    //     formatter:function(v,data){
+    //         if(data.renewal){
+    //             return dateTimeFormat(data.renewal.startDate);
+    //         }
+    //     }
+    // },{
+    //     field: 'endDate',
+    //     title: '续期结束时间',
+    //     formatter: dateTimeFormat,
+    //     readonly: view,
+    //     formatter:function(v,data){
+    //         if(data.renewal){
+    //             return dateTimeFormat(data.renewal.endDate);
+    //         }
+    //     }
     }, {
         field: 'applyNote',
         title: '还款说明',
