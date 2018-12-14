@@ -70,11 +70,8 @@ $(function () {
         field: 'updater',
         title: '最后一次更新人'
     },{
-        field: 'approveNote',
-        title: '审核意见'
-    }, {
         field: 'remark',
-        title: '备注'
+        title: '审核意见'
     }];
 
     buildList({

@@ -28,7 +28,7 @@ $(function () {
             title: '户名'
         }, {
             field: 'amount',
-            title: '充值金额',
+            title: '取现金额',
             formatter: moneyFormat
         }, {
             field: 'status',
@@ -38,7 +38,7 @@ $(function () {
             formatter: Dict.getNameForList('withdraw_status'),
             search: true
         }, {
-            field: 'applyUserName',
+            field: 'realName',
             title: '申请人'
         }, {
             field: 'applyDatetime',

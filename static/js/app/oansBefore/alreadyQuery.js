@@ -40,7 +40,7 @@ $(function() {
         }
     }, {
         field: 'creditScore',
-        title: '授信金额',
+        title: '信用分',
         formatter: moneyFormat
     // }, {
     //     field: 'overdueCode',

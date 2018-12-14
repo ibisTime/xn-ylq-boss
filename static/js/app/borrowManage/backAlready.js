@@ -90,7 +90,10 @@ $(function () {
         //         return '宝付银行卡代扣（平台）' ;
         //     }
         // }
-        formatter: Dict.getNameForList('pay_type','623907')
+      formatter: function(v,data){
+        return  Dict.getNameForList1('pay_type','623907',data.payType)
+      }
+        // formatter: Dict.getNameForList('pay_type','623907')
     // }, {
     //     field: 'renewalCount',
     //     title: '续期次数'
@@ -113,8 +116,8 @@ $(function () {
         columns: columns,
         searchParams:{
             status: 4,
-            isArchive: 0,
-            isOverdue: 0
+            isArchive: 0
+            // isOverdue: 0
         },
         pageCode: '623085',
         beforeSearch: function (data) {

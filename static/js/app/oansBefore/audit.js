@@ -14,9 +14,13 @@ $(function() {
         title: '申请人',
         type: getIsFk() ? 'select' : 'hidden',
         formatter: function(v, data){
+          if(data.user.realName) {
             data1[v] = data.user.realName + '-' + data.user.mobile;
-            $('#applyUser').renderDropdown2(data1);
-            return data.user.realName;
+          } else {
+            data1[v] = data.user.mobile;
+          }
+          $('#applyUser').renderDropdown2(data1);
+          return data.user.realName;
         },
         search: true
     }, {

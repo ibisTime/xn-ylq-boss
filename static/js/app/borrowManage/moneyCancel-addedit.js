@@ -15,7 +15,7 @@ $(function() {
         field: 'mobile',
         title: '申请人',
         formatter:function(v,data){
-            borrowCount = data.user.borrowCount;
+            borrowCount = data.borrowCount;
             overdueCode = data.user.overdueCode;
             renewalCount = data.user.renewalCount;
             return data.user.mobile
@@ -105,10 +105,6 @@ $(function() {
         title: '签约时间',
         formatter: dateTimeFormat
     }, {
-        field: 'updateDatetime',
-        title: '最后更新时间',
-        formatter: dateTimeFormat
-    }, {
         field: 'status',
         title: '状态',
         type: "select",
@@ -119,15 +115,12 @@ $(function() {
         field: 'updater',
         title: '最后一次更新人'
     },{
-        field: 'approveDatetime',
+        field: 'updateDatetime',
         title: '审核时间',
         formatter: dateTimeFormat,
     }, {
-        field: 'approveNote',
-        title: '审核说明',
-    }, {
         field: 'remark',
-        title: '备注',
+        title: '审核说明',
     }];
 
 	buildDetail({

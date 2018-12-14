@@ -42,7 +42,7 @@ $(function() {
         }
     }, {
         field: 'creditScore',
-        title: '授信金额',
+        title: '信用分',
         formatter: function(v,data){
             return moneyFormat(data.creditScore)
         }
@@ -93,8 +93,11 @@ $(function() {
             statusList: [3]
         },
         beforeSearch: function (data) {
+          if(data['mobile']) {
             data['applyUser'] = data['mobile'];
             delete data['mobile'];
+          }
+          return data;
         }
     });
 
