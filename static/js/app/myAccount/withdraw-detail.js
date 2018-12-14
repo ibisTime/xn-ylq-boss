@@ -15,7 +15,15 @@ $(function() {
         title: '户名'
     }, {
         field: 'amount',
-        title: '充值金额',
+        title: '取现金额',
+        formatter: moneyFormat
+    }, {
+        field: 'fee',
+        title: '取现手续费',
+        formatter: moneyFormat
+    }, {
+        field: 'actualAmount',
+        title: '到账金额',
         formatter: moneyFormat
     }, {
         field: 'payCardInfo',

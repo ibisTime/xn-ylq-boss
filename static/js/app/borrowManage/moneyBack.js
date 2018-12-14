@@ -204,7 +204,9 @@ $(function () {
         confirm('确认发短信对该用户进行还款提醒？').then(function() {
             reqApi({
                 code: '623083',
-                json: data
+                json: {
+                  code: selRecords[0].code
+                }
             }).then(function() {
                 sucList();
             });

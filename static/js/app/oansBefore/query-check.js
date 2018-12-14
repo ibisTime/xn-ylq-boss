@@ -66,9 +66,10 @@ $(function() {
         readonly: view,
     },{
         field: 'creditScore',
-        title: '授信金额',
-        required: true,
-        'Z+': true,
+        title: '信用分',
+        // required: true,
+        // 'Z+': true,
+      // amount: true,
         formatter:function(v,data){
             return v ? moneyFormat(v, '0') : '0';
         }
@@ -90,7 +91,15 @@ $(function() {
         title: '通过',
         handler: function() {
             if ($('#jsForm').valid()) {
-                var data = {};
+              if($("#creditScore").val() === '') {
+                toastr.info('请输入信用分');
+                return;
+              }
+              if($("#creditScore").val().indexOf('.') !== -1) {
+                toastr.info('信用分需为整数');
+                return;
+              }
+              var data = {};
                 data['code'] = code;
                 data['approver'] = getUserName();
                 data["approveResult"] = "1";

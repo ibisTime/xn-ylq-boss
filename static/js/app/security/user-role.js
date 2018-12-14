@@ -33,7 +33,7 @@ $(function() {
 		var url = $("#basePath").val()+"/user/role/change";
 		var data = {"userId":$("#userId").html(),"roleCode":$("#roleCode").val(), 'remark': $('#remark').val()};
 		reqApi({
-			code: '630057',
+			code: '630107',
 			json: data
 		}).done(function(data) {
 			sucDetail();

@@ -10,11 +10,6 @@ $(function() {
     },{
         title: '姓名',
         field: 'realName'
-    }, {
-        title: '状态',
-        field: 'status',
-        type: 'select',
-        formatter: Dict.getNameForList('user_status'),
     }];
     buildList({
         columns: columns,

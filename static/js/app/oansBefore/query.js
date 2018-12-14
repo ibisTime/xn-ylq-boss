@@ -47,27 +47,27 @@ $(function() {
     //         return data.user.overdueCode
     //     }
     }, {
+      field: 'applyDatetime',
+      title: '申请时间',
+      formatter:dateTimeFormat
+    }, {
         field: 'approver',
         title: '审核人'
-    }, {
-        field: 'applyDatetime',
-        title: '申请时间',
-        formatter:dateTimeFormat
     }, {
         field: 'approveDatetime',
         title: '审核时间',
         formatter: dateTimeFormat
     }, {
+        field: 'approveNote',
+        title: '审核说明'
+    }, {
         field: 'status',
         title: '状态',
         type: 'select',
         formatter: function(v,data){
-            return '待批复';
+          return '待批复';
         }
     },{
-        field: 'approveNote',
-        title: '审核说明'
-    }, {
         field: 'remark',
         title: '备注'
     }];
@@ -79,8 +79,11 @@ $(function() {
             statusList: [2]
         },
         beforeSearch: function (data) {
+          if(data['mobile']) {
             data['applyUser'] = data['mobile'];
             delete data['mobile'];
+          }
+            return data;
         }
     });
 

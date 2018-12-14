@@ -15,13 +15,14 @@ $(function() {
         field: 'mobile',
         title: '申请人',
         formatter:function(v,data){
-            borrowCount = data.user.borrowCount;
+            borrowCount = data.borrowCount;
             overdueCode = data.user.overdueCode;
             renewalCount = data.user.renewalCount;
             return data.user.mobile
         },
         afterSet:function(data){
-            var html='<div class="tools" style="float: right;margin-left: 20px;">'+
+          console.log(data);
+          var html='<div class="tools" style="float: right;margin-left: 20px;">'+
                             '<span style="float: left;margin-left: 20px;">借款次数:'+ borrowCount+' </span>'+
                             // '<span style="float: left;margin-left: 20px;">逾期代码: '+ overdueCode +' </span>'+
                             // '<span style="float: left;margin-left: 20px;">续期次数: '+  renewalCount +' </span>'+

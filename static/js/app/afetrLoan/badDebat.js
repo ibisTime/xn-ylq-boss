@@ -60,7 +60,7 @@ $(function () {
         title: '应收',
         formatter: moneyFormat
     }, {
-        field: 'renewalCount',
+        field: 'yqCount',
         title: '逾期次数'
     },  {
         field: 'status',

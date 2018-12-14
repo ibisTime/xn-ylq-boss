@@ -42,7 +42,7 @@ $(function() {
         readonly: view
     }, {
         field: 'creditScore',
-        title: '授信金额',
+        title: '信用分',
         readonly: view,
         amount:true,
         formatter:function(v,data){
