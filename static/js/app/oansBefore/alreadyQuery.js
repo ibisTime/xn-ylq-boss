@@ -91,7 +91,9 @@ $(function() {
             toastr.info("请选择记录");
             return;
         }
-        window.location.href = "audit_report.html?userId=" + selRecords[0].user.userId;
+
+        window.open("../report.html?userId=" + selRecords[0].user.userId);
+        // window.location.href = "audit_report.html?userId=" + selRecords[0].user.userId;
     });
 
     $('#checkBtn').off('click').click(function() {

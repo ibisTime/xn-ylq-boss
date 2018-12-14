@@ -35,7 +35,9 @@ $(function() {
                 '</div>';
             $('#mobile').append(html);
             $('#reportBtn').click(function() {
-                window.location.href = "../oansBefore/audit_report.html?userId=" + userId;
+
+                window.open("../report.html?userId=" + selRecords[0].userId);
+                // window.location.href = "../oansBefore/audit_report.html?userId=" + userId;
             });
         },
         readonly: view

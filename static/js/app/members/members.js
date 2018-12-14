@@ -107,7 +107,6 @@ $(function () {
             return;
         }
         window.location.href = "./discount.html?userId=" + selRecords[0].userId;
-
     });
 
     $("#borrowBtn").click(function () {

@@ -31,7 +31,8 @@ $(function() {
             $('#mobile').after(html1);
             $('#reportBtn').click(function() {
                 if(type == 1){
-                    window.location.href = "audit_report.html?userId=" + userId;
+                    window.open("../report.html?userId=" + userId);
+                    // window.location.href = "audit_report.html?userId=" + userId;
                 }else{
                     sessionStorage.setItem('jdtReport', jdtReport);
                     window.location.href = "audit_netReport.html?userId=" + userId;

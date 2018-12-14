@@ -5,7 +5,7 @@ $(function() {
     var download = getQueryString('download');
 
     var content,title;
-    
+
     var fields = [ {
         field: 'mobile',
         title: '合同内容',
@@ -24,7 +24,9 @@ $(function() {
             $('#mobile').after(html);
             $('.form-title').append(html7);
             $('#reportBtn').click(function() {
-                window.location.href = "../oansBefore/audit_report.html?userId=" + userId;
+
+                window.open("../report.html?userId=" + userId);
+                // window.location.href = "../oansBefore/audit_report.html?userId=" + userId;
             });
             $('#downloadBtn').off('click').click(function () {
                 html2canvas($('#mobile')[0], {
@@ -63,7 +65,7 @@ $(function() {
             });
         }
     }];
-    
+
     buildDetail({
         fields: fields,
         code: code,

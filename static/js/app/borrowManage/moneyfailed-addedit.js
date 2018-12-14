@@ -33,7 +33,8 @@ $(function() {
                 '</div>';
             $('#mobile').append(html);
             $('#reportBtn').click(function() {
-                window.location.href = "../oansBefore/audit_report.html?userId=" + userId;
+                window.open("../report.html?userId=" + userId);
+                // window.location.href = "../oansBefore/audit_report.html?userId=" + userId;
             });
         }
     }, {
