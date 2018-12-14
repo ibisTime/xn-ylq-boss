@@ -1327,6 +1327,10 @@ li input[type="radio"] {
 .report-box .tabbox table td:first-child{
     border-left: none;
 }
+.report-box .table table th i,
+.report-box .tabbox table td i{
+    font-style: normal;
+}
 .report-box .tabbox table tbody tr:nth-of-type(odd){
     background-color: #fcfcfc;
 }

@@ -24,5 +24,5 @@ $(function () {
 
             $('#idPic').html(picHtml);
         }
-    });
+    }, hideLoading);
 });

@@ -1,4 +1,5 @@
 <link rel="import" href="../head.html?__inline">
+<script src="../../js/reportDict.js"></script>
 <script src="../../js/app/presentation/carrierOperator.js"></script>
 <div class="report-place">
     <ul>
@@ -9,8 +10,8 @@
 
 <div class="box report-box">
     <div class="header">
-        <span class="code fl">编号：<i>76d59d10-b7cb-22e7-9f77-02164e0f2d7c</i></span>
-        <span class="validDatetime fr">报告时间：<i>2017-10-23 16:23:32</i></span>
+        <span class="fl">编号：<i id="code"></i></span>
+        <span class="fr">报告时间：<i id="validDatetime"></i></span>
     </div>
 
     <div class="tabbable">
@@ -23,42 +24,33 @@
                 <table>
                     <tbody id="searchResultTable">
                     <tr>
-                        <td>姓名：张三</td>
-                        <td colspan="3">身份证号:370206197312312411
-                        </td>
+                        <td>姓名：<i id="cellPhone_carrier_name"></i></td>
+                        <td colspan="3">身份证号:<i id="cellPhone_carrier_idcard"></i></td>
                     </tr>
                     <tr>
-                        <td>姓名From客户：王五</td>
-                        <td colspan="3">身份证号From客户：370206197511154367</td>
+                        <td>姓名From客户：<i id="userBasic_name"></i></td>
+                        <td colspan="3">身份证号From客户：<i id="userBasic_id_card"></i></td>
                     </tr>
                     <tr>
-                        <td>手机号码：15715846575</td>
-                        <td>入网时长：50 月</td>
-                        <td>性别：男</td>
-                        <td>年龄：41</td>
+                        <td>手机号码：<i id="cellPhone_mobile"></i></td>
+                        <td>入网时长：<i id="cellPhone_in_time"></i> 月</td>
+                        <td>性别：<i id="userBasic_gender"></i></td>
+                        <td>年龄：<i id="userBasic_age"></i></td>
                     </tr>
                     <tr>
-                        <td>星座：天蝎座</td>
-                        <td>邮箱：123456784@qq.com</td>
-                        <td colspan="2">通讯地址：浙江省南京市</td>
+                        <td>星座：<i id="userBasic_constellation"></i></td>
+                        <td>邮箱：<i id="cellPhone_email"></i></td>
+                        <td colspan="2">通讯地址：<i id="cellPhone_address"></i></td>
                     </tr>
                     <tr>
-                        <td>籍贯：山东省济南市</td>
-                        <td>手机号码归属地：浙江绍兴</td>
-                        <td>居住地址：杭州</td>
-                        <td>工作地址：杭州</td>
+                        <td>籍贯：<i id="userBasic_native_place"></i></td>
+                        <td>手机号码归属地：<i id="cellPhone_phone_attribution"></i></td>
+                        <td>居住地址：<i id="cellPhone_live_address"></i></td>
+                        <td>工作地址：</td>
                     </tr>
                     <tr>
-                        <td colspan="4">账户余额：25.59元</td>
+                        <td colspan="4">账户余额：<i id="cellPhone_available_balance">0</i>元</td>
                     </tr>
-                    <tr>
-                        <td colspan="2">联系人 | 手机号码：</td>
-                        <td colspan="2">李四 | 13777781234 (非临时小号)</td>
-                    </tr>
-                    <tr>
-                        <td colspan="4">有该联系人电话的通话记录，[180]天内联系[39]次，共[62.12]分钟，按时长计算排名第[1]位</td>
-                    </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -75,33 +67,23 @@
                             用户查询信息
                         </td>
                         <td style="width: 25%">查询过该用户的相关企业数量</td>
-                        <td>0</td>
+                        <td><i id="userInfoCheck_search_searched_org_cnt"></i></td>
                     </tr>
                     <tr class="center">
                         <td>查询过该用户的相关企业类型</td>
-                        <td class="userinfocheck">
-                        </td>
+                        <td class="userinfocheck"><i id="userInfoCheck_search_searched_org_type"></i></td>
                     </tr>
                     <tr class="center">
                         <td>身份证组合过的其他姓名</td>
-                        <td class="userinfocheck">
-                            李四,
-                            张三,
-                        </td>
+                        <td class="userinfocheck"><i id="userInfoCheck_search_idcard_with_other_names"></i></td>
                     </tr>
                     <tr class="center">
                         <td>身份证组合过其他电话</td>
-                        <td class="userinfocheck">
-                            18099745467,
-                            15089010983,
-                        </td>
+                        <td class="userinfocheck"><i id="userInfoCheck_search_idcard_with_other_phones"></i></td>
                     </tr>
                     <tr class="center">
                         <td>电话号码组合过其他姓名</td>
-                        <td class="userinfocheck">
-                            张三,
-                            李四,
-                        </td>
+                        <td class="userinfocheck"><i id="userInfoCheck_search_phone_with_other_names"></i></td>
                     </tr>
                     <tr class="center">
                         <td>电话号码组合过其他身份证</td>

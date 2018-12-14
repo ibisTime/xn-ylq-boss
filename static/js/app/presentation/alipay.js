@@ -12,6 +12,8 @@ $(function () {
         data && $('.report-place .status').html('（'+ OSS.reportFlagList[data.flag] +'）');
         if (data && data.result){
             data = JSON.parse(data.result);
+            $('#code').html(data.ref);
+            $('#validDatetime').html(dateTimeFormat(data.validDatetime));
         }
-    });
+    }, hideLoading);
 });

@@ -42,7 +42,7 @@ $(function () {
             }
             $('#tableList').bootstrapTable('prepend', data)
         }
-    });
+    }, hideLoading);
 
     //添加备注
     $('#addRemarkBtn').click(function() {

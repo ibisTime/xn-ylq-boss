@@ -11,5 +11,5 @@ $(function () {
         if (data && data.result){
             data = JSON.parse(data.result);
         }
-    });
+    }, hideLoading);
 });

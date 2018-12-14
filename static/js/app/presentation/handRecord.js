@@ -138,5 +138,5 @@ $(function () {
             userDate: data,
             buttons: []
         });
-    });
+    }, hideLoading);
 });
