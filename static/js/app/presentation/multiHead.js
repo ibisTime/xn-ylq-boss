@@ -2,10 +2,9 @@ $(function () {
     var userId = sessionStorage.getItem('report_userId');
     showLoading();
     reqApi({
-        code: "623060",
+        code: "623063",
         json: {
-            userId: userId,
-            key: 'INFO_DT_REPORT'
+            userId: userId
         }
     }).then(function (data) {
         hideLoading();
