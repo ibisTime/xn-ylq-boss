@@ -38,12 +38,12 @@ $(function() {
             });
         },
     }, {
+        field: 'duration',
+        title: '借款时长(天)',
+    }, {
         field: 'amount',
         title: '借款金额',
         amount: true,
-    }, {
-        field: 'duration',
-        title: '借款时长(天)',
     }, {
         field: 'lxAmount',
         title: '正常利息',
@@ -63,7 +63,6 @@ $(function() {
     }, {
         field: 'yhAmount',
         title: '优惠金额',
-        // amount: true,
         formatter:moneyFormat
     }, {
         field: 'Amount',
@@ -73,6 +72,10 @@ $(function() {
 
         },
         readonly:view,
+    }, {
+	      field: 'yqlxAmount',
+        title: '逾期金额',
+        formatter: moneyFormat
     }, {
         field: 'realName',
         title: '户名',

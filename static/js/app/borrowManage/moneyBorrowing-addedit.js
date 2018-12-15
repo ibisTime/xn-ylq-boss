@@ -15,7 +15,7 @@ $(function() {
         field: 'mobile',
         title: '申请人',
         formatter:function(v,data){
-            borrowCount = data.user.borrowCount;
+            borrowCount = data.borrowCount;
             overdueCode = data.user.overdueCode;
             renewalCount = data.user.renewalCount;
             return data.user.mobile
@@ -43,15 +43,12 @@ $(function() {
         title: '放款方式',
         formatter:Dict.getNameForList('loan_type','623907')
     }, {
-        field: 'amount',
-        title: '借款金额',
-        amount: true,
-    }, {
         field: 'duration',
         title: '借款时长(天)',
     }, {
-        field: 'remainDays',
-        title: '还款剩余天数',
+        field: 'amount',
+        title: '借款金额',
+        amount: true,
     }, {
         field: 'lxAmount',
         title: '正常利息',
@@ -71,7 +68,6 @@ $(function() {
     }, {
         field: 'yhAmount',
         title: '优惠金额',
-        // amount: true,
         formatter:moneyFormat
     }, {
         field: 'Amount',
@@ -84,6 +80,10 @@ $(function() {
     // }, {
     //     field: 'renewalCount',
     //     title: '订单续期(次)'
+    }, {
+        field: 'yqlxAmount',
+        title: '逾期金额',
+        formatter: moneyFormat
     }, {
         field: 'stageBatch',
         title: '分期次数'
@@ -99,6 +99,9 @@ $(function() {
         field: 'hkDatetime',
         title: '约定还款时间',
         formatter: dateTimeFormat
+    }, {
+        field: 'remainDays',
+        title: '还款剩余天数',
     }, {
         field: 'jxDatetime',
         title: '计息时间',

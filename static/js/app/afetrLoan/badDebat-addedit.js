@@ -15,7 +15,7 @@ $(function() {
         field: 'mobile',
         title: '申请人',
         formatter:function(v,data){
-            borrowCount = data.user.borrowCount;
+            borrowCount = data.borrowCount;
             overdueCode = data.user.overdueCode;
             renewalCount = data.user.renewalCount;
             return data.user.mobile
@@ -43,12 +43,12 @@ $(function() {
         title: '放款方式',
         formatter:Dict.getNameForList('loan_type','623907')
     }, {
+        field: 'duration',
+        title: '借款时长(天)',
+    }, {
         field: 'amount',
         title: '借款金额',
         formatter:moneyFormat
-    }, {
-        field: 'duration',
-        title: '借款时长(天)',
     }, {
         field: 'yqDays',
         title: '逾期天数',
@@ -59,12 +59,14 @@ $(function() {
         field: 'lxAmount',
         title: '正常利息',
         amount: true,
-    }, {
-        field: 'yqlxAmount',
-        title: '逾期利息',
-        // amount: true,
-        formatter:moneyFormat
-    }, {
+    },
+    //   {
+    //     field: 'yqlxAmount',
+    //     title: '逾期利息',
+    //     // amount: true,
+    //     formatter:moneyFormat
+    // },
+      {
         field: 'fwAmount',
         title: '服务费',
         amount: true,
@@ -90,6 +92,11 @@ $(function() {
         },
         readonly:view,
     }, {
+        field: 'yqlxAmount',
+        title: '逾期金额',
+        // amount: true,
+        formatter:moneyFormat
+      }, {
         field: 'signDatetime',
         title: '签约时间',
         formatter: dateTimeFormat

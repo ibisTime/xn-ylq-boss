@@ -8,12 +8,12 @@ $(function() {
         field: 'mobile',
         title: '申请人',
         formatter: function(v,data){
-            borrowCount = data.user.borrowCount;
+            borrowCount = data.borrowCount;
             overdueCode = data.user.overdueCode;
             renewalCount = data.user.renewalCount;
             type = data.type;
             jdtReport = data.jdtReport;
-            return data.user.mobile
+            return data.user.realName ? data.user.realName + '-' + data.user.mobile : data.us.mobile;
         },
         afterSet:function(data){
             var html='<div class="tools" style="float: right;margin-left: 20px;">'+

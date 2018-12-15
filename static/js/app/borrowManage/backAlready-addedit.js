@@ -39,12 +39,12 @@ $(function() {
             });
         },
     }, {
+        field: 'duration',
+        title: '借款时长(天)',
+    }, {
         field: 'amount',
         title: '借款金额',
         amount: true,
-    }, {
-        field: 'duration',
-        title: '借款时长(天)',
     }, {
         field: 'lxAmount',
         title: '正常利息',
@@ -74,6 +74,10 @@ $(function() {
 
         },
         readonly:view,
+    }, {
+        field: 'yqlxAmount',
+        title: '逾期金额',
+        formatter: moneyFormat
     }, {
         field: 'realHkAmount',
         title: '实际还款金额',

@@ -20,29 +20,9 @@ $(function() {
         title: '借款金额',
         amount: true,
     }, {
-        field: 'yhAmount',
-        title: '优惠金额',
-        // amount: true,
-        formatter:moneyFormat
-    }, {
-        field: 'realHkAmount',
-        title: '实际还款金额',
-        formatter:moneyFormat
-    }, {
-        field: 'duration',
-        title: '借款时长(天)',
-    }, {
-        field: 'yqDays',
-        title: '逾期天数'
-    }, {
         field: 'lxAmount',
         title: '正常利息',
         amount: true,
-    }, {
-        field: 'yqlxAmount',
-        title: '逾期利息',
-        // amount: true,
-        formatter:moneyFormat
     }, {
         field: 'fwAmount',
         title: '服务费',
@@ -55,6 +35,38 @@ $(function() {
         field: 'xsAmount',
         title: '快速信审费',
         amount: true,
+    }, {
+        field: 'yhAmount',
+        title: '优惠金额',
+        // amount: true,
+        formatter:moneyFormat
+    }, {
+        field: 'Amount',
+        title: '实际应打款金额',
+        formatter:function(v,data){
+          return  moneyFormat(data.amount-(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)+data.yhAmount)
+
+        },
+        readonly:view,
+    }, {
+        field: 'yqlxAmount',
+        title: '逾期金额',
+        formatter: moneyFormat
+    }, {
+        field: 'realHkAmount',
+        title: '实际还款金额',
+        formatter:moneyFormat
+    }, {
+        field: 'duration',
+        title: '借款时长(天)',
+    }, {
+        field: 'yqDays',
+        title: '逾期天数'
+    }, {
+        field: 'yqlxAmount',
+        title: '逾期利息',
+        // amount: true,
+        formatter:moneyFormat
     }, {
         field: 'payType',
         title: '支付类型'

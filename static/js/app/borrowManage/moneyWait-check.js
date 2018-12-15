@@ -30,13 +30,13 @@ $(function() {
         },
         readonly:view
     }, {
+      field: 'duration',
+      title: '借款时长(天)',
+      readonly:view,
+    }, {
         field: 'amount',
         title: '借款金额',
         amount: true,
-        readonly:view,
-    }, {
-        field: 'duration',
-        title: '借款时长(天)',
         readonly:view,
     }, {
         field: 'lxAmount',
@@ -79,6 +79,10 @@ $(function() {
 
         },
         readonly:view,
+    }, {
+        field: 'yqlxAmount',
+        title: '逾期金额',
+        formatter: moneyFormat
     }, {
         field: 'realName',
         title: '户名',

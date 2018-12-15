@@ -44,8 +44,11 @@ $(function() {
         key: 'withdraw_status',
         formatter: Dict.getNameForList('withdraw_status')
     }, {
-        field: 'applyUserName',
-        title: '申请人'
+        field: 'realName1',
+        title: '申请人',
+        formatter: function (v,d) {
+          return d.realName;
+        }
     }, {
         field: 'applyDatetime',
         title: '申请时间',

@@ -45,6 +45,38 @@ $(function() {
             amount: true,
             readonly: true
         }, {
+            field: 'lxAmount',
+            title: '正常利息',
+            amount: true,
+        }, {
+            field: 'fwAmount',
+            title: '服务费',
+            amount: true,
+        }, {
+            field: 'glAmount',
+            title: '账户管理费',
+            amount: true,
+        }, {
+            field: 'xsAmount',
+            title: '快速信审费',
+            amount: true,
+        }, {
+            field: 'yhAmount',
+            title: '优惠金额',
+            formatter:moneyFormat
+        }, {
+            field: 'Amount',
+            title: '实际应打款金额',
+            formatter:function(v,data){
+              return  moneyFormat(data.amount-(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)+data.yhAmount)
+
+            },
+            readonly:view,
+        }, {
+            field: 'yqlxAmount',
+            title: '逾期金额',
+            formatter: moneyFormat
+        }, {
             field: 'duration',
             title: '借款时长(天)',
             readonly: true

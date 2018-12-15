@@ -43,15 +43,12 @@ $(function() {
         title: '放款方式',
         formatter:Dict.getNameForList('loan_type','623907')
     }, {
-        field: 'amount',
-        title: '借款金额',
-        amount: true,
-    }, {
         field: 'duration',
         title: '借款时长(天)',
     }, {
-        field: 'yqDays',
-        title: '逾期天数',
+        field: 'amount',
+        title: '借款金额',
+        amount: true,
     }, {
         field: 'lxAmount',
         title: '正常利息',
@@ -89,6 +86,10 @@ $(function() {
     //     field: 'renewalCount',
     //     title: '订单续期(次)'
     }, {
+        field: 'yqlxAmount',
+        title: '逾期金额',
+        formatter: moneyFormat
+    }, {
         field: 'signDatetime',
         title: '签约时间',
         formatter: dateTimeFormat
@@ -100,6 +101,9 @@ $(function() {
         field: 'hkDatetime',
         title: '约定还款时间',
         formatter: dateTimeFormat
+    }, {
+        field: 'yqDays',
+        title: '逾期天数',
     }, {
         field: 'jxDatetime',
         title: '计息时间',
