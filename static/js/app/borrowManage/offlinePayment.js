@@ -66,7 +66,7 @@ $(function () {
             return;
         }
 
-        if (selRecords[0].status === "0") {
+        if (selRecords[0].status !== "0") {
             toastr.info("该记录不是待审核状态");
             return;
         }
