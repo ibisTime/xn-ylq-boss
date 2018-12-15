@@ -1,10 +1,148 @@
 <link rel="import" href="../head.html?__inline">
+<script src="../../js/reportDict.js"></script>
 <script src="../../js/app/presentation/multiHead.js"></script>
 <div class="report-place">
     <ul>
         <li>认证报告</li>
         <li>多头信息</li>
     </ul>
+</div>
+
+<div class="box report-box">
+    <div class="tabbable">
+        <div class="table">
+            <h5 class="littleTItle">1 基本信息</h5>
+            <div class="tabbox">
+                <table>
+                    <tr>
+                        <td>姓名：<i id="person_info_name"></i></td>
+                        <td>性别：<i id="person_info_gender"></i></td>
+                        <td>身份证号码：<i id="person_info_idcard"></i></td>
+                        <td>身份证归属地：<i id="person_info_idcard_location"></i></td>
+                    </tr>
+                    <tr>
+                        <td>年龄：<i id="person_info_age"></i></td>
+                        <td>手机号：<i id="person_info_mobile"></i></td>
+                        <td>运营商类型：<i id="person_info_carrier"></i></td>
+                        <td>手机号归属地：<i id="person_info_mobile_location"></i></td>
+                    </tr>
+                    <tr>
+                        <td>邮箱：<i id="person_info_email"></i></td>
+                        <td>学历：<i id="person_info_education_info_level"></i></td>
+                        <td colspan="2">是否毕业：<i id="person_info_education_info_is_graduation"></i></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="table">
+            <h5 class="littleTItle">2.认证信息</h5>
+            <div class="tabbox">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>魔蝎变量</td>
+                            <td>当前</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>第三方渠道注册机构数量</td>
+                            <td><i id="register_info_other_count"></i></td>
+                        </tr>
+                        <tr>
+                            <td>注册机构数量</td>
+                            <td><i id="register_info_org_count"></i></td>
+                        </tr>
+                        <tr>
+                            <td>注册机构类型</td>
+                            <td><i id="register_info_org_types"></i></td>
+                        </tr>
+                        <tr>
+                            <td>机构查询次数</td>
+                            <td><i id="queried_detail_org_count"></i></td>
+                        </tr>
+                        <tr>
+                            <td>机构类型</td>
+                            <td><i id="queried_analyze_org_type"></i></td>
+                        </tr>
+                        <tr>
+                            <td>近15天贷款申请次数</td>
+                            <td><i id="queried_analyze_loan_cnt_15d"></i></td>
+                        </tr>
+                        <tr>
+                            <td>近30天贷款申请次数</td>
+                            <td><i id="queried_analyze_loan_cnt_30d"></i></td>
+                        </tr>
+                        <tr>
+                            <td>近90天贷款申请次数</td>
+                            <td><i id="queried_analyze_loan_cnt_90d"></i></td>
+                        </tr>
+                        <tr>
+                            <td>近180天贷款申请次数</td>
+                            <td><i id="queried_analyze_loan_cnt_180d"></i></td>
+                        </tr>
+                        <tr>
+                            <td>查询日期</td>
+                            <td><i id="queried_infos_date"></i></td>
+                        </tr>
+                        <tr>
+                            <td>查询机构类型</td>
+                            <td><i id="queried_infos_org_type"></i></td>
+                        </tr>
+                        <tr>
+                            <td>是否本机构查询</td>
+                            <td><i id="queried_infos_is_self"></i></td>
+                        </tr>
+                        <tr>
+                            <td>汇总借贷机构数</td>
+                            <td><i id="loan_org_cnt_all"></i></td>
+                        </tr>
+                        <tr>
+                            <td>借贷机构数（去重）</td>
+                            <td><i id="loan_info_loan_org_cnt"></i></td>
+                        </tr>
+                        <tr>
+                            <td>借贷次数</td>
+                            <td><i id="loan_info_loan_cnt"></i></td>
+                        </tr>
+                        <tr>
+                            <td>近15天贷款的机构数</td>
+                            <td><i id="loan_info_loan_org_cnt_15d"></i></td>
+                        </tr>
+                        <tr>
+                            <td>近30天贷款的机构数</td>
+                            <td><i id="loan_info_loan_org_cnt_30d"></i></td>
+                        </tr>
+                        <tr>
+                            <td>近90天贷款的机构数</td>
+                            <td><i id="loan_info_loan_org_cnt_90d"></i></td>
+                        </tr>
+                        <tr>
+                            <td>近180天贷款的机构数</td>
+                            <td><i id="loan_info_loan_org_cnt_180d"></i></td>
+                        </tr>
+                        <tr>
+                            <td>近15天贷款的次数</td>
+                            <td><i id="loan_info_loan_cnt_15d"></i></td>
+                        </tr>
+                        <tr>
+                            <td>近30天贷款的次数</td>
+                            <td><i id="loan_info_loan_cnt_30d"></i></td>
+                        </tr>
+                        <tr>
+                            <td>近90天贷款的次数</td>
+                            <td><i id="loan_info_loan_cnt_90d"></i></td>
+                        </tr>
+                        <tr>
+                            <td>近180天贷款的次数</td>
+                            <td><i id="loan_info_loan_cnt_180d"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 
 <link rel="import" href="./foot.html?__inline">

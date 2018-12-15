@@ -1,5 +1,7 @@
 $(function() {
     var userId = getQueryString('userId');
+    var companyCode = getQueryString('companyCode');
+    sessionStorage.setItem('companyCode', companyCode);
     sessionStorage.setItem('report_userId', userId);
 
     // 获取七牛地址
