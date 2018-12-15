@@ -40,7 +40,7 @@ $(function() {
             },
             readonly: true
         }, {
-            field: 'amount',
+            field: 'borrowAmount',
             title: '借款金额',
             amount: true,
             readonly: true

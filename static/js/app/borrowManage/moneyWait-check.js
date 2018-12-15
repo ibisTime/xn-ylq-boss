@@ -34,7 +34,7 @@ $(function() {
       title: '借款时长(天)',
       readonly:view,
     }, {
-        field: 'amount',
+        field: 'borrowAmount',
         title: '借款金额',
         amount: true,
         readonly:view,

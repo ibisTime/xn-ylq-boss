@@ -40,7 +40,7 @@ $(function() {
             },
             readonly: true
         }, {
-            field: 'amount',
+            field: 'borrowAmount',
             title: '借款金额',
             amount: true,
             readonly: true
@@ -70,17 +70,28 @@ $(function() {
             formatter:moneyFormat,
             readonly: true
         }, {
-            field: 'Amount',
-            title: '实际应打款金额',
-            formatter:function(v,data){
-              return  moneyFormat(data.amount-(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)+data.yhAmount)
-
-            },
+            field: 'realGetAmount',
+            title: '已打款金额',
+            amount: true,
+            // formatter:function(v,data){
+            //   return  moneyFormat(data.amount-(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)+data.yhAmount)
+            //
+            // },
             readonly: true
         }, {
             field: 'yqlxAmount',
             title: '逾期金额',
             formatter: moneyFormat,
+            readonly: true
+        }, {
+            field: 'realHkAmount',
+            title: '已还款金额',
+            amount: true,
+            readonly: true
+        }, {
+            field: 'totalAmount',
+            title: '剩余还款金额',
+            amount: true,
             readonly: true
         }, {
             field: 'duration',
