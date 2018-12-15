@@ -1,10 +1,49 @@
 $(function() {
     var userId = getQueryString('userId');
+    var companyCode = getQueryString('companyCode');
+    sessionStorage.setItem('companyCode', companyCode);
     sessionStorage.setItem('report_userId', userId);
+
+    // 获取七牛地址
+    reqApi({
+        code: '623917',
+        json: {
+            key: 'qiniu_domain',
+            updater:'',
+            companyCode: OSS.system
+        },
+        sync: true
+    }).then(function(data) {
+        window.sessionStorage.setItem('qiniuUrl', 'http://' + data.cvalue);
+    });
 
     initMenu();
 
 	function initMenu(){
+	    $.when(
+            reqApi({
+                code: "623060",
+                json: {
+                    userId: userId,
+                    key: 'INFO_ZHIFUBAO'
+                }
+            }),
+            reqApi({
+                code: "623060",
+                json: {
+                    userId: userId,
+                    key: 'INFO_CARRIER'
+                }
+            })
+        ).then(function (data, data2) {
+            if (data && data.result) {
+                $("#reportLeft li.alipay a").attr('href', 'https://tenant.51datakey.com/alipay/report_data?data=' + data.message);
+            }
+
+            if (data2 && data2.result) {
+                $("#reportLeft li.carrierOperator a").attr('href', 'https://tenant.51datakey.com/carrier/report_data?data='+ data2.message);
+            }
+        });
         //导航切换
         $("#reportLeft li").click(function(e){
             if ($(this).find('a').attr('href').indexOf('*') > -1) {
