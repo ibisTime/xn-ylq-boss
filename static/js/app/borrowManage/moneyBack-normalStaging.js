@@ -60,7 +60,7 @@ $(function() {
             listCode: '623177',
             keyName: 'code',
             valueName: '{{count.DATA}}',
-            value: stageData ? stageData.code : '',
+            // value: stageData ? stageData.code : '',
             required: true,
             onChange: (v, data) => {
                 if (v) {

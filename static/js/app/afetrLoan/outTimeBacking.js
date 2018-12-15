@@ -26,7 +26,31 @@ $(function () {
     //     formatter: function (v, data) {
     //         return data.user.overdueCode
     //     }
-    },  {
+    }, {
+      field: 'code',
+      title: '借款编号',
+      search: true
+    }, {
+      field: 'amount',
+      title: '借款金额',
+      amount: true
+    }, {
+      field: 'loanType',
+      title: '放款方式',
+      type: "select",
+      key: "loan_type",
+      keyCode:"623907",
+      formatter: Dict.getNameForList("loan_type","623907")
+    }, {
+      field: 'dkAmount',
+      title: '实际放款金额',
+      formatter: function (v, data) {
+        return moneyFormat(data.amount - data.lxAmount - data.xsAmount - data.glAmount - data.fwAmount + data.yhAmount);
+      }
+      // }, {
+      //     field: 'renewalCount',
+      //     title: '续期次数'
+    }, {
         field: 'fkDatetime',
         title: '放款时间',
         formatter: dateTimeFormat
@@ -38,30 +62,6 @@ $(function () {
         field: 'yqDays',
         title: '逾期天数'
     },{
-        field: 'amount',
-        title: '借款金额',
-        amount: true
-    }, {
-        field: 'code',
-        title: '借款编号',
-        search: true
-    }, {
-        field: 'loanType',
-        title: '放款方式',
-        type: "select",
-        key: "loan_type",
-        keyCode:"623907",
-        formatter: Dict.getNameForList("loan_type","623907")
-    }, {
-        field: 'dkAmount',
-        title: '实际放款金额',
-        formatter: function (v, data) {
-            return moneyFormat(data.amount - data.lxAmount - data.xsAmount - data.glAmount - data.fwAmount + data.yhAmount);
-        }
-    // }, {
-    //     field: 'renewalCount',
-    //     title: '续期次数'
-    }, {
         field: 'totalAmount',
         title: '应收',
         formatter: moneyFormat

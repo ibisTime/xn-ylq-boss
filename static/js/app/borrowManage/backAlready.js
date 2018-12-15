@@ -41,40 +41,40 @@ $(function () {
     //         return data.user.overdueCode
     //     }
     }, {
+      field: 'code',
+      title: '借款编号',
+      search: true
+    }, {
+      field: 'amount',
+      title: '借款金额',
+      amount: true
+    }, {
         field: 'fkDatetime',
         title: '放款时间',
         formatter: dateTimeFormat
+    },{
+      field: 'loanType',
+      title: '放款方式',
+      formatter: function(v,data){
+        return  Dict.getNameForList1('loan_type','623907',data.loanType)
+      }
+      // }, {
+      //     field: 'yqMoney',
+      //     title: '续期费用（元）',
+      //     formatter: function (v, data) {
+      //         return moneyFormat(data.renewalCount * (data.yqlxAmount+data.lxAmount+data.xsAmount+data.glAmount+data.fwAmount));
+      //     }
     }, {
+      field: 'dkAmount',
+      title: '打款金额（元）',
+      formatter: function (v, data) {
+        return moneyFormat(data.amount-data.lxAmount-data.xsAmount-data.glAmount-data.fwAmount+data.yhAmount);
+      }
+    },  {
         field: 'realHkDatetime',
         title: '还款时间',
         formatter: dateTimeFormat
     },{
-        field: 'amount',
-        title: '借款金额',
-        amount: true
-    }, {
-        field: 'code',
-        title: '借款编号',
-        search: true
-    }, {
-        field: 'dkAmount',
-        title: '打款金额（元）',
-        formatter: function (v, data) {
-            return moneyFormat(data.amount-data.lxAmount-data.xsAmount-data.glAmount-data.fwAmount+data.yhAmount);
-        }
-    }, {
-        field: 'loanType',
-        title: '放款方式',
-        formatter: function(v,data){
-            return  Dict.getNameForList1('loan_type','623907',data.loanType)
-        }
-    // }, {
-    //     field: 'yqMoney',
-    //     title: '续期费用（元）',
-    //     formatter: function (v, data) {
-    //         return moneyFormat(data.renewalCount * (data.yqlxAmount+data.lxAmount+data.xsAmount+data.glAmount+data.fwAmount));
-    //     }
-    }, {
         field: 'realHkAmount',
         title: '还款金额（元）',
         formatter: moneyFormat

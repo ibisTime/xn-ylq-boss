@@ -39,36 +39,41 @@ $(function() {
         field: 'lxAmount',
         title: '正常利息',
         amount: true,
-        formatter: function(v,data){
+        formatter: function(v,data) {
           return data.borrow ? moneyFormat(data.borrow.lxAmount) : 0;
-        }
+        },
+        readonly: view
     }, {
         field: 'fwAmount',
         title: '服务费',
         amount: true,
         formatter: function(v,data){
           return data.borrow ? moneyFormat(data.borrow.fwAmount) : 0;
-        }
+        },
+        readonly: view
     }, {
         field: 'glAmount',
         title: '账户管理费',
         amount: true,
         formatter: function(v,data){
           return data.borrow ? moneyFormat(data.borrow.glAmount) : 0;
-        }
+        },
+        readonly: view
     }, {
         field: 'xsAmount',
         title: '快速信审费',
         amount: true,
         formatter: function(v,data){
           return data.borrow ? moneyFormat(data.borrow.xsAmount) : 0;
-        }
+        },
+        readonly: view
     }, {
         field: 'yhAmount',
         title: '优惠金额',
         formatter: function(v,data){
           return data.borrow ? moneyFormat(data.borrow.yhAmount) : 0;
-        }
+        },
+        readonly: view
     }, {
         field: 'Amount',
         title: '实际应打款金额',

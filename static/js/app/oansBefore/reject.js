@@ -53,12 +53,12 @@ $(function() {
     //         return data.user.overdueCode
     //     }
     }, {
-        field: 'approver',
-        title: '审核人'
-    }, {
         field: 'applyDatetime',
         title: '申请时间',
         formatter:dateTimeFormat
+    }, {
+        field: 'approver',
+        title: '审核人'
     }, {
         field: 'approveDatetime',
         title: '审核时间',
@@ -120,7 +120,8 @@ $(function() {
             return;
         }
 
-        window.location.href = "audit_check.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1";
+        // window.location.href = "audit_check.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1";
+      window.location.href = './query_check.html?userId=' + selRecords[0].user.userId+'&code='+selRecords[0].code+'&v=1';
     });
 
     $('#detailBtn').off("click").click(function() {

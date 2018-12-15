@@ -27,6 +27,20 @@ $(function () {
     //         return data.user.overdueCode
     //     }
     },{
+      field: 'code',
+      title: '借款编号',
+      search: true
+    }, {
+      field: 'amount',
+      title: '借款金额',
+      amount: true
+    }, {
+      field: 'dkAmount',
+      title: '实际打款金额',
+      formatter: function (v, data) {
+        return moneyFormat(data.amount-data.lxAmount-data.xsAmount-data.glAmount-data.fwAmount+data.yhAmount);
+      }
+    }, {
         field: 'fkDatetime',
         title: '放款时间',
         formatter: dateTimeFormat
@@ -38,23 +52,9 @@ $(function () {
         field: 'yqDays',
         title: '逾期天数'
     },{
-        field: 'amount',
-        title: '借款金额',
-        amount: true
-    }, {
-        field: 'code',
-        title: '借款编号',
-        search: true
-    }, {
-        field: 'dkAmount',
-        title: '实际打款金额',
-        formatter: function (v, data) {
-            return moneyFormat(data.amount-data.lxAmount-data.xsAmount-data.glAmount-data.fwAmount+data.yhAmount);
-    }
-    }, {
-        field: 'yqlxAmount',
-        title: '逾期利息',
-        amount: true
+      field: 'yqlxAmount',
+      title: '逾期利息',
+      amount: true
     },  {
         field: 'totalAmount',
         title: '应收',
