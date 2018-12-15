@@ -35,11 +35,11 @@ $(function() {
             })
         ).then(function (data, data2) {
             if (data && data.result) {
-                $("#reportLeft li.alipay").attr('href', + data.message);
+                $("#reportLeft li.alipay a").attr('href', 'https://tenant.51datakey.com/alipay/report_data?data=' + data.message);
             }
 
-            if (data1 && data1.result) {
-                $("#reportLeft li.carrierOperator").attr('href', + data1.message);
+            if (data2 && data2.result) {
+                $("#reportLeft li.carrierOperator a").attr('href', 'https://tenant.51datakey.com/carrier/report_data?data='+ data2.message);
             }
         });
         //导航切换
