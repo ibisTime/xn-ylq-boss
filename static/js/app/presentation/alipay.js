@@ -10,6 +10,7 @@ $(function () {
     }).then(function (data) {
         hideLoading();
         data && $('.report-place .status').html('（'+ OSS.reportFlagList[data.flag] +'）');
+        data && $('.report-box .status').html('（'+ OSS.reportFlagList[data.flag] +'）');
         if (data && data.result){
             data = JSON.parse(data.result);
             $('#code').html(data.ref);
