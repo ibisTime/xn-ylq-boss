@@ -31,7 +31,7 @@ $(function () {
       title: '借款编号',
       search: true
     }, {
-      field: 'amount',
+      field: 'borrowAmount',
       title: '借款金额',
       amount: true
     }, {
@@ -42,11 +42,12 @@ $(function () {
       keyCode:"623907",
       formatter: Dict.getNameForList("loan_type","623907")
     }, {
-      field: 'dkAmount',
-      title: '实际放款金额',
-      formatter: function (v, data) {
-        return moneyFormat(data.amount - data.lxAmount - data.xsAmount - data.glAmount - data.fwAmount + data.yhAmount);
-      }
+      field: 'realGetAmount',
+      title: '已打款金额',
+      amount: true
+      // formatter: function (v, data) {
+      //   return moneyFormat(data.amount - data.lxAmount - data.xsAmount - data.glAmount - data.fwAmount + data.yhAmount);
+      // }
       // }, {
       //     field: 'renewalCount',
       //     title: '续期次数'
@@ -65,7 +66,8 @@ $(function () {
         field: 'isStage',
         title: '是否分期',
         formatter: function (v,d) {
-          return d.isStage ? '是' : '否'
+          // debugger;
+          return d.isStage === '1' ? '是' : '否'
         }
     }, {
         field: 'totalAmount',

@@ -4,7 +4,8 @@ $(function() {
     var userId = getQueryString('userId');
     var view = getQueryString('v');
     var isStage = getQueryString('isStage');
-    var borrowCount,overdueCode,renewalCount;
+  console.log(isStage);
+  var borrowCount,overdueCode,renewalCount;
 
     var fields = [ {
         field: 'code1',
@@ -47,7 +48,7 @@ $(function() {
         field: 'duration',
         title: '借款时长(天)',
     }, {
-        field: 'amount',
+        field: 'borrowAmount',
         title: '借款金额',
         amount: true,
     }, {
@@ -78,12 +79,13 @@ $(function() {
         // amount: true,
         formatter:moneyFormat
     }, {
-        field: 'Amount',
-        title: '实际打款金额',
-        formatter:function(v,data){
-          return  moneyFormat(data.amount-(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)+data.yhAmount)
-
-        },
+        field: 'realGetAmount',
+        title: '已打款金额',
+        amount: true,
+        // formatter:function(v,data){
+        //   return  moneyFormat(data.amount-(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)+data.yhAmount)
+        //
+        // },
         readonly:view,
     // }, {
     //     field: 'renewalCount',
@@ -93,6 +95,14 @@ $(function() {
         title: '逾期金额',
         formatter: moneyFormat
     }, {
+        field: 'realHkAmount',
+        title: '已还款金额',
+        amount: true
+      }, {
+        field: 'totalAmount',
+        title: '剩余还款金额',
+        amount: true
+      }, {
         field: 'signDatetime',
         title: '签约时间',
         formatter: dateTimeFormat
@@ -120,11 +130,11 @@ $(function() {
     , {
         field: 'stageCount',
         title: '分期期数',
-        hidden: !isStage
+        hidden: isStage === '0'
     }, {
         field: 'stageCycle',
         title: '分期天数',
-        hidden: !isStage
+        hidden: isStage === '0'
     }, {
         field: 'updateDatetime',
         title: '最后更新时间',

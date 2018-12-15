@@ -42,7 +42,7 @@ $(function() {
       field: 'duration',
       title: '借款时长(天)',
     }, {
-        field: 'amount',
+        field: 'borrowAmount',
         title: '借款金额',
         amount: true,
     }, {
@@ -75,8 +75,9 @@ $(function() {
         formatter:moneyFormat,
         readonly:view,
     }, {
-        field: 'Amount',
+        field: 'realGetAmount',
         title: '实际应打款金额',
+        // amount: true,
         formatter:function(v,data){
           return  moneyFormat(data.amount-(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)+data.yhAmount)
 

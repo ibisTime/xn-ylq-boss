@@ -16,7 +16,7 @@ $(function() {
             return data.user.mobile
         }
     }, {
-        field: 'amount',
+        field: 'realGetAmount',
         title: '借款金额',
         amount: true,
     }, {
@@ -41,12 +41,13 @@ $(function() {
         // amount: true,
         formatter:moneyFormat
     }, {
-        field: 'Amount',
-        title: '实际应打款金额',
-        formatter:function(v,data){
-          return  moneyFormat(data.amount-(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)+data.yhAmount)
-
-        },
+        field: 'realGetAmount',
+        title: '已打款金额',
+        amount: true,
+        // formatter:function(v,data){
+        //   return  moneyFormat(data.amount-(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)+data.yhAmount)
+        //
+        // },
         readonly:view,
     }, {
         field: 'yqlxAmount',
@@ -54,8 +55,12 @@ $(function() {
         formatter: moneyFormat
     }, {
         field: 'realHkAmount',
-        title: '实际还款金额',
+        title: '已还款金额',
         formatter:moneyFormat
+    }, {
+        field: 'totalAmount',
+        title: '剩余还款金额',
+        amount: true
     }, {
         field: 'duration',
         title: '借款时长(天)',

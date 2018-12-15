@@ -46,7 +46,7 @@ $(function () {
     //         return data.user.overdueCode
     //     }
     }, {
-        field: 'amount',
+        field: 'borrowAmount',
         title: '借款金额',
         amount: true
     }, {
@@ -61,8 +61,9 @@ $(function () {
         title: '优惠金额',
         amount: true,
     }, {
-        field: 'Amount',
+        field: 'realGetAmount',
         title: '实际应打款金额',
+        // amount: true
         formatter:function(v,data){
           return  moneyFormat(data.amount-(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)+data.yhAmount)
 

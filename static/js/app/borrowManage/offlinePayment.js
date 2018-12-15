@@ -66,12 +66,12 @@ $(function () {
             return;
         }
 
-        if (selRecords[0].status !== "0") {
+        if (selRecords[0].status === "0") {
             toastr.info("该记录不是待审核状态");
             return;
         }
 
-        window.location.href = "./offlinePayment_check.html?Code=" + selRecords[0].code+"&v=1";
+        window.location.href = "./offlinePayment_check.html?Code=" + selRecords[0].code+"&v=1"+"&type="+selRecords[0].type;
     });
 
     $('#detailBtn').off('click').click(function() {
@@ -79,7 +79,6 @@ $(function () {
       if (selRecords.length <= 0) {
         return;
       }
-      console.log(selRecords[0].type);
       window.location.href = "./offlinePayment_addedit.html?Code=" + selRecords[0].code+"&v=1"+"&type="+selRecords[0].type;
     });
 

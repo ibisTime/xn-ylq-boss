@@ -46,7 +46,7 @@ $(function () {
     //         return data.user.overdueCode
     //     }
     },{
-        field: 'amount',
+        field: 'borrowAmount',
         title: '借款金额',
         amount: true
     }, {

@@ -19,7 +19,7 @@ $(function () {
         } ,
         search: true
     }, {
-        field: 'amount',
+        field: 'borrowAmount',
         title: '借款金额',
         amount: true,
     }, {

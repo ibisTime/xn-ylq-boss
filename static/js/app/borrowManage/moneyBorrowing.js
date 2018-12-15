@@ -45,7 +45,7 @@ $(function () {
       title: '借款编号',
       search: true
     }, {
-      field: 'amount',
+      field: 'borrowAmount',
       title: '借款金额',
       amount: true
     },  {
@@ -55,11 +55,20 @@ $(function () {
         return moneyFormat(data.yhAmount);
       }
     }, {
-      field: 'dkAmount',
-      title: '实际打款（元）',
-      formatter: function (v, data) {
-        return moneyFormat(data.amount-data.lxAmount-data.xsAmount-data.glAmount-data.fwAmount+data.yhAmount);
-      }
+      field: 'realGetAmount',
+      title: '已打款金额',
+      amount: true
+      // formatter: function (v, data) {
+      //   return moneyFormat(data.amount-data.lxAmount-data.xsAmount-data.glAmount-data.fwAmount+data.yhAmount);
+      // }
+    }, {
+      field: 'realHkAmount',
+      title: '已还款金额',
+      amount: true
+    }, {
+      field: 'totalAmount',
+      title: '剩余还款金额',
+      amount: true
     }, {
       field: 'loanType',
       title: '放款方式',

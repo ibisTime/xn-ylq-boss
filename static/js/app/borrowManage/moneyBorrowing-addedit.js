@@ -47,7 +47,7 @@ $(function() {
         field: 'duration',
         title: '借款时长(天)',
     }, {
-        field: 'amount',
+        field: 'borrowAmount',
         title: '借款金额',
         amount: true,
     }, {
@@ -71,12 +71,13 @@ $(function() {
         title: '优惠金额',
         formatter:moneyFormat
     }, {
-        field: 'Amount',
-        title: '实际打款金额',
-        formatter:function(v,data){
-          return  moneyFormat(data.amount-(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)+data.yhAmount)
-
-        },
+        field: 'realGetAmount',
+        title: '已打款金额',
+        amount: true,
+        // formatter:function(v,data){
+        //   return  moneyFormat(data.amount-(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)+data.yhAmount)
+        //
+        // },
         readonly:view,
     // }, {
     //     field: 'renewalCount',
@@ -85,6 +86,14 @@ $(function() {
         field: 'yqlxAmount',
         title: '逾期金额',
         formatter: moneyFormat
+    }, {
+        field: 'realHkAmount',
+        title: '已还款金额',
+        amount: true
+    }, {
+        field: 'totalAmount',
+        title: '剩余还款金额',
+        amount: true
     }, {
         field: 'stageBatch',
         title: '分期次数'

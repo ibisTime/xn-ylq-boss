@@ -31,15 +31,16 @@ $(function () {
       title: '借款编号',
       search: true
     }, {
-      field: 'amount',
+      field: 'borrowAmount',
       title: '借款金额',
       amount: true
     }, {
-      field: 'dkAmount',
-      title: '实际打款金额',
-      formatter: function (v, data) {
-        return moneyFormat(data.amount-data.lxAmount-data.xsAmount-data.glAmount-data.fwAmount+data.yhAmount);
-      }
+      field: 'realGetAmount',
+      title: '已打款金额',
+      amount: true
+      // formatter: function (v, data) {
+      //   return moneyFormat(data.amount-data.lxAmount-data.xsAmount-data.glAmount-data.fwAmount+data.yhAmount);
+      // }
     }, {
         field: 'fkDatetime',
         title: '放款时间',
@@ -56,6 +57,14 @@ $(function () {
       title: '逾期利息',
       amount: true
     },  {
+      field: 'realHkAmount',
+      title: '已还款金额',
+      amount: true
+    }, {
+      field: 'totalAmount',
+      title: '剩余还款金额',
+      amount: true
+    }, {
         field: 'totalAmount',
         title: '应收',
         formatter: moneyFormat

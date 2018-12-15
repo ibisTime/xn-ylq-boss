@@ -46,7 +46,7 @@ $(function() {
         field: 'duration',
         title: '借款时长(天)',
     }, {
-        field: 'amount',
+        field: 'borrowAmount',
         title: '借款金额',
         formatter:moneyFormat
     }, {
@@ -78,24 +78,37 @@ $(function() {
         field: 'xsAmount',
         title: '快速信审费',
         amount: true,
+        readonly:view
     }, {
         field: 'yhAmount',
         title: '优惠金额',
         // amount: true,
-        formatter:moneyFormat
+        formatter:moneyFormat,
+        readonly:view
     }, {
-        field: 'Amount',
-        title: '实际打款金额',
-        formatter:function(v,data){
-          return  moneyFormat(data.amount-(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)+data.yhAmount)
-
-        },
+        field: 'realGetAmount',
+        title: '已打款金额',
+        amount: true,
+        // formatter:function(v,data){
+        //   return  moneyFormat(data.amount-(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)+data.yhAmount)
+        //
+        // },
         readonly:view,
     }, {
         field: 'yqlxAmount',
         title: '逾期金额',
         // amount: true,
         formatter:moneyFormat,
+        readonly:view
+      }, {
+        field: 'realHkAmount',
+        title: '已还款金额',
+        amount: true,
+        readonly:view
+      }, {
+        field: 'totalAmount',
+        title: '剩余还款金额',
+        amount: true,
         readonly:view
       }, {
         field: 'signDatetime',
