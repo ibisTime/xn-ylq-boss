@@ -17,6 +17,17 @@ $(function() {
         window.sessionStorage.setItem('qiniuUrl', 'http://' + data.cvalue);
     });
 
+    // 获取用户信息
+    reqApi({
+        code: '805121',
+        json: {
+            userId: userId
+        },
+        sync: true
+    }).then(function(data) {
+        window.sessionStorage.setItem('companyCode', data.companyCode);
+    });
+
     initMenu();
 
 	function initMenu(){
@@ -40,9 +51,9 @@ $(function() {
                 $("#reportLeft li.alipay a").attr('href', 'https://tenant.51datakey.com/alipay/report_data?data=' + data.message);
             }
 
-            if (data2 && data2.result) {
-                $("#reportLeft li.carrierOperator a").attr('href', 'https://tenant.51datakey.com/carrier/report_data?data='+ data2.message);
-            }
+            // if (data2 && data2.result) {
+            //     $("#reportLeft li.carrierOperator a").attr('href', 'https://tenant.51datakey.com/carrier/report_data?data='+ data2.message);
+            // }
         });
         //导航切换
         $("#reportLeft li").click(function(e){

@@ -1322,6 +1322,8 @@ li input[type="radio"] {
     white-space: normal;
     vertical-align: middle;
     border-left: 1px solid #cbf4ef;
+    min-width: 50px;
+    white-space: nowrap;
 }
 .report-box .table table th:first-child,
 .report-box .tabbox table td:first-child{

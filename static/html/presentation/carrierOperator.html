@@ -11,6 +11,7 @@
 <div class="box report-box"><p>报告<span class="status" style="display: inline-block"></span></p></div>
 
 <div style="display: none" class="box report-box">
+<!--<div class="box report-box">-->
     <div class="header">
         <span class="fl">编号：<i id="code"></i></span>
         <span class="fr">报告时间：<i id="validDatetime"></i></span>
@@ -65,7 +66,8 @@
                 <table>
                     <tbody>
                     <tr class="center ">
-                        <td rowspan="9" style="text-align: center;vertical-align: middle;width: 15%;border-bottom: none;">
+                        <td rowspan="9"
+                            style="text-align: center;vertical-align: middle;width: 15%;border-bottom: none;">
                             用户查询信息
                         </td>
                         <td style="width: 25%">查询过该用户的相关企业数量</td>
@@ -128,7 +130,7 @@
                         </td>
                         <td style="width: 25%">黑中介分数</td>
                         <td>61
-                            (分数范围0-100，40分以下为高危人群）
+                            (分数范围0-100，40分以下为高危人群)
                         </td>
                     </tr>
                     <tr class="center">
@@ -271,7 +273,7 @@
                         <td>互通电话的号码数目</td>
                         <td class="center">18</td>
                         <td class="center">48</td>
-                        <td class="center">近3/6月互有主叫和被叫的联系人电话号码数目（去重）</td>
+                        <td class="center">近3/6月互有主叫和被叫的联系人电话号码数目(去重)</td>
                     </tr>
                     </tbody>
                 </table>
@@ -287,7 +289,7 @@
                         <th>号码</th>
                         <th>归属地</th>
                         <th>通话次数</th>
-                        <th>通话时长（秒）</th>
+                        <th>通话时长(秒)</th>
                         <th>主叫次数</th>
                         <th>被叫次数</th>
                     </tr>
@@ -330,7 +332,7 @@
                         <th>号码</th>
                         <th>归属地</th>
                         <th>通话次数</th>
-                        <th>通话时长（秒）</th>
+                        <th>通话时长(秒)</th>
                         <th>主叫次数</th>
                         <th>被叫次数</th>
                     </tr>
@@ -374,7 +376,7 @@
                         <th>地址</th>
                         <th>通话次数</th>
                         <th>通话号码数</th>
-                        <th>通话时长（秒）</th>
+                        <th>通话时长(秒)</th>
                         <th>主叫次数</th>
                         <th>被叫次数</th>
                     </tr>
@@ -417,7 +419,7 @@
                         <th>地址</th>
                         <th>通话次数</th>
                         <th>通话号码数</th>
-                        <th>通话时长（秒）</th>
+                        <th>通话时长(秒)</th>
                         <th>主叫次数</th>
                         <th>被叫次数</th>
                     </tr>
@@ -567,8 +569,8 @@
                         <th>号码类别</th>
                         <th>近3月通话次数</th>
                         <th>近6月通话次数</th>
-                        <th>近3月通话时长（秒）</th>
-                        <th>近6月通话时长（秒）</th>
+                        <th>近3月通话时长(秒)</th>
+                        <th>近6月通话时长(秒)</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -650,13 +652,13 @@
                     </tr>
 
                     <tr class="center">
-                        <td>主叫时长（秒）</td>
+                        <td>主叫时长(秒)</td>
                         <td>15163</td>
                         <td>27928</td>
                     </tr>
 
                     <tr class="center">
-                        <td>被叫时长（秒）</td>
+                        <td>被叫时长(秒)</td>
                         <td>16029</td>
                         <td>30247</td>
                     </tr>
@@ -669,35 +671,15 @@
             <h5 class="littleTItle">1.7 消费分析摘要</h5>
             <h6 class="sort">消费识别</h6>
             <div class="tabbox">
-                <table>
+                <table id="table_consumption_detail_recognition">
                     <thead>
-                    <tr>
-                        <th class="left">魔蝎变量</th>
-                        <th>近3月</th>
-                        <th>近6月</th>
-                    </tr>
+                        <tr>
+                            <th class="left">魔蝎变量</th>
+                            <th>近3月</th>
+                            <th>近6月</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>消费总金额（分）</td>
-                        <td>46564</td>
-                        <td>78238</td>
-                    </tr>
-                    <tr>
-                        <td>单次充值最大金额（分）</td>
-                        <td>5000</td>
-                        <td>5000</td>
-                    </tr>
-                    <tr>
-                        <td>充值次数</td>
-                        <td>11</td>
-                        <td>17</td>
-                    </tr>
-                    <tr>
-                        <td>账单最新认证时间</td>
-                        <td class="center">2017-10-23</td>
-                        <td class="center">--</td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -705,7 +687,7 @@
         <div class="table">
             <h6 class="sort"> 消费细类统计</h6>
             <div class="tabbox">
-                <table>
+                <table id="table_consumption_detail_statistics">
                     <thead>
                     <tr class="center">
                         <th>消费类别</th>
@@ -717,38 +699,6 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="center">
-                        <td>网络流量消费金额（分）</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr class="center">
-                        <td>通话消费金额（分）</td>
-                        <td>115</td>
-                        <td>1522</td>
-                        <td>2928</td>
-                        <td>507</td>
-                        <td>488</td>
-                    </tr>
-                    <tr class="center">
-                        <td>短信消费金额（分）</td>
-                        <td>30</td>
-                        <td>150</td>
-                        <td>240</td>
-                        <td>50</td>
-                        <td>40</td>
-                    </tr>
-                    <tr class="center">
-                        <td>增值业务消费金额（分）</td>
-                        <td>378</td>
-                        <td>1378</td>
-                        <td>2878</td>
-                        <td>459</td>
-                        <td>480</td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -757,111 +707,31 @@
         <div class="table">
             <h6 class="sort"> 运营商消费数据</h6>
             <div class="tabbox">
-                <table>
-                <thead>
-                <tr class="center">
-                    <td>运营商</td>
-                    <td>号码</td>
-                    <td>归属地</td>
-                    <td>月份</td>
-                    <td>呼叫次数</td>
-                    <td>主叫次数</td>
-                    <td>主叫时间(分)</td>
-                    <td>被叫次数</td>
-                    <td>被叫时间(分)</td>
-                    <td>短信数量</td>
-                    <td>话费消费(元)</td>
-                </tr>
-                </thead>
-                <tbody>
-
-                <tr class="center">
-                    <td class="userinfocheck">浙江移动</td>
-                    <td class="userinfocheck">15715846575</td>
-                    <td class="userinfocheck">浙江绍兴</td>
-                    <td class="userinfocheck">2017-10</td>
-                    <td class="userinfocheck">81</td>
-                    <td class="userinfocheck">32</td>
-                    <td class="userinfocheck">45.35</td>
-                    <td class="userinfocheck">49</td>
-                    <td class="userinfocheck">38.22</td>
-                    <td class="userinfocheck">118</td>
-                    <td class="userinfocheck">76.26</td>
-                </tr>
-                <tr class="center">
-                    <td class="userinfocheck">浙江移动</td>
-                    <td class="userinfocheck">15715846575</td>
-                    <td class="userinfocheck">浙江绍兴</td>
-                    <td class="userinfocheck">2017-09</td>
-                    <td class="userinfocheck">107</td>
-                    <td class="userinfocheck">40</td>
-                    <td class="userinfocheck">91.03</td>
-                    <td class="userinfocheck">67</td>
-                    <td class="userinfocheck">124.12</td>
-                    <td class="userinfocheck">176</td>
-                    <td class="userinfocheck">107.76</td>
-                </tr>
-                <tr class="center">
-                    <td class="userinfocheck">浙江移动</td>
-                    <td class="userinfocheck">15715846575</td>
-                    <td class="userinfocheck">浙江绍兴</td>
-                    <td class="userinfocheck">2017-08</td>
-                    <td class="userinfocheck">81</td>
-                    <td class="userinfocheck">32</td>
-                    <td class="userinfocheck">45.35</td>
-                    <td class="userinfocheck">49</td>
-                    <td class="userinfocheck">38.22</td>
-                    <td class="userinfocheck">118</td>
-                    <td class="userinfocheck">76.26</td>
-                </tr>
-                <tr class="center">
-                    <td class="userinfocheck">浙江移动</td>
-                    <td class="userinfocheck">15715846575</td>
-                    <td class="userinfocheck">浙江绍兴</td>
-                    <td class="userinfocheck">2017-07</td>
-                    <td class="userinfocheck">81</td>
-                    <td class="userinfocheck">32</td>
-                    <td class="userinfocheck">45.35</td>
-                    <td class="userinfocheck">49</td>
-                    <td class="userinfocheck">38.22</td>
-                    <td class="userinfocheck">118</td>
-                    <td class="userinfocheck">76.26</td>
-                </tr>
-                <tr class="center">
-                    <td class="userinfocheck">浙江移动</td>
-                    <td class="userinfocheck">15715846575</td>
-                    <td class="userinfocheck">浙江绍兴</td>
-                    <td class="userinfocheck">2017-10</td>
-                    <td class="userinfocheck">81</td>
-                    <td class="userinfocheck">32</td>
-                    <td class="userinfocheck">45.35</td>
-                    <td class="userinfocheck">49</td>
-                    <td class="userinfocheck">38.22</td>
-                    <td class="userinfocheck">118</td>
-                    <td class="userinfocheck">76.26</td>
-                </tr>
-                <tr class="center">
-                    <td class="userinfocheck">浙江移动</td>
-                    <td class="userinfocheck">15715846575</td>
-                    <td class="userinfocheck">浙江绍兴</td>
-                    <td class="userinfocheck">2017-10</td>
-                    <td class="userinfocheck">81</td>
-                    <td class="userinfocheck">32</td>
-                    <td class="userinfocheck">45.35</td>
-                    <td class="userinfocheck">49</td>
-                    <td class="userinfocheck">38.22</td>
-                    <td class="userinfocheck">118</td>
-                    <td class="userinfocheck">76.26</td>
-                </tr>
-                </tbody>
-            </table>
+                <table id="table_cell_behavior">
+                    <thead>
+                    <tr class="center">
+                        <td>运营商</td>
+                        <td>号码</td>
+                        <td>归属地</td>
+                        <td>月份</td>
+                        <td>呼叫次数</td>
+                        <td>主叫次数</td>
+                        <td>主叫时间(分)</td>
+                        <td>被叫次数</td>
+                        <td>被叫时间(分)</td>
+                        <td>短信数量</td>
+                        <td>话费消费(元)</td>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
         </div>
 
         <div class="table">
             <h5 class="littleTItle">1.8 漫游分析摘要(近6月漫游天数降序)</h5>
             <div class="tabbox">
-                <table>
+                <table id="table_roam_analysis">
                     <thead>
                     <tr class="center">
                         <td>漫游地</td>
@@ -874,42 +744,6 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="center">
-                        <td>杭州</td>
-                        <td>73</td>
-                        <td>141</td>
-                        <td>24</td>
-                        <td>60</td>
-                        <td>6</td>
-                        <td>12</td>
-                    </tr>
-                    <tr class="center">
-                        <td>温州</td>
-                        <td>7</td>
-                        <td>12</td>
-                        <td>7</td>
-                        <td>7</td>
-                        <td>1</td>
-                        <td>2</td>
-                    </tr>
-                    <tr class="center">
-                        <td>丽水</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>1</td>
-                    </tr>
-                    <tr class="center">
-                        <td>湖州</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -921,83 +755,18 @@
         <div class="table">
             <h5 class="littleTItle">2.1 总体统计</h5>
             <div class="tabbox">
-                <table>
+                <table id="table_active_degree_statistics">
                     <thead>
-                    <tr>
-                        <th class="left">魔蝎变量</th>
-                        <th>近1月</th>
-                        <th>近3月</th>
-                        <th>近6月</th>
-                        <th>近3月月均</th>
-                        <th>近6月月均</th>
-                    </tr>
+                        <tr>
+                            <th class="left">魔蝎变量</th>
+                            <th>近1月</th>
+                            <th>近3月</th>
+                            <th>近6月</th>
+                            <th>近3月月均</th>
+                            <th>近6月月均</th>
+                        </tr>
                     </thead>
-                    <tbody>
-                    <tr class="center">
-                        <td>通话次数</td>
-                        <td>109</td>
-                        <td>291</td>
-                        <td>666</td>
-                        <td>97.00</td>
-                        <td>111.00</td>
-                    </tr>
-                    <tr class="center">
-                        <td>通话号码数目</td>
-                        <td>78</td>
-                        <td>180</td>
-                        <td>388</td>
-                        <td>60.00</td>
-                        <td>64.67</td>
-                    </tr>
-                    <tr class="center">
-                        <td>通话号码归属地总数</td>
-                        <td>12</td>
-                        <td>26</td>
-                        <td>42</td>
-                        <td>8.67</td>
-                        <td>7.00</td>
-                    </tr>
-                    <tr class="center">
-                        <td>主叫次数</td>
-                        <td>46</td>
-                        <td>117</td>
-                        <td>238</td>
-                        <td>39.00</td>
-                        <td>39.67</td>
-                    </tr>
-                    <tr class="center">
-                        <td>被叫次数</td>
-                        <td>63</td>
-                        <td>174</td>
-                        <td>428</td>
-                        <td>58.00</td>
-                        <td>71.33</td>
-                    </tr>
-                    <tr class="center">
-                        <td>主叫号码数</td>
-                        <td>33</td>
-                        <td>68</td>
-                        <td>135</td>
-                        <td>22.67</td>
-                        <td>22.50</td>
-                    </tr>
-                    <tr class="center">
-                        <td>被叫号码数</td>
-                        <td>52</td>
-                        <td>130</td>
-                        <td>301</td>
-                        <td>43.33</td>
-                        <td>50.17</td>
-                    </tr>
-                    <tr class="center">
-                        <td>通话时长（秒）</td>
-                        <td>7450</td>
-                        <td>31192</td>
-                        <td>58175</td>
-                        <td>10397</td>
-                        <td>9696</td>
-                    </tr>
-                    </tbody>
+                    <tbody></tbody>
                 </table>
             </div>
         </div>
@@ -1006,9 +775,9 @@
             <h5 class="littleTItle">2.2 详细统计</h5>
             <h6 style="clear:both" class="sort">联系人</h6>
             <div class="tabbox longTabbox">
-                <table>
+                <table id="table_call_contact_detail">
                     <thead>
-                    <tr class="center">
+                        <tr class="center">
                         <td>号码</td>
                         <td>号码标识</td>
                         <td>号码类型</td>
@@ -1017,22 +786,22 @@
                         <td>近一月通话次数</td>
                         <td>近三月通话次数</td>
                         <td>近六月通话次数</td>
-                        <td>近三月通话时长（秒）</td>
-                        <td>近六月通话时长（秒）</td>
+                        <td>近三月通话时长(秒)</td>
+                        <td>近六月通话时长(秒)</td>
                         <td>近三月主叫次数</td>
                         <td>近六月主叫次数</td>
                         <td>近三月被叫次数</td>
                         <td>近六月被叫次数</td>
-                        <td>近三月早上（5:30-11:30）通话次数</td>
-                        <td>近六月早上（5:30-11:30）通话次数</td>
-                        <td>近三月中午（11:30-13:30）通话次数</td>
-                        <td>近六月中午（11:30-13:30）通话次数</td>
-                        <td>近三月下午（13:30-17:30）通话次数</td>
-                        <td>近六月下午（13:30-17:30）通话次数</td>
-                        <td>近三月晚上（17:30-23:30）通话次数</td>
-                        <td>近六月晚上（17:30-23:30）通话次数</td>
-                        <td>近三月凌晨（23:30-5:30）通话次数</td>
-                        <td>近六月凌晨（23:30-5:30）通话次数</td>
+                        <td>近三月早上(5:30-11:30)通话次数</td>
+                        <td>近六月早上(5:30-11:30)通话次数</td>
+                        <td>近三月中午(11:30-13:30)通话次数</td>
+                        <td>近六月中午(11:30-13:30)通话次数</td>
+                        <td>近三月下午(13:30-17:30)通话次数</td>
+                        <td>近六月下午(13:30-17:30)通话次数</td>
+                        <td>近三月晚上(17:30-23:30)通话次数</td>
+                        <td>近六月晚上(17:30-23:30)通话次数</td>
+                        <td>近三月凌晨(23:30-5:30)通话次数</td>
+                        <td>近六月凌晨(23:30-5:30)通话次数</td>
                         <td>近三月工作日通话次数</td>
                         <td>近六月工作日通话次数</td>
                         <td>近三月周末通话次数</td>
@@ -1043,482 +812,51 @@
                         <td>近六月是否有全天联系</td>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr class="center">
-                        <td>057110086</td>
-                        <td>中国移动客服热线</td>
-                        <td>通信服务机构</td>
-                        <td>杭州</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>7</td>
-                        <td>12</td>
-                        <td>736</td>
-                        <td>1320</td>
-                        <td>7</td>
-                        <td>12</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>5</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>1</td>
-                        <td>5</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>否</td>
-                        <td>否</td>
-                    </tr>
-                    <tr class="center">
-                        <td>057510086</td>
-                        <td>中国移动客服热线</td>
-                        <td>通信服务机构</td>
-                        <td>绍兴</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>3</td>
-                        <td>11</td>
-                        <td>113</td>
-                        <td>631</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>3</td>
-                        <td>10</td>
-                        <td>1</td>
-                        <td>4</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>7</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>7</td>
-                        <td>1</td>
-                        <td>3</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>否</td>
-                        <td>否</td>
-                    </tr>
-                    <tr class="center">
-                        <td>10000</td>
-                        <td>中国电信综合服务</td>
-                        <td>通信服务机构</td>
-                        <td>全国</td>
-                        <td>0</td>
-                        <td>4</td>
-                        <td>6</td>
-                        <td>6</td>
-                        <td>523</td>
-                        <td>523</td>
-                        <td>6</td>
-                        <td>6</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>5</td>
-                        <td>5</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>6</td>
-                        <td>6</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>否</td>
-                        <td>否</td>
-                    </tr>
-                    <tr class="center">
-                        <td>1866750321</td>
-                        <td>滴滴/优步</td>
-                        <td>旅游出行</td>
-                        <td>绍兴</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>103</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>否</td>
-                        <td>否</td>
-                    </tr>
-                    <tr class="center">
-                        <td>18698582312</td>
-                        <td>滴滴/优步</td>
-                        <td>旅游出行</td>
-                        <td>杭州</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>91</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>否</td>
-                        <td>否</td>
-                    </tr>
-                    <tr class="center">
-                        <td>057188893123</td>
-                        <td>唛歌KTV</td>
-                        <td>娱乐活动</td>
-                        <td>杭州</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>90</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>否</td>
-                        <td>否</td>
-                    </tr>
-                    <tr class="center">
-                        <td>4000352311</td>
-                        <td>周大虾龙虾盖浇饭</td>
-                        <td>餐饮行业</td>
-                        <td>全国</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>50</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>否</td>
-                        <td>否</td>
-                    </tr>
-                    <tr class="center">
-                        <td>02122272312</td>
-                        <td>携程旅行网</td>
-                        <td>旅游出行</td>
-                        <td>上海</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>13</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>否</td>
-                        <td>否</td>
-                    </tr>
-                    </tbody>
+                    <tbody></tbody>
                 </table>
             </div>
         </div>
         <div class="table">
-            <h6 class="sort">通话时段（近三月）</h6>
+            <h6 class="sort">通话时段(近三月)</h6>
             <div class="tabbox">
-                <table>
+                <table id="table_call_duration_detail_3m">
                     <thead>
                     <tr class="center">
                         <th>通话时段</th>
                         <th>通话次数</th>
                         <th>通话号码数</th>
-                        <th>通话时长（秒）</th>
+                        <th>通话时长(秒)</th>
                         <th>主叫次数</th>
                         <th>被叫次数</th>
+                        <td>主叫时长(秒)</td>
+                        <td>被叫时长(秒)</td>
                         <th>最后一次通话时间</th>
                         <th>第一次通话时间</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr class="center">
-                        <td>早晨[5:30-9:00]</td>
-                        <td>7</td>
-                        <td>4</td>
-                        <td>694</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>20171016-081351</td>
-                        <td>20170803-083654</td>
-                    </tr>
-                    <tr class="center">
-                        <td>上午[9:00-11:30]</td>
-                        <td>37</td>
-                        <td>27</td>
-                        <td>6759</td>
-                        <td>16</td>
-                        <td>21</td>
-                        <td>20171023-111406</td>
-                        <td>20170727-091447</td>
-                    </tr>
-                    <tr class="center">
-                        <td>中午[11:30-13:30]</td>
-                        <td>65</td>
-                        <td>53</td>
-                        <td>4425</td>
-                        <td>14</td>
-                        <td>51</td>
-                        <td>20171023-124104</td>
-                        <td>20170726-115114</td>
-                    </tr>
-                    <tr class="center">
-                        <td>下午[13:30-17:30]</td>
-                        <td>49</td>
-                        <td>31</td>
-                        <td>10583</td>
-                        <td>32</td>
-                        <td>17</td>
-                        <td>20171019-164554</td>
-                        <td>20170730-133400</td>
-                    </tr>
-                    <tr class="center">
-                        <td>傍晚[17:30-19:30]</td>
-                        <td>58</td>
-                        <td>47</td>
-                        <td>3248</td>
-                        <td>21</td>
-                        <td>37</td>
-                        <td>20171021-181809</td>
-                        <td>20170727-182804</td>
-                    </tr>
-                    <tr class="center">
-                        <td>晚上[19:30-23:30]</td>
-                        <td>71</td>
-                        <td>51</td>
-                        <td>5369</td>
-                        <td>30</td>
-                        <td>41</td>
-                        <td>20171020-225552</td>
-                        <td>20170726-205602</td>
-                    </tr>
-                    <tr class="center">
-                        <td>凌晨[23:30-1:30]</td>
-                        <td>4</td>
-                        <td>4</td>
-                        <td>114</td>
-                        <td>1</td>
-                        <td>3</td>
-                        <td>20171016-233455</td>
-                        <td>20170731-234046</td>
-                    </tr>
-                    <tr class="center">
-                        <td>深夜[1:30-5:30]</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>该时段无通话记录</td>
-                        <td>该时段无通话记录</td>
-                    </tr>
-                    </tbody>
+                    <tbody></tbody>
                 </table>
             </div>
         </div>
         <div class="table">
-            <h6 class="sort">通话时段（近六月）</h6>
+            <h6 class="sort">通话时段(近六月)</h6>
             <div class="tabbox">
-                <table>
+                <table id="table_call_duration_detail_6m">
                     <thead>
                     <tr class="center">
                         <th>通话时段</th>
                         <th>通话次数</th>
                         <th>通话号码数</th>
-                        <th>通话时长（秒）</th>
+                        <th>通话时长(秒)</th>
                         <th>主叫次数</th>
                         <th>被叫次数</th>
+                        <td>主叫时长(秒)</td>
+                        <td>被叫时长(秒)</td>
                         <th>最后一次通话时间</th>
                         <th>第一次通话时间</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr class="center">
-                        <td>早晨[5:30-9:00]</td>
-                        <td>17</td>
-                        <td>11</td>
-                        <td>1141</td>
-                        <td>5</td>
-                        <td>12</td>
-                        <td>20171016-081351</td>
-                        <td>20170502-073840</td>
-                    </tr>
-                    <tr class="center">
-                        <td>上午[9:00-11:30]</td>
-                        <td>82</td>
-                        <td>53</td>
-                        <td>10230</td>
-                        <td>36</td>
-                        <td>46</td>
-                        <td>20171023-111406</td>
-                        <td>20170511-093751</td>
-                    </tr>
-                    <tr class="center">
-                        <td>中午[11:30-13:30]</td>
-                        <td>131</td>
-                        <td>102</td>
-                        <td>10313</td>
-                        <td>36</td>
-                        <td>95</td>
-                        <td>20171023-124104</td>
-                        <td>20170505-121755</td>
-                    </tr>
-                    <tr class="center">
-                        <td>下午[13:30-17:30]</td>
-                        <td>117</td>
-                        <td>78</td>
-                        <td>14690</td>
-                        <td>52</td>
-                        <td>65</td>
-                        <td>20171019-164554</td>
-                        <td>20170428-160710</td>
-                    </tr>
-                    <tr class="center">
-                        <td>傍晚[17:30-19:30]</td>
-                        <td>147</td>
-                        <td>114</td>
-                        <td>7300</td>
-                        <td>46</td>
-                        <td>101</td>
-                        <td>20171021-181809</td>
-                        <td>20170501-181459</td>
-                    </tr>
-                    <tr class="center">
-                        <td>晚上[19:30-23:30]</td>
-                        <td>162</td>
-                        <td>99</td>
-                        <td>13821</td>
-                        <td>58</td>
-                        <td>104</td>
-                        <td>20171020-225552</td>
-                        <td>20170427-211634</td>
-                    </tr>
-                    <tr class="center">
-                        <td>凌晨[23:30-1:30]</td>
-                        <td>10</td>
-                        <td>8</td>
-                        <td>680</td>
-                        <td>5</td>
-                        <td>5</td>
-                        <td>20171016-233455</td>
-                        <td>20170714-235820</td>
-                    </tr>
-                    <tr class="center">
-                        <td>深夜[1:30-5:30]</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>该时段无通话记录</td>
-                        <td>该时段无通话记录</td>
-                    </tr>
-                    </tbody>
+                    <tbody></tbody>
                 </table>
             </div>
         </div>
@@ -1531,13 +869,13 @@
                         <td>地址</td>
                         <td>通话次数</td>
                         <td>通话号码数</td>
-                        <td>通话时长（秒）</td>
+                        <td>通话时长(秒)</td>
                         <td>主叫次数</td>
                         <td>被叫次数</td>
-                        <td>主叫时长（秒）</td>
-                        <td>被叫时长（秒）</td>
-                        <td>平均主叫时长（秒）</td>
-                        <td>平均被叫时长（秒）</td>
+                        <td>主叫时长(秒)</td>
+                        <td>被叫时长(秒)</td>
+                        <td>平均主叫时长(秒)</td>
+                        <td>平均被叫时长(秒)</td>
                         <td>主叫次数比重</td>
                         <td>被叫次数比重</td>
                         <td>主叫时长比重</td>
@@ -1553,22 +891,22 @@
             <div class="tabbox">
                 <table id="table_contact_region_6m">
                     <thead>
-                        <tr>
-                            <td>地址</td>
-                            <td>通话次数</td>
-                            <td>通话号码数</td>
-                            <td>通话时长（秒）</td>
-                            <td>主叫次数</td>
-                            <td>被叫次数</td>
-                            <td>主叫时长（秒）</td>
-                            <td>被叫时长（秒）</td>
-                            <td>平均主叫时长（秒）</td>
-                            <td>平均被叫时长（秒）</td>
-                            <td>主叫次数比重</td>
-                            <td>被叫次数比重</td>
-                            <td>主叫时长比重</td>
-                            <td>被叫时长比重</td>
-                        </tr>
+                    <tr>
+                        <td>地址</td>
+                        <td>通话次数</td>
+                        <td>通话号码数</td>
+                        <td>通话时长(秒)</td>
+                        <td>主叫次数</td>
+                        <td>被叫次数</td>
+                        <td>主叫时长(秒)</td>
+                        <td>被叫时长(秒)</td>
+                        <td>平均主叫时长(秒)</td>
+                        <td>平均被叫时长(秒)</td>
+                        <td>主叫次数比重</td>
+                        <td>被叫次数比重</td>
+                        <td>主叫时长比重</td>
+                        <td>被叫时长比重</td>
+                    </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
@@ -1603,14 +941,14 @@
             <div class="tabbox">
                 <table id="table_call_risk_analysis">
                     <thead>
-                        <tr>
-                            <th class="left">魔蝎变量</th>
-                            <th>近1月</th>
-                            <th>近3月</th>
-                            <th>近6月</th>
-                            <th>近3月月均</th>
-                            <th>近6月月均</th>
-                        </tr>
+                    <tr>
+                        <th class="left">魔蝎变量</th>
+                        <th>近1月</th>
+                        <th>近3月</th>
+                        <th>近6月</th>
+                        <th>近3月月均</th>
+                        <th>近6月月均</th>
+                    </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
@@ -1622,12 +960,12 @@
             <div class="tabbox">
                 <table id="table_call_family_detail">
                     <thead>
-                        <tr>
-                            <th class="left">魔蝎变量</th>
-                            <th>近1月</th>
-                            <th>近3月</th>
-                            <th>近6月</th>
-                        </tr>
+                    <tr>
+                        <th class="left">魔蝎变量</th>
+                        <th>近1月</th>
+                        <th>近3月</th>
+                        <th>近6月</th>
+                    </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
@@ -1658,11 +996,11 @@
                         <th>服务号码</th>
                         <th>月份</th>
                         <th>通话次数</th>
-                        <th>通话时长（秒）</th>
+                        <th>通话时长(秒)</th>
                         <th>主叫次数</th>
                         <th>被叫次数</th>
-                        <th>主叫时长（秒）</th>
-                        <th>被叫时长（秒）</th>
+                        <th>主叫时长(秒)</th>
+                        <th>被叫时长(秒)</th>
                     </tr>
                     </thead>
                     <tbody></tbody>
@@ -1722,10 +1060,10 @@
             <div class="tabbox">
                 <table id="table_roam_detail">
                     <thead>
-                        <tr>
-                            <td>漫游日期</td>
-                            <td>漫游城市</td>
-                        </tr>
+                    <tr>
+                        <td>漫游日期</td>
+                        <td>漫游城市</td>
+                    </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
@@ -1740,13 +1078,13 @@
             <div class="tabbox">
                 <table id="table_trip_info">
                     <thead>
-                        <tr class="center hideborder" style="text-align: center">
-                            <td>出发地</td>
-                            <td>目的地</td>
-                            <td>出发时间</td>
-                            <td>结束时间</td>
-                            <td>类型</td>
-                        </tr>
+                    <tr class="center hideborder" style="text-align: center">
+                        <td>出发地</td>
+                        <td>目的地</td>
+                        <td>出发时间</td>
+                        <td>结束时间</td>
+                        <td>类型</td>
+                    </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
