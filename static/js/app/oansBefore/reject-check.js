@@ -1,9 +1,9 @@
 $(function() {
-    var code = getQueryString('code');
+
+	var code = getQueryString('code');
     var userId = getQueryString('userId');
     var view = getQueryString('v');
-    var borrowCount,overdueCode,renewalCount,type,jdtReport;
-
+	var borrowCount,overdueCode,renewalCount,type,jdtReport;
     var fields = [{
         field: 'mobile',
         title: '申请人',
@@ -13,7 +13,7 @@ $(function() {
             renewalCount = data.user.renewalCount;
             type = data.type;
             jdtReport = data.jdtReport;
-            return data.user.mobile
+            return data.user.realName ? data.user.realName + '-' + data.user.mobile : data.user.mobile;
         },
         afterSet:function(data){
             var html='<div class="tools" style="float: right;margin-left: 20px;">'+
@@ -43,14 +43,6 @@ $(function() {
         },
         readonly: view
     }, {
-        field: 'creditScore',
-        title: '信用分',
-        readonly: view,
-        amount:true,
-        formatter:function(v,data){
-            return moneyFormat(data.creditScore)
-        }
-    }, {
         field: 'applyDatetime',
         title: '申请时间',
         readonly: view,
@@ -60,9 +52,8 @@ $(function() {
     }, {
         field: 'status',
         title: '状态',
-        // formatter: Dict.getNameForList("apply_status","623907"),
         formatter: function(v,data){
-            return "审核不通过"
+          return "审核不通过"
         },
         readonly: view,
     }, {
@@ -70,27 +61,84 @@ $(function() {
         title: '备注',
         readonly: view,
     }, {
-        title: '审核人',
-        field: 'approver',
-        maxlength: 250
-    }, {
-        title: '审核时间',
-        field: 'approveDatetime',
-        formatter: dateTimeFormat
-    }, {
-        title: '审核说明',
+        field: 'creditScore',
+        title: '信用分',
+        // required: true,
+        // 'Z+': true,
+      // amount: true,
+        formatter:function(v,data){
+            return v ? moneyFormat(v, '0') : '0';
+        }
+    },{
         field: 'approveNote',
+        title: '审核意见',
+        required: true,
         maxlength: 250
     }];
 
-    buildDetail({
+    var options = {
         fields: fields,
-        view:view,
         code:code,
-        detailCode: "623031",
-    });
+        detailCode: '623031',
 
-    $('#backBtn').off('click').click(function() {
-        window.location.href = "./reject.html?"
-    });
+    };
+
+    options.buttons = [{
+        title: '通过',
+        handler: function() {
+            if ($('#jsForm').valid()) {
+              if($("#creditScore").val() === '') {
+                toastr.info('请输入信用分');
+                return;
+              }
+              if($("#creditScore").val().indexOf('.') !== -1) {
+                toastr.info('信用分需为整数');
+                return;
+              }
+              var data = {};
+                data['code'] = code;
+                data['approver'] = getUserName();
+                data["approveResult"] = "1";
+                data["approveNote"] = $("#approveNote").val();
+                data["creditScore"] =  moneyParse($("#creditScore").val());
+                reqApi({
+                    code: "623023",
+                    json: data
+                }).done(function() {
+                    sucDetail();
+                });
+            }
+        }
+    }, {
+        title: '不通过',
+        handler: function() {
+            if ($('#jsForm').valid()) {
+                var data = {};
+                data['code'] = code;
+                data['approver'] = getUserName();
+                data["approveResult"] = "0";
+                data["approveNote"] = $("#approveNote").val();
+                data["creditScore"] =  moneyParse($("#creditScore").val());
+                reqApi({
+                    code: "623023",
+                    json: data
+                }).done(function() {
+                    sucDetail();
+                });
+            }
+        }
+    }, {
+        title: '返回',
+        handler: function() {
+            window.location.href = "./reject.html"
+        }
+    }];
+
+    buildDetail(options);
+
+
+
+
+
+
 });

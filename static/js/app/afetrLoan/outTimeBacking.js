@@ -62,6 +62,12 @@ $(function () {
         field: 'yqDays',
         title: '逾期天数'
     },{
+        field: 'isStage',
+        title: '是否分期',
+        formatter: function (v,d) {
+          return d.isStage ? '是' : '否'
+        }
+    }, {
         field: 'totalAmount',
         title: '应收',
         formatter: moneyFormat
@@ -172,7 +178,7 @@ $(function () {
             return;
         }
 
-        window.location.href = "./outTimeBacking_addedit.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1";
+        window.location.href = "./outTimeBacking_addedit.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1"+'&isStage='+selRecords[0].isStage;
     });
 
     $('#overdueStagingBtn').click(function() {

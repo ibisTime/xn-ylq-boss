@@ -1,9 +1,9 @@
 $(function() {
 
 	var code = getQueryString('code');
-    var userId = getQueryString('userId');
+	var userId = getQueryString('userId');
 	var view = getQueryString('v');
-    var borrowCount,overdueCode,renewalCount,type,jdtReport;
+	var borrowCount,overdueCode,renewalCount,type,jdtReport;
 
 	var fields = [ {
         field: 'code1',
@@ -15,7 +15,7 @@ $(function() {
         field: 'mobile',
         title: '申请人',
         formatter:function(v,data){
-            borrowCount = data.user.borrowCount;
+            borrowCount = data.borrowCount;
             overdueCode = data.user.overdueCode;
             renewalCount = data.user.renewalCount;
             type = data.type;
@@ -36,7 +36,7 @@ $(function() {
             $('#mobile').append(html);
             $('#reportBtn').click(function() {
 
-                window.open("../report.html?userId=" + selRecords[0].userId);
+                window.open("../report.html?userId=" + userId);
                 // window.location.href = "../oansBefore/audit_report.html?userId=" + userId;
             });
         },

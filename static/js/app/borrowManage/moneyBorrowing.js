@@ -174,5 +174,18 @@ $(function () {
         // window.location.href = "../oansBefore/audit_report.html?userId=" + selRecords[0].user.userId;
 
     });
+  $('#detailBtn').click(function() {
+    var selRecords = $('#tableList').bootstrapTable('getSelections');
+    if (selRecords.length <= 0) {
+      toastr.info("请选择记录");
+      return;
+    }
+
+    // window.open("../moneyBorrowing_addedit.html?userId=" + selRecords[0].user.userId + );
+    // window.location.href = "../oansBefore/audit_report.html?userId=" + selRecords[0].user.userId;
+    window.location.href = './moneyBorrowing_addedit.html?userId=' + selRecords[0].user.userId + '&code=' + selRecords[0].code + '&v=1';
+
+
+  });
 
 });

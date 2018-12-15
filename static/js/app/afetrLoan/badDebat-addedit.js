@@ -95,7 +95,8 @@ $(function() {
         field: 'yqlxAmount',
         title: '逾期金额',
         // amount: true,
-        formatter:moneyFormat
+        formatter:moneyFormat,
+        readonly:view
       }, {
         field: 'signDatetime',
         title: '签约时间',

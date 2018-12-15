@@ -3,6 +3,7 @@ $(function() {
     var code = getQueryString('code');
     var userId = getQueryString('userId');
     var view = getQueryString('v');
+    var isStage = getQueryString('isStage');
     var borrowCount,overdueCode,renewalCount;
 
     var fields = [ {
@@ -111,6 +112,14 @@ $(function() {
     //     formatter: dateTimeFormat
     // }
     , {
+        field: 'stageCount',
+        title: '分期期数',
+        hidden: !isStage
+      }, {
+        field: 'stageCycle',
+        title: '分期天数',
+        hidden: !isStage
+      }, {
         field: 'updateDatetime',
         title: '最后更新时间',
         formatter: dateTimeFormat

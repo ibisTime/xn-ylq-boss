@@ -74,6 +74,15 @@ $(function () {
         window.location.href = "./offlinePayment_check.html?Code=" + selRecords[0].code+"&v=1";
     });
 
+    $('#detailBtn').off('click').click(function() {
+      var selRecords = $('#tableList').bootstrapTable('getSelections');
+      if (selRecords.length <= 0) {
+        return;
+      }
+      console.log(selRecords[0].type);
+      window.location.href = "./offlinePayment_addedit.html?Code=" + selRecords[0].code+"&v=1"+"&type="+selRecords[0].type;
+    });
+
 
 
 

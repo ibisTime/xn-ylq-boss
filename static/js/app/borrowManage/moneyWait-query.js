@@ -14,7 +14,7 @@ $(function() {
         field: 'mobile',
         title: '申请人',
         formatter:function(v,data){
-            borrowCount = data.user.borrowCount;
+            borrowCount = data.borrowCount;
             overdueCode = data.user.overdueCode;
             renewalCount = data.user.renewalCount;
             return data.user.mobile

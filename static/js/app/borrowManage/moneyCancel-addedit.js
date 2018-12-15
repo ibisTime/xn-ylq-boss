@@ -75,7 +75,8 @@ $(function() {
     }, {
 	      field: 'yqlxAmount',
         title: '逾期金额',
-        formatter: moneyFormat
+        formatter: moneyFormat,
+        readonly:view,
     }, {
         field: 'realName',
         title: '户名',

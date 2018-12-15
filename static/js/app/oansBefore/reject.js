@@ -121,7 +121,7 @@ $(function() {
         }
 
         // window.location.href = "audit_check.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1";
-      window.location.href = './query_check.html?userId=' + selRecords[0].user.userId+'&code='+selRecords[0].code+'&v=1';
+      window.location.href = './reject_check.html?userId=' + selRecords[0].user.userId+'&code='+selRecords[0].code+'&v=1';
     });
 
     $('#detailBtn').off("click").click(function() {
@@ -133,7 +133,7 @@ $(function() {
 
 
 
-        window.location.href = "./query_addedit.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1";
+        window.location.href = "./reject_addedit.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1";
     });
 
 });

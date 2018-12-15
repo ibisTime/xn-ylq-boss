@@ -3,6 +3,7 @@ $(function() {
     var code = getQueryString('code');
     var userId = getQueryString('userId');
     var view = getQueryString('v');
+    var isStage = getQueryString('isStage');
     var borrowCount,overdueCode,renewalCount;
 
     var fields = [ {
@@ -15,7 +16,7 @@ $(function() {
         field: 'mobile',
         title: '申请人',
         formatter:function(v,data){
-            borrowCount = data.user.borrowCount;
+            borrowCount = data.borrowCount;
             overdueCode = data.user.overdueCode;
             renewalCount = data.user.renewalCount;
             return data.user.mobile
@@ -53,11 +54,13 @@ $(function() {
         field: 'lxAmount',
         title: '正常利息',
         amount: true,
-    }, {
-        field: 'yqlxAmount',
-        title: '逾期利息',
-        amount: true,
-    }, {
+    },
+    //   {
+    //     field: 'yqlxAmount',
+    //     title: '逾期利息',
+    //     amount: true,
+    // },
+      {
         field: 'fwAmount',
         title: '服务费',
         amount: true,
@@ -115,6 +118,14 @@ $(function() {
     //     formatter: dateTimeFormat
     // }
     , {
+        field: 'stageCount',
+        title: '分期期数',
+        hidden: !isStage
+    }, {
+        field: 'stageCycle',
+        title: '分期天数',
+        hidden: !isStage
+    }, {
         field: 'updateDatetime',
         title: '最后更新时间',
         formatter: dateTimeFormat

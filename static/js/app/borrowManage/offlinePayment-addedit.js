@@ -1,7 +1,11 @@
 $(function() {
 
 	var code = getQueryString('code');
+	var type = getQueryString('type');
 	var view = getQueryString('v');
+  console.log(code);
+  console.log(type);
+  let fq;
 
 	var fields = [ {
         field: 'code1',
@@ -25,6 +29,28 @@ $(function() {
         key: "repay_apply_type",
         keyCode:"623907",
         formatter: Dict.getNameForList("repay_apply_type","623907"),
+        // onChange: function (data) {
+        //   if(data === '1') {
+        //     debugger;
+        //     fq = true;
+        //   } else {
+        //     fq = false;
+        //   }
+        // }
+    }, {
+        field: 'stageCount',
+        title: '分期期数',
+        hidden: type !== '1',
+        formatter: function (v,d) {
+          return d.borrow.stageCount;
+        }
+    }, {
+        field: 'stageCycle',
+        title: '分期天数',
+        hidden: type !== '1',
+        formatter: function (v,d) {
+          return d.borrow.stageCycle;
+        }
     }, {
         field: 'amount1',
         title: '借款金额',

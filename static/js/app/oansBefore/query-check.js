@@ -13,7 +13,7 @@ $(function() {
             renewalCount = data.user.renewalCount;
             type = data.type;
             jdtReport = data.jdtReport;
-            return data.user.realName ? data.user.realName + '-' + data.user.mobile : data.us.mobile;
+            return data.user.realName ? data.user.realName + '-' + data.user.mobile : data.user.mobile;
         },
         afterSet:function(data){
             var html='<div class="tools" style="float: right;margin-left: 20px;">'+
@@ -30,14 +30,15 @@ $(function() {
             $('#mobile').append(html);
             $('#mobile').after(html1);
             $('#reportBtn').click(function() {
-                if(type == 1){
-
-                    window.open("../report.html?userId=" + userId);
-                    // window.location.href = "audit_report.html?userId=" + userId;
-                }else{
-                    sessionStorage.setItem('jdtReport', jdtReport);
-                    window.location.href = "audit_netReport.html?userId=" + userId;
-                }
+              window.open("../report.html?userId=" + userId);
+                // if(type == 1){
+                //
+                //     window.open("../report.html?userId=" + userId);
+                //     // window.location.href = "audit_report.html?userId=" + userId;
+                // }else{
+                //     sessionStorage.setItem('jdtReport', jdtReport);
+                //     window.location.href = "audit_netReport.html?userId=" + userId;
+                // }
             });
         },
         readonly: view

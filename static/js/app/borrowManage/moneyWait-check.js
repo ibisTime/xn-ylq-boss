@@ -15,7 +15,7 @@ $(function() {
         field: 'mobile',
         title: '申请人',
         formatter:function(v,data){
-            borrowCount = data.user.borrowCount;
+            borrowCount = data.borrowCount;
             overdueCode = data.user.overdueCode;
             renewalCount = data.user.renewalCount;
             return data.user.mobile
@@ -65,12 +65,12 @@ $(function() {
           return  moneyFormat(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)
 
         },
-        readonly:view,
+        readonly:view
     }, {
         field: 'yhAmount',
         title: '优惠金额',
         formatter:moneyFormat,
-        readonly:view,
+        readonly:view
     }, {
         field: 'Amount',
         title: '实际应打款金额',
@@ -82,7 +82,8 @@ $(function() {
     }, {
         field: 'yqlxAmount',
         title: '逾期金额',
-        formatter: moneyFormat
+        formatter: moneyFormat,
+        readonly:view
     }, {
         field: 'realName',
         title: '户名',

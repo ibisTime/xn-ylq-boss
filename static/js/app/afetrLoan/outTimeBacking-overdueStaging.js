@@ -48,22 +48,27 @@ $(function() {
             field: 'lxAmount',
             title: '正常利息',
             amount: true,
+            readonly: true
         }, {
             field: 'fwAmount',
             title: '服务费',
             amount: true,
+            readonly: true
         }, {
             field: 'glAmount',
             title: '账户管理费',
             amount: true,
+            readonly: true
         }, {
             field: 'xsAmount',
             title: '快速信审费',
             amount: true,
+            readonly: true
         }, {
             field: 'yhAmount',
             title: '优惠金额',
-            formatter:moneyFormat
+            formatter:moneyFormat,
+            readonly: true
         }, {
             field: 'Amount',
             title: '实际应打款金额',
@@ -71,11 +76,12 @@ $(function() {
               return  moneyFormat(data.amount-(data.lxAmount+data.fwAmount+data.glAmount+data.xsAmount)+data.yhAmount)
 
             },
-            readonly:view,
+            readonly: true
         }, {
             field: 'yqlxAmount',
             title: '逾期金额',
-            formatter: moneyFormat
+            formatter: moneyFormat,
+            readonly: true
         }, {
             field: 'duration',
             title: '借款时长(天)',
@@ -92,7 +98,7 @@ $(function() {
             listCode: '623177',
             keyName: 'code',
             valueName: '{{count.DATA}}',
-            value: stageData ? stageData.code : '',
+            // value: stageData ? stageData.code : '',
             required: true,
             onChange: (v, data) => {
                 if (v) {
