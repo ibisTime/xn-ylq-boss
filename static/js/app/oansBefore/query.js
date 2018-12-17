@@ -51,16 +51,6 @@ $(function() {
       title: '申请时间',
       formatter:dateTimeFormat
     }, {
-        field: 'approver',
-        title: '审核人'
-    }, {
-        field: 'approveDatetime',
-        title: '审核时间',
-        formatter: dateTimeFormat
-    }, {
-        field: 'approveNote',
-        title: '审核说明'
-    }, {
         field: 'status',
         title: '状态',
         type: 'select',

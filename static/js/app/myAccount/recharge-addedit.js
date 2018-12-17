@@ -42,7 +42,32 @@ $(function() {
                 data.applyUser = getUserId();
                 data.applyUserType = 'B';
                 return data;
+            },
+          buttons: [{
+            title: '提交',
+            handler: function() {
+              if ($('#jsForm').valid()) {
+                var data = {};
+                data.accountNumber = accountNumber;
+                data.applyUser = getUserId();
+                data.applyUserType = 'B';
+                data.amount = moneyParse($('#amount').val());
+                data.applyNote = $('#applyNote').val();
+                // data["creditScore"] =  moneyParse($("#creditScore").val());
+                reqApi({
+                  code: "802340",
+                  json: data
+                }).done(function() {
+                  sucDetail();
+                });
+              }
             }
+          }, {
+            title: '返回',
+            handler: function() {
+              window.location.href = "./recharge.html"
+            }
+          }]
         });
 
     }, hideLoading);

@@ -21,19 +21,21 @@ $(function () {
             return moneyFormat(v, '0');
         }
     }, {
-        field: 'userReferee1',
-        title: '推荐人',
-        type: 'select',
-        formatter: function (v, data) {
-            if (data.refereeUser) {
-                var res2 = data.refereeUser.mobile;
-                if (res2) {
-                    return res2
-                } else {
-                    return "-"
-                }
-            }
-        }
+      title: '渠道',
+      field: 'userReferee',
+      type: 'select',
+      search: true,
+      pageCode: '623155',
+      keyName: 'code',
+      valueName: 'name',
+      params: {
+        start: 1,
+        limit: 50,
+        companyCode: OSS.companyCode
+      },
+      formatter: function (v,d) {
+        return d.refereeWay ? d.refereeWay.name : '';
+      }
     }, {
         title: '是否黑名单',
         field: 'isBlackList',
@@ -89,19 +91,6 @@ $(function () {
     }, {
         title: '备注',
         field: 'remark'
-    }, {
-      title: '渠道',
-      field: 'userReferee',
-      type: 'select',
-      search: true,
-      pageCode: '623155',
-      keyName: 'code',
-      valueName: 'name',
-      params: {
-        start: 1,
-        limit: 50,
-        companyCode: OSS.companyCode
-      }
     }
     ];
     buildList({

@@ -3,6 +3,7 @@ $(function() {
 	var code = getQueryString('code');
 	var type = getQueryString('type');
 	var view = getQueryString('v');
+	var isStage = type;
 
 	var fields = [ {
         field: 'code1',
@@ -13,41 +14,42 @@ $(function() {
     }, {
         field: 'refNo',
         title: '借款编号',
-    }, {
-        field: 'loanType',
-        title: '放款方式',
-        formatter: function(v,data){
-            return data.borrow ? Dict.getNameForList1('loan_type', '', data.borrow.loanType) : '';
+        formatter: function (v,d) {
+          var dCode = d.borrow ? d.borrow.code : '';
+          var urlHtml = '<a href="./moneyBack_addedit.html?v=1&code='+ dCode + '&isStage=' + isStage +'">'+dCode+'</a>';
+          return urlHtml;
         }
     }, {
+      field: 'borrowAmount',
+      title: '借款金额',
+      formatter: function (v,d) {
+        return d.borrow ? moneyFormat(d.borrow.borrowAmount) : 0;
+      }
+    }, {
+      field: 'stageCount',
+      title: '还款期数',
+      hidden: type !== '1',
+      formatter: function (v,d) {
+        return d.borrow.stageCount;
+      }
+    }, {
+      field: 'stageCycle',
+      title: '还款天数',
+      hidden: type !== '1',
+      formatter: function (v,d) {
+        return d.borrow.stageCycle;
+      }
+    }, {
+    field: 'amount',
+    title: '还款金额',
+    amount: true,
+  }, {
         field: 'type',
         title: '还款方式',
         type: "select",
         key: "repay_apply_type",
         keyCode:"623907",
         formatter: Dict.getNameForList("repay_apply_type","623907")
-    }, {
-        field: 'stageCount',
-        title: '分期期数',
-        hidden: type !== '1',
-        formatter: function (v,d) {
-          return d.borrow.stageCount;
-        }
-    }, {
-        field: 'stageCycle',
-        title: '分期天数',
-        hidden: type !== '1',
-        formatter: function (v,d) {
-          return d.borrow.stageCycle;
-        }
-    }, {
-        field: 'borrowAmount',
-        title: '借款金额',
-        amount: true,
-        readonly: view,
-        formatter: function(v,data){
-          return data.borrow ? moneyFormat(data.borrow.borrowAmount) : 0;
-        }
     }, {
         field: 'lxAmount',
         title: '正常利息',

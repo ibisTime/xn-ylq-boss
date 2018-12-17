@@ -8,7 +8,7 @@ $(function () {
         title: "期数"
     }, {
         field: 'cycle',
-        title: '分期周期'
+        title: '分期周期（天）'
     }, {
         field: "rate",
         title: "分期日利率"

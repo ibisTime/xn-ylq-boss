@@ -29,6 +29,9 @@ $(function() {
         title: '申请时间',
         formatter: dateTimeFormat
     }, {
+      field: "applyNote",
+      title: "打款备注"
+    }, {
         field: 'payUserName',
         title: '审核人'
     }, {

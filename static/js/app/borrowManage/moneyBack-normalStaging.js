@@ -91,7 +91,7 @@ $(function() {
             readonly: true
         }, {
             field: 'repaymentSituation',
-            title: '还款情况列表查询',
+            title: '分期计划',
             type: 'o2m',
             readonly: true,
             useData: repaymentSituationList,
