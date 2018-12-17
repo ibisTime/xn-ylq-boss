@@ -72,6 +72,9 @@ $(function () {
             }
             $('#userInfoCheck_search_phone_with_other_names').html(phone_with_other_names_html);
 
+            // 活跃识别
+
+
             // 消费识别
             var table_consumption_detail_recognition_html = '';
             if (data.consumption_detail.length > 0) {
