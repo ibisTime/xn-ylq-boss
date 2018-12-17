@@ -3223,14 +3223,16 @@ function getDefaultFileIcon() {
 }
 
 $(function () {
-    var validTimer;
-    $(document).on('mousemove', function (e) {
-        clearTimeout(validTimer);
-        validTimer = setTimeout(function () {
-            sessionStorage.setItem('token', '');
-            location.href = '../signin.html?kind=' + (sessionStorage.getItem('loginKind') || '01');
-        }, +OSS.userValidTime * 60 * 1000);
-    });
+    if(window.parent.location.href.indexOf('repore.html') > -1) {
+        var validTimer;
+        $(document).on('mousemove', function (e) {
+            clearTimeout(validTimer);
+            validTimer = setTimeout(function () {
+                sessionStorage.setItem('token', '');
+                location.href = '../signin.html?kind=' + (sessionStorage.getItem('loginKind') || '01');
+            }, +OSS.userValidTime * 60 * 1000);
+        });
+    }
 });
 
 // 导入

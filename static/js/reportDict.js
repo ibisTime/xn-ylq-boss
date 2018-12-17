@@ -121,5 +121,14 @@ var DictList = {
         'fund_redeem_cnt': '基金赎回笔数',
         'cun_jin_bao_redeem_amt': '存金宝赎回金额(元)',
         'cun_jin_bao_redeem_cnt': '存金宝赎回笔数'
-    }
+    },
+    'basic_check_items': {
+        'mobile_silence_3m': '号码沉默度',
+        'mobile_silence_6m': '招财宝赎回金额(元)',
+        'zhao_cai_bao_redeem_cnt': '招财宝赎回笔数',
+        'fund_redeem_amt': '基金赎回金额(元)',
+        'fund_redeem_cnt': '基金赎回笔数',
+        'cun_jin_bao_redeem_amt': '存金宝赎回金额(元)',
+        'cun_jin_bao_redeem_cnt': '存金宝赎回笔数'
+    },
 }

@@ -91,27 +91,20 @@
                     </tr>
                     <tr class="center">
                         <td>电话号码组合过其他身份证</td>
-                        <td class="userinfocheck">
-                            610424199303043125,
-                            332502199501101234,
-                        </td>
+                        <td class="userinfocheck"><i id="userInfoCheck_search_phone_with_other_idcards"></i></td>
                     </tr>
                     <tr class="center">
                         <td>电话号码注册过的相关企业数量</td>
-                        <td>0</td>
+                        <td><i id="userInfoCheck_search_register_org_cnt"></i></td>
                     </tr>
                     <tr class="center">
                         <td>电话号码注册过的相关企业类型</td>
-                        <td class="userinfocheck">
-                        </td>
-
+                        <td class="userinfocheck"><i id="userInfoCheck_search_register_org_type"></i></td>
                     </tr>
                     <tr class="center">
                         <td>电话号码出现过的公开信息网站</td>
-                        <td class="userinfocheck">
-                        </td>
+                        <td class="userinfocheck"><i id="userInfoCheck_search_arised_open_web"></i></td>
                     </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -123,45 +116,34 @@
             <div class="tabbox">
                 <table>
                     <tbody>
-                    <tr class="center ">
+                    <tr class="center">
                         <td rowspan="6" class="hideborder"
                             style="text-align: center;vertical-align: middle;width: 15%;border-bottom: none;">
                             黑名单信息
                         </td>
                         <td style="width: 25%">黑中介分数</td>
-                        <td>61
-                            (分数范围0-100，40分以下为高危人群)
-                        </td>
+                        <td><i id="checkBlackInfo_phone_gray_score"></i> (分数范围0-100，40分以下为高危人群)</td>
                     </tr>
                     <tr class="center">
                         <td>直接联系人中黑名单人数</td>
-                        <td>0
-                            (直接联系人：和被查询号码有通话记录)
-                        </td>
+                        <td><i id="checkBlackInfo_contacts_class1_blacklist_cnt"></i> (直接联系人：和被查询号码有通话记录)</td>
                     </tr>
                     <tr class="center">
                         <td>间接联系人中黑名单人数</td>
-                        <td>20
-                            (和被查询人的直接联系人有通话记录)
-                        </td>
+                        <td><i id="checkBlackInfo_contacts_class2_blacklist_cnt"></i> (和被查询人的直接联系人有通话记录)</td>
                     </tr>
                     <tr class="center">
                         <td>直接联系人人数</td>
-                        <td>384 (直接联系人：和被查询号码有通话记录)</td>
+                        <td><i id="checkBlackInfo_contacts_class1_cnt"></i> (直接联系人：和被查询号码有通话记录)</td>
                     </tr>
                     <tr class="center">
                         <td>引起黑名单的直接联系人数量</td>
-                        <td>9
-                            (直接联系人有和黑名单用户的通讯记录的号码数量)
-                        </td>
+                        <td><i id="checkBlackInfo_contacts_router_cnt"></i> (直接联系人有和黑名单用户的通讯记录的号码数量)</td>
                     </tr>
                     <tr class="center">
                         <td>直接联系人中引起间接黑名单占比</td>
-                        <td>0.02
-                            (直接联系人有和黑名单用户的通讯记录的号码数量在直接联系人数量中的百分比)
-                        </td>
+                        <td><i id="checkBlackInfo_contacts_router_ratio"></i> (直接联系人有和黑名单用户的通讯记录的号码数量在直接联系人数量中的百分比)</td>
                     </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -170,7 +152,7 @@
         <div class="table">
             <h5 class="littleTItle">1.2 数据来源</h5>
             <div class="tabbox">
-                <table>
+                <table id="table_report">
                     <thead>
                     <tr class="center">
                         <th>来源名称</th>
@@ -187,7 +169,7 @@
         <div class="table">
             <h5 class="littleTItle">1.3信息校验</h5>
             <div class="tabbox">
-                <table>
+                <table id="table_basic_check_items">
                     <thead>
                     <tr>
                         <th class="left">检查项</th>
@@ -197,27 +179,27 @@
                     <tbody>
                     <tr>
                         <td>身份证号码有效性</td>
-                        <td class="center">通过检验</td>
+                        <td class="td1_1"></td>
                     </tr>
                     <tr>
                         <td>邮箱有效性</td>
-                        <td class="center">未提供邮箱</td>
+                        <td class="td2_1"></td>
                     </tr>
                     <tr>
                         <td>通讯地址有效性</td>
-                        <td class="center">未提供通讯地址</td>
+                        <td class="td3_1"></td>
                     </tr>
                     <tr>
                         <td>身份证号码是否与运营商数据匹配</td>
-                        <td class="center">匹配失败</td>
+                        <td class="td4_1"></td>
                     </tr>
                     <tr>
                         <td>姓名是否与运营商数据匹配</td>
-                        <td class="center">匹配失败</td>
+                        <td class="td5_1"></td>
                     </tr>
                     <tr>
                         <td>通话记录完整性</td>
-                        <td class="center">通话记录正常</td>
+                        <td class="td6_1"></td>
                     </tr>
                     </tbody>
                 </table>
@@ -229,7 +211,7 @@
             <h5 class="littleTItle">1.4社交分析摘要</h5>
             <h6 class="sort">朋友圈</h6>
             <div class="tabbox">
-                <table>
+                <table id="table_friend_circle_summary">
                     <thead>
                     <tr>
                         <th class="left">魔蝎变量</th>
@@ -241,32 +223,32 @@
                     <tbody>
                     <tr>
                         <td>朋友圈大小</td>
-                        <td class="center">180</td>
-                        <td class="center">388</td>
+                        <td class="td1_1"></td>
+                        <td class="td1_2"></td>
                         <td class="center">近3/6月联系号码数</td>
                     </tr>
                     <tr>
                         <td>朋友圈亲密度</td>
-                        <td class="center">3</td>
-                        <td class="center">5</td>
+                        <td class="td2_1"></td>
+                        <td class="td2_2"></td>
                         <td class="center">近3/6月联系十次以上的号码数量</td>
                     </tr>
                     <tr>
                         <td>朋友圈中心地</td>
-                        <td class="center">杭州</td>
-                        <td class="center">杭州</td>
+                        <td class="td3_1"></td>
+                        <td class="td3_2"></td>
                         <td class="center">近3/6月联系次数最多的归属地</td>
                     </tr>
                     <tr>
                         <td>朋友圈是否在本地</td>
-                        <td class="center">否</td>
-                        <td class="center">否</td>
+                        <td class="td4_1"></td>
+                        <td class="td4_2"></td>
                         <td class="center">近3/6月朋友圈中心地是否与手机归属地一致</td>
                     </tr>
                     <tr>
                         <td>互通电话的号码数目</td>
-                        <td class="center">18</td>
-                        <td class="center">48</td>
+                        <td class="td5_1"></td>
+                        <td class="td5_2"></td>
                         <td class="center">近3/6月互有主叫和被叫的联系人电话号码数目(去重)</td>
                     </tr>
                     </tbody>
@@ -277,7 +259,7 @@
         <div class="table">
             <h6 class="sort">联系人Top3 (近3月通话次数降序)</h6>
             <div class="tabbox">
-                <table>
+                <table id="table_friend_circle_peer_top3_3m">
                     <thead>
                     <tr class="center">
                         <th>号码</th>
@@ -289,30 +271,6 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="center">
-                        <td>18685033242</td>
-                        <td>贵阳</td>
-                        <td>20</td>
-                        <td>3905</td>
-                        <td>8</td>
-                        <td>12</td>
-                    </tr>
-                    <tr class="center">
-                        <td>13777781234</td>
-                        <td>温州</td>
-                        <td>15</td>
-                        <td>1778</td>
-                        <td>14</td>
-                        <td>1</td>
-                    </tr>
-                    <tr class="center">
-                        <td>15706841122</td>
-                        <td>宁波</td>
-                        <td>13</td>
-                        <td>918</td>
-                        <td>8</td>
-                        <td>5</td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -320,7 +278,7 @@
         <div class="table">
             <h6 class="sort">联系人Top3 (近6月通话次数降序)</h6>
             <div class="tabbox">
-                <table>
+                <table id="table_friend_circle_peer_top3_6m">
                     <thead>
                     <tr class="center">
                         <th>号码</th>
@@ -332,30 +290,6 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="center">
-                        <td>13777782233</td>
-                        <td>温州</td>
-                        <td>39</td>
-                        <td>3727</td>
-                        <td>26</td>
-                        <td>13</td>
-                    </tr>
-                    <tr class="center">
-                        <td>18685035544</td>
-                        <td>贵阳</td>
-                        <td>37</td>
-                        <td>6094</td>
-                        <td>13</td>
-                        <td>24</td>
-                    </tr>
-                    <tr class="center">
-                        <td>15706846655</td>
-                        <td>宁波</td>
-                        <td>14</td>
-                        <td>997</td>
-                        <td>8</td>
-                        <td>6</td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -364,7 +298,7 @@
         <div class="table">
             <h6 class="sort">联系人号码归属地Top3 (近3月通话次数降序)</h6>
             <div class="tabbox">
-                <table>
+                <table id="table_friend_circle_loc_top3_3m">
                     <thead>
                     <tr class="center">
                         <th>地址</th>
@@ -376,30 +310,6 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="center">
-                        <td>杭州</td>
-                        <td>158</td>
-                        <td>120</td>
-                        <td>4182</td>
-                        <td>44</td>
-                        <td>114</td>
-                    </tr>
-                    <tr class="center">
-                        <td>温州</td>
-                        <td>31</td>
-                        <td>10</td>
-                        <td>2756</td>
-                        <td>25</td>
-                        <td>6</td>
-                    </tr>
-                    <tr class="center">
-                        <td>贵阳</td>
-                        <td>20</td>
-                        <td>1</td>
-                        <td>3905</td>
-                        <td>8</td>
-                        <td>12</td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -407,7 +317,7 @@
         <div class="table">
             <h6 class="sort">联系人号码归属地Top3 (近6月通话次数降序)</h6>
             <div class="tabbox">
-                <table>
+                <table id="table_friend_circle_loc_top3_6m">
                     <thead>
                     <tr class="center">
                         <th>地址</th>
@@ -416,57 +326,6 @@
                         <th>通话时长(秒)</th>
                         <th>主叫次数</th>
                         <th>被叫次数</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr class="center">
-                        <td>杭州</td>
-                        <td>331</td>
-                        <td>239</td>
-                        <td>11949</td>
-                        <td>101</td>
-                        <td>230</td>
-                    </tr>
-                    <tr class="center">
-                        <td>绍兴</td>
-                        <td>85</td>
-                        <td>56</td>
-                        <td>2491</td>
-                        <td>20</td>
-                        <td>65</td>
-                    </tr>
-                    <tr class="center">
-                        <td>温州</td>
-                        <td>62</td>
-                        <td>13</td>
-                        <td>7401</td>
-                        <td>41</td>
-                        <td>21</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="table">
-            <h6 class="sort">是否呼叫指定联系人号码(近6月通话次数降序)</h6>
-            <div class="tabbox">
-                <table>
-                    <thead>
-                    <tr class="center">
-                        <th>姓名</th>
-                        <th>号码</th>
-                        <th>关系</th>
-                        <th>归属地</th>
-                        <th>短信次数</th>
-                        <th>通话次数</th>
-                        <th>通话时长(秒)</th>
-                        <th>主叫次数</th>
-                        <th>主叫时长(秒)</th>
-                        <th>被叫次数</th>
-                        <th>被叫时长(秒)</th>
-                        <th>第一次通话时间</th>
-                        <th>最后一次通话时间</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -480,7 +339,7 @@
             <h5 class="littleTItle">1.5 风险分析摘要</h5>
             <h6 class="sort">风险识别</h6>
             <div class="tabbox">
-                <table>
+                <table id="table_basic_check_items_info">
                     <thead>
                     <tr>
                         <th class="left">魔蝎变量</th>
@@ -492,27 +351,27 @@
                     <tbody>
                     <tr>
                         <td>号码沉默度</td>
-                        <td class="center">3</td>
-                        <td class="center">3</td>
-                        <td class="center">满分10分</td>
+                        <td class="info1_1"></td>
+                        <td class="info1_2"></td>
+                        <td>满分10分</td>
                     </tr>
                     <tr>
                         <td>欠费风险度</td>
-                        <td class="center">0</td>
-                        <td class="center">0</td>
-                        <td class="center">满分10分</td>
+                        <td class="info2_1"></td>
+                        <td class="info2_2"></td>
+                        <td>满分10分</td>
                     </tr>
                     <tr>
                         <td>亲情网风险度</td>
-                        <td class="center">0</td>
-                        <td class="center">--</td>
-                        <td class="center">满分10分</td>
+                        <td class="info3_1"></td>
+                        <td class="info3_2">--</td>
+                        <td>满分10分</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
             <div class="tabbox">
-                <table>
+                <table id="table_basic_check_items_result">
                     <thead>
                     <tr>
                         <th class="left" style="width: 71.95%;">魔蝎变量</th>
@@ -520,6 +379,18 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <tr>
+                        <td>申请人姓名+身份证号码是否出现在法院黑名单</td>
+                        <td class="result1"></td>
+                    </tr>
+                    <tr>
+                        <td>申请人姓名+身份证号码是否出现在金融机构黑名单</td>
+                        <td class="result2"></td>
+                    </tr>
+                    <tr>
+                        <td>申请人姓名+手机号码是否出现在金融机构黑名单</td>
+                        <td class="result3"></td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -529,7 +400,7 @@
         <div class="table">
             <h6 class="sort">风险联系</h6>
             <div class="tabbox">
-                <table>
+                <table id="table_call_risk_analysis_contact">
                     <thead>
                     <tr class="center">
                         <th>号码类别</th>
@@ -549,7 +420,7 @@
             <h5 class="littleTItle">1.6 活跃分析摘要</h5>
             <h6 class="sort">活跃识别</h6>
             <div class="tabbox">
-                <table id="">
+                <table id="table_active_degree_active">
                     <thead>
                         <tr>
                             <th class="left">魔蝎变量</th>

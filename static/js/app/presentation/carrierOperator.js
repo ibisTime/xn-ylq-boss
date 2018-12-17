@@ -72,7 +72,305 @@ $(function () {
             }
             $('#userInfoCheck_search_phone_with_other_names').html(phone_with_other_names_html);
 
+            // 电话号码组合过其他身份证
+            var phone_with_other_idcards_html = '';
+            if (data.user_info_check[0].check_search_info.phone_with_other_idcards.length > 0) {
+                data.user_info_check[0].check_search_info.phone_with_other_idcards.forEach(function (d, i) {
+                    phone_with_other_idcards_html += d;
+                    if (data.user_info_check[0].check_search_info.phone_with_other_idcards.length-1 > i) {
+                        phone_with_other_idcards_html += ','
+                    }
+                });
+            }
+            $('#userInfoCheck_search_phone_with_other_idcards').html(phone_with_other_idcards_html);
+
+            // 电话号码注册过的相关企业数量
+            $('#userInfoCheck_search_register_org_cnt').html(data.user_info_check[0].check_search_info.register_org_cnt);
+
+            // 电话号码注册过的相关企业类型
+            $('#userInfoCheck_search_register_org_type').html(DictList.searched_org_type[data.user_info_check[0].check_search_info.register_org_type]);
+
+            // 电话号码出现过的公开信息网站
+            $('#userInfoCheck_search_arised_open_web').html(data.user_info_check[0].check_search_info.arised_open_web);
+
+            // 用户信息检测(黑名单)
+            if (data.user_info_check[0].check_black_info) {
+                var check_black_info = data.user_info_check[0].check_black_info;
+                Object.keys(check_black_info).forEach(function (d) {
+                    $('#checkBlackInfo_'+ d).html(check_black_info[d]);
+                });
+            }
+
+            // 数据来源
+            var table_report_html = '';
+            if (data.report.length > 0) {
+                var source_name_zh = '';
+                var data_type = '';
+                var data_gain_time = '';
+                data.report.forEach(function (d) {
+                    if(d.key === 'source_name_zh') {
+                        source_name_zh = d.value;
+                    }
+                    if(d.key === 'data_type') {
+                        data_type = d.value;
+                    }
+                    if(d.key === 'data_gain_time') {
+                        data_gain_time = d.value;
+                    }
+                });
+                table_report_html += '<tr class="center">' +
+                    '<td>' + source_name_zh + '</td>' +
+                    '<td>' + data_type + '</td>' +
+                    '<td>' + data_gain_time + '</td>' +
+                    '</tr>';
+            } else {
+                table_report_html = '<tr class="center"><td colspan="5">暂无数据</td></tr>'
+            }
+            $('#table_report tbody').html(table_report_html);
+
+
+            // 信息校验
+            if (data.basic_check_items.length > 0) {
+                data.basic_check_items.forEach(function (d, i) {
+                    // 身份证号码有效性
+                    if (d.check_item === 'idcard_check') {
+                        $('#table_basic_check_items .td1_1').html(d.result);
+                    }
+                    // 邮箱有效性
+                    if (d.check_item === 'email_check') {
+                        $('#table_basic_check_items .td2_1').html(d.result);
+                    }
+                    // 通讯地址有效性
+                    if (d.check_item === 'address_check') {
+                        $('#table_basic_check_items .td3_1').html(d.result);
+                    }
+
+                    // 身份证号码是否与运营商数据匹配
+                    if (d.check_item === 'idcard_match') {
+                        $('#table_basic_check_items .td4_1').html(d.result);
+                    }
+
+                    // 姓名是否与运营商数据匹配
+                    if (d.check_item === 'name_match') {
+                        $('#table_basic_check_items .td5_1').html(d.result);
+                    }
+
+                    // 通话记录完整性
+                    if (d.check_item === 'call_data_check') {
+                        $('#table_basic_check_items .td6_1').html(d.result);
+                    }
+                });
+            }
+
+            // 朋友圈
+            if (data.friend_circle['summary'].length > 0) {
+                data.friend_circle['summary'].forEach(function (d, i) {
+                    // 朋友圈大小 近3月联系号码数
+                    if (d.key === 'friend_num_3m') {
+                        $('#table_friend_circle_summary .td1_1').html(d.value);
+                    }
+                    // 朋友圈大小 近6月联系号码数
+                    if (d.key === 'friend_num_6m') {
+                        $('#table_friend_circle_summary .td1_2').html(d.value);
+                    }
+                    // 朋友圈亲密度 近3月联系十次以上的号码数量
+                    if (d.key === 'good_friend_num_3m') {
+                        $('#table_friend_circle_summary .td2_1').html(d.value);
+                    }
+
+                    // 朋友圈亲密度 近6月联系十次以上的号码数量
+                    if (d.key === 'good_friend_num_6m') {
+                        $('#table_friend_circle_summary .td2_2').html(d.value);
+                    }
+
+                    // 朋友圈中心地 近3月联系次数最多的归属地
+                    if (d.key === 'friend_city_center_3m') {
+                        $('#table_friend_circle_summary .td3_1').html(d.value);
+                    }
+
+                    // 朋友圈中心地 近6月联系次数最多的归属地
+                    if (d.key === 'friend_city_center_6m') {
+                        $('#table_friend_circle_summary .td3_2').html(d.value);
+                    }
+
+                    // 朋友圈是否在本地 近3月朋友圈中心地是否与手机归属地一致
+                    if (d.key === 'is_city_match_friend_city_center_3m') {
+                        $('#table_friend_circle_summary .td4_1').html(d.value);
+                    }
+
+                    // 朋友圈是否在本地 近6月朋友圈中心地是否与手机归属地一致
+                    if (d.key === 'is_city_match_friend_city_center_6m') {
+                        $('#table_friend_circle_summary .td4_2').html(d.value);
+                    }
+
+                    // 互通电话的号码数目 近3月互有主叫和被叫的联系人电话号码数目(去重)
+                    if (d.key === 'inter_peer_num_3m') {
+                        $('#table_friend_circle_summary .td5_1').html(d.value);
+                    }
+
+                    // 互通电话的号码数目 近6月互有主叫和被叫的联系人电话号码数目(去重)
+                    if (d.key === 'inter_peer_num_6m') {
+                        $('#table_friend_circle_summary .td5_2').html(d.value);
+                    }
+                });
+            }
+
+            // 联系人Top3 (近3/6月通话次数降序)
+            var table_friend_circle_peer_top3_3m_html = '';
+            var table_friend_circle_peer_top3_6m_html = '';
+
+            if (data.friend_circle.peer_num_top_list.length > 0) {
+                data.friend_circle.peer_num_top_list.forEach(function (f, i) {
+                    if(f.key === 'peer_num_top3_3m' && f.top_item.length > 0) {
+                        f.top_item.forEach(function (d, i) {
+                            table_friend_circle_peer_top3_3m_html += '<tr class="center">' +
+                                '<td>' + d.peer_number + '</td>' +
+                                '<td>' + d.peer_num_loc + '</td>' +
+                                '<td>' + d.call_cnt + '</td>' +
+                                '<td>' + d.call_time + '</td>' +
+                                '<td>' + d.dial_cnt + '</td>' +
+                                '<td>' + d.dialed_cnt + '</td>' +
+                                '</tr>';
+                        })
+                    } else if(f.key === 'peer_num_top3_3m') {
+                        table_friend_circle_peer_top3_3m_html = '<tr class="center"><td colspan="5">暂无数据</td></tr>'
+                    }
+
+                    if(f.key === 'peer_num_top3_6m' && f.top_item.length > 0) {
+                        f.top_item.forEach(function (d, i) {
+                            table_friend_circle_peer_top3_6m_html += '<tr class="center">' +
+                                '<td>' + d.peer_number + '</td>' +
+                                '<td>' + d.peer_num_loc + '</td>' +
+                                '<td>' + d.call_cnt + '</td>' +
+                                '<td>' + d.call_time + '</td>' +
+                                '<td>' + d.dial_cnt + '</td>' +
+                                '<td>' + d.dialed_cnt + '</td>' +
+                                '</tr>';
+                        })
+                    } else if(f.key === 'peer_num_top3_6m') {
+                        table_friend_circle_peer_top3_6m_html = '<tr class="center"><td colspan="5">暂无数据</td></tr>'
+                    }
+                });
+            }
+            $('#table_friend_circle_peer_top3_3m tbody').html(table_friend_circle_peer_top3_3m_html);
+            $('#table_friend_circle_peer_top3_6m tbody').html(table_friend_circle_peer_top3_6m_html);
+
+            // 联系人号码归属地Top3 (近3/6月通话次数降序)
+            var table_friend_circle_loc_top3_3m_html = '';
+            var table_friend_circle_loc_top3_6m_html = '';
+
+            if (data.friend_circle.location_top_list.length > 0) {
+                data.friend_circle.location_top_list.forEach(function (f, i) {
+                    if(f.key === 'location_top3_3m' && f.top_item.length > 0) {
+                        f.top_item.forEach(function (d, i) {
+                            table_friend_circle_loc_top3_3m_html += '<tr class="center">' +
+                                '<td>' + d.location + '</td>' +
+                                '<td>' + d.call_cnt + '</td>' +
+                                '<td>' + d.peer_number_cnt + '</td>' +
+                                '<td>' + d.call_time + '</td>' +
+                                '<td>' + d.dial_cnt + '</td>' +
+                                '<td>' + d.dialed_cnt + '</td>' +
+                                '</tr>';
+                        })
+                    } else if(f.key === 'location_top3_3m') {
+                        table_friend_circle_loc_top3_3m_html = '<tr class="center"><td colspan="5">暂无数据</td></tr>'
+                    }
+
+                    if(f.key === 'location_top3_6m' && f.top_item.length > 0) {
+                        f.top_item.forEach(function (d, i) {
+                            table_friend_circle_loc_top3_6m_html += '<tr class="center">' +
+                                '<td>' + d.location + '</td>' +
+                                '<td>' + d.call_cnt + '</td>' +
+                                '<td>' + d.peer_number_cnt + '</td>' +
+                                '<td>' + d.call_time + '</td>' +
+                                '<td>' + d.dial_cnt + '</td>' +
+                                '<td>' + d.dialed_cnt + '</td>' +
+                                '</tr>';
+                        })
+                    } else if(f.key === 'location_top3_6m') {
+                        table_friend_circle_loc_top3_6m_html = '<tr class="center"><td colspan="5">暂无数据</td></tr>'
+                    }
+                });
+            }
+            $('#table_friend_circle_loc_top3_3m tbody').html(table_friend_circle_loc_top3_3m_html);
+            $('#table_friend_circle_loc_top3_6m tbody').html(table_friend_circle_loc_top3_6m_html);
+
+            // 风险识别
+            if (data.basic_check_items.length > 0) {
+                data.basic_check_items.forEach(function (d, i) {
+                    // 号码沉默度 3月
+                    if (d.check_item === 'mobile_silence_3m') {
+                        $('#table_basic_check_items_info .info1_1').html(d.result);
+                    }
+                    // 号码沉默度 6月
+                    if (d.check_item === 'mobile_silence_6m') {
+                        $('#table_basic_check_items_info .info1_2').html(d.result);
+                    }
+                    // 欠费风险度 3月
+                    if (d.check_item === 'arrearage_risk_3m') {
+                        $('#table_basic_check_items_info .info2_1').html(d.result);
+                    }
+                    // 欠费风险度 6月
+                    if (d.check_item === 'arrearage_risk_6m') {
+                        $('#table_basic_check_items_info .info2_2').html(d.result);
+                    }
+                    // 亲情网风险度
+                    if (d.check_item === 'binding_risk') {
+                        $('#table_basic_check_items_info .info3_1').html(d.result);
+                    }
+                    // 申请人姓名+身份证号码是否出现在法院黑名单
+                    if (d.check_item === 'is_name_and_idcard_in_court_black') {
+                        $('#table_basic_check_items_result .result1').html(d.result);
+                    }
+                    // 申请人姓名+身份证号码是否出现在金融机构黑名单
+                    if (d.check_item === 'is_name_and_idcard_in_finance_black') {
+                        $('#table_basic_check_items_result .result2').html(d.result);
+                    }
+                    // 申请人姓名+手机号码是否出现在金融机构黑名单
+                    if (d.check_item === 'is_name_and_mobile_in_finance_black') {
+                        $('#table_basic_check_items_result .result3').html(d.result);
+                    }
+                });
+            }
+
+            // 风险联系
+            var table_call_risk_analysis_contact_html = '';
+            if (data.call_risk_analysis.length > 0) {
+                data.call_risk_analysis.forEach(function (d, i) {
+                    if(d.analysis_item === '110' || d.analysis_item === '120' || d.analysis_item === 'loan' ||
+                        d.analysis_item === 'credit_card' || d.analysis_item === 'collection') {
+                        table_call_risk_analysis_contact_html += '<tr class="center">' +
+                            '<td>' + d.analysis_desc + '</td>' +
+                            '<td>' + d.analysis_point.call_cnt_3m + '</td>' +
+                            '<td>' + d.analysis_point.call_cnt_6m + '</td>' +
+                            '<td>' + d.analysis_point.avg_call_time_3m + '</td>' +
+                            '<td>' + d.analysis_point.avg_call_time_6m + '</td>' +
+                            '</tr>';
+                    }
+                });
+            } else {
+                table_call_risk_analysis_contact_html = '<tr class="center"><td colspan="5">暂无数据</td></tr>'
+            }
+            $('#table_call_risk_analysis_contact tbody').html(table_call_risk_analysis_contact_html);
+
             // 活跃识别
+            var table_active_degree_active_html = '';
+            if (data.active_degree.length > 0) {
+                data.active_degree.forEach(function (d, i) {
+                    if(d.app_point === 'call_day' || d.app_point === 'dial_cnt' || d.app_point === 'dialed_cnt' ||
+                        d.app_point === 'dial_time' || d.app_point === 'dialed_time') {
+                        table_active_degree_active_html += '<tr class="center">' +
+                            '<td>' + d.app_point_zh + '</td>' +
+                            '<td>' + d.item.item_3m + '</td>' +
+                            '<td>' + d.item.item_6m + '</td>' +
+                            '</tr>';
+                    }
+                });
+            } else {
+                table_active_degree_active_html = '<tr class="center"><td colspan="5">暂无数据</td></tr>'
+            }
+            $('#table_active_degree_active tbody').html(table_active_degree_active_html);
+
 
 
             // 消费识别
