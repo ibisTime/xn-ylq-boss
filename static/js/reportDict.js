@@ -44,5 +44,50 @@ var DictList = {
         'jiebei_rpy_cnt': '借呗还款笔数',
         'other_rpy_amt': '其他还款金额(元)',
         'other_rpy_cnt': '其他还款笔数'
-    }
+    },
+  // 主要支出 - 消费
+  'major_expenditure_consumption': {
+    'total_consume_amt': '总消费金额(元)',
+    'total_consume_cnt': '总消费笔数',
+    'max_consume_amt': '月单笔最大消费金额(元)',
+    'online_shopping_amt': '网购金额(元)',
+    'online_shopping_cnt': '网购笔数',
+    'takeout_amt': '外卖金额(元)',
+    'takeout_cnt': '外卖笔数',
+    'lifepay_amt': '生活缴费金额(元)',
+    'lifepay_cnt': '生活缴费笔数',
+    'taxipay_amt': '打车金额(元)',
+    'taxipay_cnt': '打车笔数',
+    'carpay_amt': '汽车用品金额(元)',
+    'carpay_cnt': '汽车用品笔数',
+    'travel_amt': '航旅金额(元)',
+    'travel_cnt': '航旅笔数',
+    'lottery_amt': '彩票金额(元)',
+    'lottery_rate': '彩票金额占比',
+    'lottery_cnt': '彩票笔数',
+    'game_amt': '游戏金额(元)',
+    'game_rate': '游戏金额占比',
+    'game_cnt': '游戏笔数'
+  },
+  // 主要支出 - 转账-转出
+  'major_expenditure_transfer_out_info': {
+    'out_amt': '转出总金额(元)',
+    'out_cnt': '转出总笔数',
+    'max_out_amt': '月单笔最大转出金额(元)'
+  },
+  // 主要支出 - 理财
+  'major_expenditure_financial': {
+    'zhao_cai_bao_purchase_amt': '招财申购金额(元)',
+    'fund_purchase_amt': '基金申购金额(元)',
+    'cun_jin_bao_purchase_amt': '存金宝申购金额(元)'
+  },
+  // 主要支出 - 其他
+  'major_expenditure_financial': {
+    'redpkt_amt': '发红包金额',
+    'redpkt_cnt': '发红包个数',
+    'max_redpkt_amt': '月单个红包最大金额(元)',
+    'donate_amt': '爱心捐赠金额(元)',
+    'donate_cnt': '爱心捐赠笔数',
+    'gratuity_amt': '打赏金额(元)'
+  }
 }
