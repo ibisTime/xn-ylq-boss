@@ -33,5 +33,16 @@ var DictList = {
         'evening': '晚上[19:30-23:30]',
         'daybreak': '凌晨[23:30-1:30]',
         'midnight': '深夜[1:30-5:30]',
+    },
+    // 主要支出 - 总资产
+    'major_expenditure_repayment': {
+        'credit_rpy_amt': '信用卡还款金额(元)',
+        'credit_rpy_cnt': '信用卡还款笔数',
+        'huabei_rpy_amt': '花呗还款金额(元)',
+        'huabei_rpy_cnt': '花呗还款笔数',
+        'jiebei_rpy_amt': '借呗还款金额(元)',
+        'jiebei_rpy_cnt': '借呗还款笔数',
+        'other_rpy_amt': '其他还款金额(元)',
+        'other_rpy_cnt': '其他还款笔数'
     }
 }
