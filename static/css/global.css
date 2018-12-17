@@ -1195,14 +1195,12 @@ li input[type="radio"] {
     width: 100px;
 }
 .report-form-body .pic-wrap{
-    width: 100%;
     overflow: hidden;
-    padding-left: 30px;
 }
 .report-form-body .pic-wrap .item{
-    width: 200px;
+    width: 250px;
     float: left;
-    margin: 10px 20px;
+    margin: 5px 20px 10px 0;
 }
 .report-form-body .pic-wrap .item img{
     width: 100%;
