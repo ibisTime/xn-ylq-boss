@@ -10,7 +10,7 @@ $(function() {
         search: true,
     }, {
         field: 'level',
-        title: '商品颜色',
+        title: '商品等级',
         type: "select",
         listCode: "623907",
         params: {
@@ -29,6 +29,12 @@ $(function() {
         title: '借款时长(天)',
         required: true,
     }, {
+        field: 'lxRate',
+        title: '日利息利率',
+        number: true,
+        required: true,
+      // amount: true,
+    }, {
         field: 'yqRate1',
         title: '7天内逾期利率',
         number: true,
@@ -38,12 +44,6 @@ $(function() {
         title: '7天外逾期利率',
         number: true,
         required: true,
-    }, {
-        field: 'lxRate',
-        title: '日利息利率',
-        number: true,
-        required: true,
-        // amount: true,
     }, {
         field: 'fwAmount',
         title: '服务费(元)',

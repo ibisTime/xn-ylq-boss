@@ -26,14 +26,14 @@ $(function() {
         title: '借款时长(天)',
         required: true,
     }, {
+        field: 'lxRate',
+        title: '日利息利率',
+    }, {
         field: 'yqRate1',
         title: '7天内逾期利率',
     }, {
         field: 'yqRate2',
         title: '7天外逾期利率',
-    }, {
-        field: 'lxRate',
-        title: '日利息利率',
     }, {
         field: 'fwAmount',
         title: '服务费(元)',

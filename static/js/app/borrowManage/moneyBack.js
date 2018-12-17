@@ -5,6 +5,10 @@ $(function () {
         title: '',
         checkbox: true
     }, {
+      field: 'code',
+      title: '借款编号',
+      search: true
+    }, {
         field: 'applyUser',
         title: '申请人',
         type: getIsFk() ? 'select' : 'hidden',
@@ -35,10 +39,6 @@ $(function () {
             return data.user.mobile;
         }
     },{
-      field: 'code',
-      title: '借款编号',
-      search: true
-    }, {
       field: 'borrowAmount',
       title: '借款金额',
       amount: true

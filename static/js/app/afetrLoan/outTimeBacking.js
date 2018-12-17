@@ -5,6 +5,10 @@ $(function () {
         title: '',
         checkbox: true
     },  {
+      field: 'code',
+      title: '借款编号',
+      search: true
+    }, {
         field: 'applyUser',
         title: '申请人',
         type: getIsFk() ? 'select' : 'hidden',
@@ -26,10 +30,6 @@ $(function () {
     //     formatter: function (v, data) {
     //         return data.user.overdueCode
     //     }
-    }, {
-      field: 'code',
-      title: '借款编号',
-      search: true
     }, {
       field: 'borrowAmount',
       title: '借款金额',

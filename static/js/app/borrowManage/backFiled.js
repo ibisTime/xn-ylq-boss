@@ -60,6 +60,12 @@ $(function () {
         title: '签约时间',
         formatter: dateTimeFormat
     }, {
+      field: 'isStage',
+      title: '是否分期',
+      formatter: function (v,d) {
+        return d.isStage === '1' ? '是' : '否'
+      }
+    }, {
         field: 'status',
         title: '状态',
         type: "select",
@@ -79,7 +85,15 @@ $(function () {
         pageCode: '623085'
     });
 
+  $('#detailBtn').off("click").click(function() {
+    var selRecords = $('#tableList').bootstrapTable('getSelections');
+    if (selRecords.length <= 0) {
+      toastr.info("请选择记录");
+      return;
+    }
 
+    window.location.href = "./backFiled_addedit.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1"+'&isStage='+selRecords[0].isStage;
+  });
     $('#reportBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {

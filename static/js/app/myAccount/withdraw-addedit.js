@@ -41,7 +41,7 @@ $(function() {
           required: true
         }, {
           field: 'payCardInfo',
-          title: '银行名称',
+          title: '开户行',
           required: true,
         }, {
           field: 'payCardNo',

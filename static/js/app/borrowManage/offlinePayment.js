@@ -9,43 +9,38 @@ $(function () {
         field: 'code',
         title: '还款编号',
     }, {
-        field: 'refNo',
-        title: '借款编号',
-        search: true
+      field: 'borrowAmount',
+      title: '借款金额',
+      formatter: function (v,d) {
+        return d.borrow ? moneyFormat(d.borrow.borrowAmount) : 0;
+      }
     }, {
-        field: 'loanType',
-        title: '放款方式',
-        formatter: function(v,data){
-          return data.borrow ? Dict.getNameForList1('loan_type', '', data.borrow.loanType) : '';
-        }
+      field: 'stageCount',
+      title: '还款期数',
+      formatter: function (v,d) {
+        return d.borrow ? d.borrow.stageCount : 0;
+      }
     }, {
-        field: 'type',
-        title: '还款方式',
-        key: "repay_apply_type",
-        keyCode:"623907",
-        formatter: Dict.getNameForList("repay_apply_type"),
-        search: true
+      field: 'days',
+      title: '还款天数',
+      formatter: function (v,d) {
+        return d.borrow ? d.borrow.days : 0;
+      }
     }, {
         field: 'amount',
         title: '还款金额',
         amount: true,
     }, {
-        field: 'applyUser',
-        title: '还款人',
-        type: "select",
-        formatter:function(v,data){
-            data1[v] = data.user.mobile;
-            $('#applyUser').renderDropdown2(data1);
-             return data.user.mobile
-        } ,
-        search: true
+      field: 'type',
+      title: '还款方式',
+      key: "repay_apply_type",
+      keyCode:"623907",
+      formatter: Dict.getNameForList("repay_apply_type"),
+      search: true
     },{
         field: 'applyDatetime',
-        title: '还款时间',
+        title: '还款申请时间',
         formatter: dateTimeFormat,
-    }, {
-        field: 'applyNote',
-        title: '还款说明',
     }, {
         field: 'status',
         title: '状态',

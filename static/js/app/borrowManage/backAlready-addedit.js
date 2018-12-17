@@ -2,9 +2,20 @@ $(function() {
 
     var code = getQueryString('code');
     var userId = getQueryString('userId');
+    var isStage = getQueryString('isStage');
     var view = getQueryString('v');
     var borrowCount,overdueCode,renewalCount;
-
+    var columns =  [{
+      field: 'date',
+      title: '日期'
+    }, {
+      field: 'amount',
+      title: '还款金额',
+      formatter: moneyFormat
+    }, {
+      field: 'remark',
+      title: '备注'
+    }]
     var fields = [ {
         field: 'code1',
         title: '借款编号',
@@ -114,6 +125,26 @@ $(function() {
         field: 'realHkDatetime',
         title: '实际还款时间',
         formatter: dateTimeFormat
+    }, {
+        field: 'stageCount',
+        title: '分期期数',
+        hidden: isStage === '0'
+    }, {
+        field: 'stageCycle',
+        title: '分期天数',
+        hidden: isStage === '0'
+    }, {
+        field: 'stageList',
+        title: '还款明细记录列表',
+        type: 'o2m',
+        columns: columns,
+        useData: function(v,d) {
+          if(!v) {
+            return [];
+          }
+          return v.filter((x) => x.status === '1');
+        },
+        hidden: isStage === '0'
     }, {
         field: 'updateDatetime',
         title: '最后更新时间',

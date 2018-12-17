@@ -1712,8 +1712,13 @@ function buildDetail(options) {
                     if (displayValue) {
                         var clickDiv = $('#' + item.field).html('<a>' + displayValue + '</a>');
                         (function (a) {
-                            clickDiv.on('click', function () {
-                                window.open(a.url + '?v=1&code=' + data[a.codeField || 'code'], '', 'width=1200,height=800');
+                          if(!a.parameter) {
+                            a.parameter = '';
+                          }
+                          console.log(data[a.codeField]);
+                          clickDiv.on('click', function () {
+                                // window.open(a.url + '?v=1&code=' + data[a.codeField || 'code'], '', 'width=1200,height=800');
+                                window.location.href = a.url + '?v=1&code=' + data[a.codeField || 'code'] + a.parameter;
                             });
                         })(item);
                     } else {
@@ -1734,7 +1739,12 @@ function buildDetail(options) {
                         buildList(options1);
                     } else {
                         if (item.useData) {
-                            displayValue = $.isArray(item.useData) ? item.useData : (data || []);
+                            if(typeof item.useData === 'function' ) {
+                                displayValue = item.useData(displayValue, data);
+                            }else {
+                                displayValue = $.isArray(item.useData) ? item.useData : (data || []);
+                            }
+
                         }
                         $('#' + item.field).html('<table id="' + item.field + 'List"></table>');
                         $('#' + item.field + 'List').bootstrapTable({
@@ -2795,9 +2805,12 @@ function buildDetail1(options) {
                 if (item.type == 'm2o') {
                     if (displayValue) {
                         var clickDiv = $('#' + item.field + "-model").html('<a>' + displayValue + '</a>');
+                        if(!a.parameter) {
+                          a.parameter = '';
+                        }
                         (function (a) {
                             clickDiv.on('click', function () {
-                                window.open(a.url + '?v=1&code=' + data[a.codeField], '', 'width=1000,height=800');
+                                window.open(a.url + '?v=1&code=' + data[a.codeField] + a.parameter, '', 'width=1000,height=800');
                             });
                         })(item);
                     } else {

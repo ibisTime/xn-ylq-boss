@@ -64,28 +64,6 @@ $(function() {
         formatter: Dict.getNameForList('jour_status'),
         readonly: view
     }, {
-        field: 'workDate',
-        title: '拟对账时间',
-        readonly: view
-    }, {
-        field: 'checkUser',
-        title: '对账人',
-        readonly: view
-    }, {
-        field: 'checkDatetime',
-        title: '对账时间',
-        formatter: dateTimeFormat,
-        readonly: view
-    }, {
-        field: 'adjustUser',
-        title: '调账人',
-        readonly: view
-    }, {
-        field: 'adjustDatetime',
-        title: '调账时间',
-        formatter: dateTimeFormat,
-        readonly: view
-    }, {
         field: 'refNo',
         title: '关联编号',
         readonly: view

@@ -60,18 +60,6 @@ $(function() {
         field: 'remark',
         title: '备注',
         readonly: view,
-    }, {
-        title: '审核人',
-        field: 'approver',
-        maxlength: 250
-    }, {
-        title: '审核时间',
-        field: 'approveDatetime',
-        formatter: dateTimeFormat
-    }, {
-        title: '审核说明',
-        field: 'approveNote',
-        maxlength: 250
     }];
 
     buildDetail({

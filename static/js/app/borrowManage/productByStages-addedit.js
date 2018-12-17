@@ -9,7 +9,7 @@ $(function() {
         required: true
     }, {
         field: 'cycle',
-        title: '分期周期',
+        title: '分期周期（天）',
         'Z+': true,
         required: true
     }, {

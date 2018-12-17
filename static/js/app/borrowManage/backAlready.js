@@ -1,9 +1,12 @@
 $(function () {
-    var data1 = {};
     var columns = [{
         field: '',
         title: '',
         checkbox: true
+    }, {
+      field: 'code',
+      title: '借款编号',
+      search: true
     }, {
         field: 'applyUser',
         title: '申请人',
@@ -34,16 +37,6 @@ $(function () {
         formatter: function(v, data){
             return data.user.mobile;
         }
-    // },  {
-    //     field: 'overdueCode',
-    //     title: '代码',
-    //     formatter: function (v, data) {
-    //         return data.user.overdueCode
-    //     }
-    }, {
-      field: 'code',
-      title: '借款编号',
-      search: true
     }, {
       field: 'borrowAmount',
       title: '借款金额',
@@ -102,6 +95,12 @@ $(function () {
     // }, {
     //     field: 'renewalCount',
     //     title: '续期次数'
+    }, {
+      field: 'isStage',
+      title: '是否分期',
+      formatter: function (v,d) {
+        return d.isStage === '1' ? '是' : '否'
+      }
     }, {
         field: 'status',
         title: '状态',
@@ -172,7 +171,7 @@ $(function () {
             return;
         }
 
-        window.location.href = "./backAlready_addedit.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1";
+        window.location.href = "./backAlready_addedit.html?userId=" + selRecords[0].user.userId+"&code="+selRecords[0].code+"&v=1"+'&isStage='+selRecords[0].isStage;
     });
 
 });

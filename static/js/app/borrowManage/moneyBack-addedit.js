@@ -5,7 +5,17 @@ $(function() {
     var view = getQueryString('v');
     var isStage = getQueryString('isStage');
     var borrowCount,overdueCode,renewalCount;
-
+    var columns =  [{
+      field: 'date',
+      title: '日期'
+    }, {
+      field: 'amount',
+      title: '还款金额',
+      formatter: moneyFormat
+    }, {
+      field: 'remark',
+      title: '备注'
+    }]
     var fields = [ {
         field: 'code1',
         title: '借款编号',
@@ -21,24 +31,24 @@ $(function() {
             renewalCount = data.user.renewalCount;
             return data.user.mobile
         },
-        afterSet:function(data){
-            var html='<div class="tools" style="float: right;margin-left: 20px;">'+
-                '<div>'+
-                '<span style="float: left;margin-left: 20px;">借款次数:'+ borrowCount+' </span>'+
-                // '<span style="float: left;margin-left: 20px;">逾期代码: '+ overdueCode +' </span>'+
-                // '<span style="float: left;margin-left: 20px;">续期次数: '+  renewalCount +' </span>'+
-                '</div>'+
-                '<ul class="toolbar"  style="float: left;">'+
-                '<li style="display:block;" id="reportBtn"><span><img src="/static/images/t01.png"></span>查看资信报告</li>'+
-                '</ul>'+
-                '</div>';
-            $('#mobile').append(html);
-            $('#reportBtn').click(function() {
-
-                window.open("../report.html?userId=" + userId);
-                // window.location.href = "../oansBefore/audit_report.html?userId=" + userId;
-            });
-        },
+        // afterSet:function(data){
+        //     var html='<div class="tools" style="float: right;margin-left: 20px;">'+
+        //         '<div>'+
+        //         '<span style="float: left;margin-left: 20px;">借款次数:'+ borrowCount+' </span>'+
+        //         // '<span style="float: left;margin-left: 20px;">逾期代码: '+ overdueCode +' </span>'+
+        //         // '<span style="float: left;margin-left: 20px;">续期次数: '+  renewalCount +' </span>'+
+        //         '</div>'+
+        //         '<ul class="toolbar"  style="float: left;">'+
+        //         '<li style="display:block;" id="reportBtn"><span><img src="/static/images/t01.png"></span>查看资信报告</li>'+
+        //         '</ul>'+
+        //         '</div>';
+        //     $('#mobile').append(html);
+        //     $('#reportBtn').click(function() {
+        //
+        //         window.open("../report.html?userId=" + userId);
+        //         // window.location.href = "../oansBefore/audit_report.html?userId=" + userId;
+        //     });
+        // },
     }, {
         field: 'loanType',
         title: '放款方式',
@@ -127,6 +137,18 @@ $(function() {
       }, {
         field: 'stageCycle',
         title: '分期天数',
+        hidden: isStage === '0'
+      }, {
+        field: 'stageList',
+        title: '还款明细记录列表',
+        type: 'o2m',
+        columns: columns,
+        useData: function(v,d) {
+          if(!v) {
+            return [];
+          }
+          return v.filter((x) => x.status === '1');
+        },
         hidden: isStage === '0'
       }, {
         field: 'updateDatetime',
