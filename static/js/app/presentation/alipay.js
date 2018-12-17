@@ -15,6 +15,10 @@ $(function () {
             data = JSON.parse(data.result);
             $('#code').html(data.ref);
             $('#validDatetime').html(dateTimeFormat(data.validDatetime));
+            for(var k in data.basic_info.user_and_account_basic_info){
+              $('#basic_info_'+ k).html(data.basic_info.user_and_account_basic_info[k]);
+              $('#basic_info_alipay_gender').html(data.basic_info.user_and_account_basic_info.alipay_gender === 'MALE' ? '男' : '女')
+            }
         }
     }, hideLoading);
 });
