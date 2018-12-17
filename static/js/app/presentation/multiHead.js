@@ -8,7 +8,7 @@ $(function () {
         }
     }).then(function (data) {
         hideLoading();
-        if (data){
+        if (data && data.person_info){
             data = JSON.parse(data);
             $("#person_info_name").html(data.person_info.name);
             $("#person_info_gender").html(data.person_info.gender);
@@ -46,7 +46,6 @@ $(function () {
             $('#loan_info_loan_cnt_30d').html(data.auth_queried_detail.loan_info.loan_org_cnt_30d);
             $('#loan_info_loan_cnt_90d').html(data.auth_queried_detail.loan_info.loan_org_cnt_90d);
             $('#loan_info_loan_cnt_180d').html(data.auth_queried_detail.loan_info.loan_org_cnt_180d);
-
         }
     }, hideLoading);
 });
