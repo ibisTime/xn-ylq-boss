@@ -109,7 +109,6 @@ $.validator.addMethod("Z+", function(value, element) {
 }, '请输入整数');
 
 $.validator.addMethod("ZZ+", function(value, element) {
-    console.log(/^[1-9]\d*$/.test(value) && value >= 0);
     return this.optional(element) || (/^[0-9]\d*$/.test(value) && value >= 0);
 }, '请输入正整数');
 
