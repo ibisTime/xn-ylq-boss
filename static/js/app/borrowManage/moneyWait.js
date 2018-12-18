@@ -17,6 +17,7 @@ $(function () {
         pageCode: '805120',
         keyName: 'userId',
         valueName: '{{realName.DATA}}',
+        searchName: 'realName',
         params: {
             updater: '',
             kind: 'C'
@@ -120,8 +121,11 @@ $(function () {
         pageCode: '623085',
         singleSelect: false,
         beforeSearch: function (data) {
-            data['applyUser'] = data['mobile'];
-            delete data['mobile'];
+            if(data['mobile']) {
+                data['applyUser'] = data['mobile'];
+                delete data['mobile'];
+            }
+            return data;
         }
     });
 

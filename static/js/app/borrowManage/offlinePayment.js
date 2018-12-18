@@ -9,6 +9,38 @@ $(function () {
         field: 'code',
         title: '还款编号',
     }, {
+        field: 'applyUser',
+        title: '还款人',
+        type: 'select',
+        search: true,
+        pageCode: '805120',
+        keyName: 'userId',
+        valueName: getIsFk() ? '{{realName.DATA}}-{{mobile.DATA}}' : '{{mobile.DATA}}',
+        searchName: 'realName',
+        params: {
+            updater: '',
+            kind: 'C'
+        },
+        formatter: function(v,data){
+            return data.user.realName
+        }
+    }, {
+        field: 'mobile',
+        title: '还款人手机号',
+        type: 'select',
+        search: true,
+        pageCode: '805120',
+        keyName: 'userId',
+        valueName: 'mobile',
+        searchName: 'mobile',
+        params: {
+            updater: '',
+            kind: 'C'
+        },
+        formatter: function(v,data){
+            return data.user.mobile
+        }
+    }, {
       field: 'borrowAmount',
       title: '借款金额',
       formatter: function (v,d) {
@@ -52,7 +84,14 @@ $(function () {
 
     buildList({
         columns: columns,
-        pageCode: '623088'
+        pageCode: '623088',
+        beforeSearch: function (data) {
+            if(data['mobile']) {
+                data['applyUser'] = data['mobile'];
+                delete data['mobile'];
+            }
+            delete data['mobile'];
+        }
     });
 
     $('#checkBtn').off('click').click(function() {

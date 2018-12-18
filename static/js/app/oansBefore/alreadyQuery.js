@@ -49,8 +49,11 @@ $(function() {
             statusList:[4]
         },
         beforeSearch: function (data) {
-            data['applyUser'] = data['mobile'];
-            delete data['mobile'];
+            if(data['mobile']) {
+                data['applyUser'] = data['mobile'];
+                delete data['mobile'];
+            }
+            return data;
         }
     });
 
