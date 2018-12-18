@@ -20,6 +20,9 @@ $(function() {
       key: "repay_apply_type",
       keyCode:"623907",
       formatter: Dict.getNameForList("repay_apply_type","623907")
+    }, {
+      field: 'remark',
+      title: '备注'
     }]
     var fields = [ {
         field: 'code1',
@@ -112,23 +115,21 @@ $(function() {
     }, {
         field: 'stageBatch',
         title: '分期次数'
-    },
-    //   {
-    //   field: 'stageCount',
-    //   title: '分期期数',
-    //   hidden: isStage === '0'
-    // }, {
-    //   field: 'stageCycle',
-    //   title: '分期天数',
-    //   hidden: isStage === '0'
-    // }, {
-    //   field: 'repayList',
-    //   title: '还款明细记录列表',
-    //   type: 'o2m',
-    //   columns: columns,
-    //   readonly: true
-    // },
-      {
+    }, {
+      field: 'stageCount',
+      title: '分期期数',
+      hidden: isStage === '0'
+    }, {
+      field: 'stageCycle',
+      title: '分期天数',
+      hidden: isStage === '0'
+    }, {
+      field: 'repayList',
+      title: '还款明细记录列表',
+      type: 'o2m',
+      columns: columns,
+      readonly: true
+    }, {
         field: 'signDatetime',
         title: '签约时间',
         formatter: dateTimeFormat
