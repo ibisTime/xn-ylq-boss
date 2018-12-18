@@ -48,11 +48,11 @@ $(function() {
         search: true
     }, {
         field: 'createDatetime',
-        title: '创建时间',
+        title: '金额变动时间',
         formatter: dateTimeFormat
     }, {
         field1: 'createDatetimeStart',
-        title1: '创建时间',
+        title1: '金额变动时间',
         type: 'date',
         field2: 'createDatetimeEnd',
         twoDate: true,

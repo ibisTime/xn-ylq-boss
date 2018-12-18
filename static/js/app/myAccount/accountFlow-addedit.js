@@ -53,7 +53,7 @@ $(function() {
         readonly: view
     }, {
         field: 'createDatetime',
-        title: '金额変动时间',
+        title: '金额变动时间',
         formatter: dateTimeFormat,
         readonly: view
     }, {
