@@ -8,8 +8,8 @@ $(function () {
         }
     }).then(function (data) {
         hideLoading();
+        data = JSON.parse(data);
         if (data && data.person_info){
-            data = JSON.parse(data);
             $("#person_info_name").html(data.person_info.name);
             $("#person_info_gender").html(data.person_info.gender);
             $("#person_info_idcard").html(data.person_info.idcard);
