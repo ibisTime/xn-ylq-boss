@@ -190,7 +190,7 @@ $(function() {
         addCode: '623000',
         editCode: '623001',
         beforeSubmit:function(data){
-            data.updater = getUserId();
+            data.updater = getUserName();
             return data;
         }
     });

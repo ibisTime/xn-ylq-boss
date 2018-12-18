@@ -128,7 +128,7 @@ $(function() {
         addCode: '623083',
         editCode: '623083',
         beforeSubmit:function(data){
-            data.updater = getUserId();
+            data.updater = getUserName();
             return data;
         }
     });
