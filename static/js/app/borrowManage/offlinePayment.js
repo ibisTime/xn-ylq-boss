@@ -11,11 +11,11 @@ $(function () {
     }, {
         field: 'applyUser',
         title: '还款人',
-        type: 'select',
+        type: getIsFk() ? 'select' : 'hidden',
         search: true,
         pageCode: '805120',
         keyName: 'userId',
-        valueName: getIsFk() ? '{{realName.DATA}}-{{mobile.DATA}}' : '{{mobile.DATA}}',
+        valueName: '{{realName.DATA}}',
         searchName: 'realName',
         params: {
             updater: '',
