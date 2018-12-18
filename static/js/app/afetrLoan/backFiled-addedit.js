@@ -1,8 +1,8 @@
 $(function() {
-    
+
     var code = getQueryString('code');
     var view = getQueryString('v');
-    
+
     var fields = [ {
         field: 'code1',
         title: '借款编号',
@@ -110,7 +110,7 @@ $(function() {
         field: 'remark',
         title: '备注',
     }];
-    
+
     buildDetail({
         fields: fields,
         code: code,
@@ -119,7 +119,7 @@ $(function() {
         addCode: '623000',
         editCode: '623001',
         beforeSubmit:function(data){
-            data.updater = getUserId();
+            data.updater = getUserName();
             return data;
         }
     });
