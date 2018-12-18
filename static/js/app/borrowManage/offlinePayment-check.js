@@ -51,24 +51,17 @@ $(function() {
     title: '分期次数',
     formatter: function (v,d) {
       return d.borrow ? d.borrow.stageBatch : 0;
-    }
+    },
+    readonly: view
   }, {
-        field: 'stageCount',
-        title: '第几期',
-        hidden: type !== '1',
-        formatter: function (v,d) {
-          return d.borrow.stageCount;
-        },
-        readonly: view
-    }, {
-        field: 'days',
-        title: '第几天',
-        hidden: type !== '1',
-        formatter: function (v,d) {
-          return d.borrow.stageCycle;
-        },
-        readonly: view
-    }, {
+    field: 'stageCount',
+    title: '第几期',
+    hidden: type !== '1'
+  }, {
+    field: 'days',
+    title: '第几天',
+    hidden: type !== '1'
+  }, {
         field: 'repayList',
         title: '还款明细记录列表',
         type: 'o2m',
