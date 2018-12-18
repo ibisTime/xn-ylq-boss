@@ -9,6 +9,21 @@ $(function () {
         field: 'code',
         title: '还款编号',
     }, {
+      field: 'applyUser',
+      title: '还款人',
+      type: 'select',
+      search: true,
+      pageCode: '805120',
+      keyName: 'userId',
+      valueName: '{{realName.DATA}}',
+      params: {
+        updater: '',
+        kind: 'C'
+      },
+      formatter: function(v,data){
+        return data.user.realName
+      }
+    },{
       field: 'borrowAmount',
       title: '借款金额',
       formatter: function (v,d) {
