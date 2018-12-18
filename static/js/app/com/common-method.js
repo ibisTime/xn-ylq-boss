@@ -1159,6 +1159,9 @@ function buildDetail(options) {
         if (item['Z+']) {
             rules[item.field]['Z+'] = item['Z+'];
         }
+        if (item['ZZ+']) {
+            rules[item.field]['ZZ+'] = item['ZZ+'];
+        }
         if (item['amount']) {
             rules[item.field]['amount'] = item['amount'];
         }

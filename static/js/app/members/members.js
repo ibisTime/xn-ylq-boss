@@ -201,7 +201,7 @@ $(function () {
                 field: 'creditScore1',
                 title: '信用分',
                 required: true,
-                'Z+': true,
+                'ZZ+': true,
                 value: moneyFormat(selRecords[0].creditScore, '0'),
                 formatter: (v, data) => {
                     return moneyFormat(selRecords[0].creditScore, '0');

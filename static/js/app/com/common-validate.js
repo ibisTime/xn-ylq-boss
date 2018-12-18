@@ -26,7 +26,7 @@ $.extend($.validator.messages, {
 });
 
 /*-------------扩展验证规则-------------*/
-//邮箱 
+//邮箱
 jQuery.validator.addMethod("mail", function(value, element) {
     var mail = /^[a-z0-9._%-]+@([a-z0-9-]+\.)+[a-z]{2,4}$/;
     return this.optional(element) || (mail.test(value));
@@ -42,31 +42,31 @@ jQuery.validator.addMethod("phone", function(value, element) {
     return this.optional(element) || (phone.test(value));
 }, "电话格式如：0371-68787027");
 
-//区号验证规则  
+//区号验证规则
 jQuery.validator.addMethod("ac", function(value, element) {
     var ac = /^0\d{2,3}$/;
     return this.optional(element) || (ac.test(value));
 }, "区号如：010或0371");
 
-//无区号电话验证规则  
+//无区号电话验证规则
 jQuery.validator.addMethod("noactel", function(value, element) {
     var noactel = /^\d{7,8}$/;
     return this.optional(element) || (noactel.test(value));
 }, "电话格式如：68787027");
 
-//手机验证规则  
+//手机验证规则
 jQuery.validator.addMethod("mobile", function(value, element) {
     var mobile = /^1[3|4|5|7|8]\d{9}$/;
     return this.optional(element) || (mobile.test(value));
 }, "手机格式不对");
 
-//邮箱或手机验证规则  
+//邮箱或手机验证规则
 jQuery.validator.addMethod("mm", function(value, element) {
     var mm = /^[a-z0-9._%-]+@([a-z0-9-]+\.)+[a-z]{2,4}$|^.*$/;
     return this.optional(element) || (mm.test(value));
 }, "邮箱或手机格式不对");
 
-//电话或手机验证规则  
+//电话或手机验证规则
 jQuery.validator.addMethod("tm", function(value, element) {
     var tm = /(^1[3|4|5|7|8]\d{9}$)|(^\d{3,4}-\d{7,8}$)|(^\d{7,8}$)|(^\d{3,4}-\d{7,8}-\d{1,4}$)|(^\d{7,8}-\d{1,4}$|(^\d{3}-\d{3}-\d{4}$))/;
     return this.optional(element) || (tm.test(value));
@@ -107,6 +107,11 @@ $.validator.addMethod("isPositive", function(value, element) {
 $.validator.addMethod("Z+", function(value, element) {
     return this.optional(element) || /^[1-9]\d*$/.test(value);
 }, '请输入整数');
+
+$.validator.addMethod("ZZ+", function(value, element) {
+    console.log(/^[1-9]\d*$/.test(value) && value >= 0);
+    return this.optional(element) || (/^[0-9]\d*$/.test(value) && value >= 0);
+}, '请输入正整数');
 
 $.validator.addMethod("amount", function(value, element) {
     var aint = '' + parseInt(value.replace(/[\,]/g, ''));
