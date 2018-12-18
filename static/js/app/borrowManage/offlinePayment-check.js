@@ -17,7 +17,10 @@ $(function() {
     key: "repay_apply_type",
     keyCode:"623907",
     formatter: Dict.getNameForList("repay_apply_type","623907")
-  }]
+  }, {
+    field: 'remark',
+    title: '备注'
+  }];
 	var fields = [ {
         field: 'code1',
         title: '还款编号',

@@ -122,8 +122,11 @@ $(function () {
         },
         pageCode: '623085',
         beforeSearch: function (data) {
+          if(data['mobile']) {
             data['applyUser'] = data['mobile'];
             delete data['mobile'];
+          }
+          return data;
     }
     });
 
