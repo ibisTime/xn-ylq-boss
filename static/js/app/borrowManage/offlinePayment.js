@@ -15,22 +15,6 @@ $(function () {
         return d.borrow ? moneyFormat(d.borrow.borrowAmount) : 0;
       }
     }, {
-      field: 'stageCount',
-      title: '还款期数',
-      formatter: function (v,d) {
-        return d.borrow ? d.borrow.stageCount : 0;
-      }
-    }, {
-      field: 'days',
-      title: '还款天数',
-      formatter: function (v,d) {
-        return d.borrow ? d.borrow.days : 0;
-      }
-    }, {
-        field: 'amount',
-        title: '还款金额',
-        amount: true,
-    }, {
       field: 'type',
       title: '还款方式',
       key: "repay_apply_type",
@@ -38,6 +22,22 @@ $(function () {
       formatter: Dict.getNameForList("repay_apply_type"),
       search: true
     },{
+      field: 'stageBatch',
+      title: '分期次数',
+      formatter: function (v,d) {
+        return d.borrow ? d.borrow.stageBatch : 0;
+      }
+    }, {
+      field: 'amount',
+      title: '还款金额',
+      amount: true,
+    }, {
+      field: 'stageCount',
+      title: '第几期'
+    }, {
+      field: 'days',
+      title: '第几天'
+    }, {
         field: 'applyDatetime',
         title: '还款申请时间',
         formatter: dateTimeFormat,

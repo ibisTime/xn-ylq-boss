@@ -2,7 +2,22 @@ $(function() {
 	var code = getQueryString('code');
   var type = getQueryString('type');
   var view = getQueryString('v');
-
+  var columns =  [{
+    field: 'approveDatetime',
+    title: '还款时间',
+    formatter: dateTimeFormat
+  }, {
+    field: 'amount',
+    title: '还款金额',
+    formatter: moneyFormat
+  }, {
+    field: 'type',
+    title: '还款方式',
+    type: "select",
+    key: "repay_apply_type",
+    keyCode:"623907",
+    formatter: Dict.getNameForList("repay_apply_type","623907")
+  }]
 	var fields = [ {
         field: 'code1',
         title: '还款编号',
@@ -29,21 +44,39 @@ $(function() {
         formatter: Dict.getNameForList("repay_apply_type","623907"),
         readonly: view
     }, {
+    field: 'stageBatch',
+    title: '分期次数',
+    formatter: function (v,d) {
+      return d.borrow ? d.borrow.stageBatch : 0;
+    }
+  }, {
         field: 'stageCount',
-        title: '分期期数',
+        title: '第几期',
         hidden: type !== '1',
         formatter: function (v,d) {
           return d.borrow.stageCount;
         },
         readonly: view
     }, {
-        field: 'stageCycle',
-        title: '分期天数',
+        field: 'days',
+        title: '第几天',
         hidden: type !== '1',
         formatter: function (v,d) {
           return d.borrow.stageCycle;
         },
         readonly: view
+    }, {
+        field: 'repayList',
+        title: '还款明细记录列表',
+        type: 'o2m',
+        columns: columns,
+        useData: function(v,d) {
+          if(!d.borrow.repayList) {
+            return [];
+          }
+          return d.borrow.repayList;
+        },
+        readonly: true
     }, {
         field: 'amount1',
         title: '借款金额',

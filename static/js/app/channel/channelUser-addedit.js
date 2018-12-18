@@ -7,11 +7,6 @@ $(function () {
         field: "loginName",
         readonly: true,
     }, {
-        title: "昵称",
-        field: "nickname",
-        readonly: true,
-        // search: true
-    }, {
         title: '手机号',
         field: 'mobile',
         readonly: true,
@@ -55,10 +50,6 @@ $(function () {
             title: "注册时间",
             field: "createDatetime",
             formatter: dateTimeFormat,
-            readonly: true,
-        }, {
-            title: '备注',
-            field: 'remark',
             readonly: true,
         }];
 

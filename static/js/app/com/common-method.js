@@ -1741,7 +1741,7 @@ function buildDetail(options) {
                         if (item.useData) {
                             if(typeof item.useData === 'function' ) {
                                 displayValue = item.useData(displayValue, data);
-                            }else {
+                            } else {
                                 displayValue = $.isArray(item.useData) ? item.useData : (data || []);
                             }
 

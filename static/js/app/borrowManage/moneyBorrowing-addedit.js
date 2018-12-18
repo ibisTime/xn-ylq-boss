@@ -2,8 +2,7 @@ $(function() {
 
     var code = getQueryString('code');
     var userId = getQueryString('userId');
-  console.log(userId);
-  var view = getQueryString('v');
+    var view = getQueryString('v');
     var borrowCount,overdueCode,renewalCount;
 
     var fields = [ {

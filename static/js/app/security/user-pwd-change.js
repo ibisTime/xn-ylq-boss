@@ -11,10 +11,10 @@ $(function() {
 			data[this.name] = this.value;
 		});
 		
-		data.loginPwdStrength = calculateSecurityLevel(data.newLoginPwd);
+		data.loginPwdStrength = calculateSecurityLevel(data.newPwd);
 		data.userId = sessionStorage.getItem("userId");
 		reqApi({
-			code: '805064',
+			code: '630104',
 			json: data
 		}).then(function(data) {
 			location.href = "../main.html";

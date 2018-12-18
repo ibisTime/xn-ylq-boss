@@ -60,11 +60,8 @@ $(function () {
         title: '签约时间',
         formatter: dateTimeFormat
     }, {
-      field: 'isStage',
-      title: '是否分期',
-      formatter: function (v,d) {
-        return d.isStage === '1' ? '是' : '否'
-      }
+      field: 'stageBatch',
+      title: '分期次数'
     }, {
         field: 'status',
         title: '状态',

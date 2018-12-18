@@ -7,8 +7,12 @@ $(function() {
         checkbox: true
     }, {
         field: 'realName',
-        title: '户名',
-        search: true
+        title: '户名'
+    }, {
+      field: 'relaNameForQuery',
+      title: '户名',
+      search: true,
+      visible: false
     }, {
         field: 'channelType',
         title: '渠道',
@@ -47,10 +51,10 @@ $(function() {
         title: '创建时间',
         formatter: dateTimeFormat
     }, {
-        field1: 'dateStart',
+        field1: 'createDatetimeStart',
         title1: '创建时间',
         type: 'date',
-        field2: 'dateEnd',
+        field2: 'createDatetimeEnd',
         twoDate: true,
         search: true,
         visible: false

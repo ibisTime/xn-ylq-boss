@@ -63,12 +63,8 @@ $(function () {
         field: 'yqDays',
         title: '逾期天数'
     },{
-        field: 'isStage',
-        title: '是否分期',
-        formatter: function (v,d) {
-          // debugger;
-          return d.isStage === '1' ? '是' : '否'
-        }
+        field: 'stageBatch',
+        title: '分期次数'
     }, {
         field: 'totalAmount',
         title: '应收',

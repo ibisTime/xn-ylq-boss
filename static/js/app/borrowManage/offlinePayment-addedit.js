@@ -4,7 +4,22 @@ $(function() {
 	var type = getQueryString('type');
 	var view = getQueryString('v');
 	var isStage = type;
-
+  var columns =  [{
+    field: 'approveDatetime',
+    title: '还款时间',
+    formatter: dateTimeFormat
+  }, {
+    field: 'amount',
+    title: '还款金额',
+    formatter: moneyFormat
+  }, {
+    field: 'type',
+    title: '还款方式',
+    type: "select",
+    key: "repay_apply_type",
+    keyCode:"623907",
+    formatter: Dict.getNameForList("repay_apply_type","623907")
+  }]
 	var fields = [ {
         field: 'code1',
         title: '还款编号',
@@ -26,31 +41,43 @@ $(function() {
         return d.borrow ? moneyFormat(d.borrow.borrowAmount) : 0;
       }
     }, {
-      field: 'stageCount',
-      title: '还款期数',
-      hidden: type !== '1',
-      formatter: function (v,d) {
-        return d.borrow.stageCount;
-      }
-    }, {
-      field: 'stageCycle',
-      title: '还款天数',
-      hidden: type !== '1',
-      formatter: function (v,d) {
-        return d.borrow.stageCycle;
-      }
-    }, {
-    field: 'amount',
-    title: '还款金额',
-    amount: true,
+    field: 'type',
+    title: '还款方式',
+    type: "select",
+    key: "repay_apply_type",
+    keyCode:"623907",
+    formatter: Dict.getNameForList("repay_apply_type","623907")
   }, {
-        field: 'type',
-        title: '还款方式',
-        type: "select",
-        key: "repay_apply_type",
-        keyCode:"623907",
-        formatter: Dict.getNameForList("repay_apply_type","623907")
+    field: 'stageBatch',
+    title: '分期次数',
+    formatter: function (v,d) {
+      return d.borrow ? d.borrow.stageBatch : 0;
+    }
+  }, {
+      field: 'stageCount',
+      title: '第几期',
+      hidden: type !== '1'
     }, {
+      field: 'days',
+      title: '第几天',
+      hidden: type !== '1'
+    }, {
+      field: 'repayList',
+      title: '还款明细记录列表',
+      type: 'o2m',
+      columns: columns,
+      useData: function(v,d) {
+        if(!d.borrow.repayList) {
+          return [];
+        }
+        return d.borrow.repayList;
+      },
+      readonly: true
+  }, {
+      field: 'amount',
+      title: '还款金额',
+      amount: true,
+  }, {
         field: 'lxAmount',
         title: '正常利息',
         amount: true,
@@ -128,8 +155,8 @@ $(function() {
         }
     },{
         field: 'applyDatetime',
-        title: '还款时间',
-        formatter: dateTimeFormat,
+        title: '还款申请时间',
+        formatter: dateTimeFormat
     }, {
         field: 'applyNote',
         title: '还款说明',

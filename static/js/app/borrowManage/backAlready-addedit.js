@@ -5,17 +5,22 @@ $(function() {
     var isStage = getQueryString('isStage');
     var view = getQueryString('v');
     var borrowCount,overdueCode,renewalCount;
-    var columns =  [{
-      field: 'date',
-      title: '日期'
-    }, {
-      field: 'amount',
-      title: '还款金额',
-      formatter: moneyFormat
-    }, {
-      field: 'remark',
-      title: '备注'
-    }]
+  var columns =  [{
+    field: 'approveDatetime',
+    title: '还款时间',
+    formatter: dateTimeFormat
+  }, {
+    field: 'amount',
+    title: '还款金额',
+    formatter: moneyFormat
+  }, {
+    field: 'type',
+    title: '还款方式',
+    type: "select",
+    key: "repay_apply_type",
+    keyCode:"623907",
+    formatter: Dict.getNameForList("repay_apply_type","623907")
+  }]
     var fields = [ {
         field: 'code1',
         title: '借款编号',
@@ -126,6 +131,9 @@ $(function() {
         title: '实际还款时间',
         formatter: dateTimeFormat
     }, {
+        field: 'stageBatch',
+        title: '分期次数'
+    }, {
         field: 'stageCount',
         title: '分期期数',
         hidden: isStage === '0'
@@ -134,17 +142,11 @@ $(function() {
         title: '分期天数',
         hidden: isStage === '0'
     }, {
-        field: 'stageList',
+        field: 'repayList',
         title: '还款明细记录列表',
         type: 'o2m',
         columns: columns,
-        useData: function(v,d) {
-          if(!v) {
-            return [];
-          }
-          return v.filter((x) => x.status === '1');
-        },
-        hidden: isStage === '0'
+        readonly: true
     }, {
         field: 'updateDatetime',
         title: '最后更新时间',

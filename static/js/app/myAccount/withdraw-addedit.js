@@ -43,6 +43,7 @@ $(function() {
           field: 'payCardInfo',
           title: '开户行',
           required: true,
+          help: '例如：招商银行杭州支行'
         }, {
           field: 'payCardNo',
           title: '银行卡号',

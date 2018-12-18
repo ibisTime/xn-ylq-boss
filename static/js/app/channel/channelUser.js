@@ -88,9 +88,6 @@ $(function () {
         title: "注册时间",
         field: "createDatetime",
         formatter: dateTimeFormat
-    }, {
-        title: '备注',
-        field: 'remark'
     }
     ];
     buildList({
