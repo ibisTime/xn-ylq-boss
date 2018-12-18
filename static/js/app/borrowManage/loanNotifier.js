@@ -19,9 +19,6 @@ $(function () {
         title: "结束时间",
         type: 'select',
         data: OSS.notifyTimeList
-    }, {
-        field: "remark",
-        title: "备注"
     }];
     buildList({
         columns: columns,
