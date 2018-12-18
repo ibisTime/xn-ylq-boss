@@ -15,7 +15,7 @@ $(function() {
         data['adminUserId'] = sessionStorage.getItem('userId');
 
         reqApi({
-            code: '805065',
+            code: '630105',
             json: data
         }).done(function(data) {
             sucDetail();

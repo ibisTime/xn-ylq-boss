@@ -5,22 +5,22 @@ $(function() {
     var view = getQueryString('v');
     var isStage = getQueryString('isStage');
     var borrowCount,overdueCode,renewalCount;
-  var columns =  [{
-    field: 'approveDatetime',
-    title: '还款时间',
-    formatter: dateTimeFormat
-  }, {
-    field: 'amount',
-    title: '还款金额',
-    formatter: moneyFormat
-  }, {
-    field: 'type',
-    title: '还款方式',
-    type: "select",
-    key: "repay_apply_type",
-    keyCode:"623907",
-    formatter: Dict.getNameForList("repay_apply_type","623907")
-  }]
+    var columns =  [{
+      field: 'approveDatetime',
+      title: '还款时间',
+      formatter: dateTimeFormat
+    }, {
+      field: 'amount',
+      title: '还款金额',
+      formatter: moneyFormat
+    }, {
+      field: 'type',
+      title: '还款方式',
+      type: "select",
+      key: "repay_apply_type",
+      keyCode:"623907",
+      formatter: Dict.getNameForList("repay_apply_type","623907")
+    }]
     var fields = [ {
         field: 'code1',
         title: '借款编号',

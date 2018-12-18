@@ -1,5 +1,4 @@
 $(function () {
-    var data1 = {};
     var columns = [{
         field: '',
         title: '',
@@ -38,12 +37,6 @@ $(function () {
         formatter: function(v, data){
             return data.user.mobile;
         }
-    // }, {
-    //     field: 'overdueCode',
-    //     title: '代码',
-    //     formatter: function (v, data) {
-    //         return data.user.overdueCode
-    //     }
     },{
       field: 'borrowAmount',
       title: '借款金额',
@@ -58,9 +51,6 @@ $(function () {
       field: 'realGetAmount',
       title: '已打款金额',
       amount: true
-      // formatter: function (v, data) {
-      //   return moneyFormat(data.amount-data.lxAmount-data.xsAmount-data.glAmount-data.fwAmount+data.yhAmount);
-      // }
     }, {
       field: 'realHkAmount',
       title: '已还款金额',
@@ -192,7 +182,7 @@ $(function () {
 
     // window.open("../moneyBorrowing_addedit.html?userId=" + selRecords[0].user.userId + );
     // window.location.href = "../oansBefore/audit_report.html?userId=" + selRecords[0].user.userId;
-    window.location.href = './moneyBorrowing_addedit.html?userId=' + selRecords[0].user.userId + '&code=' + selRecords[0].code + '&v=1';
+    window.location.href = './moneyBorrowing_addedit.html?userId=' + selRecords[0].user.userId + '&code=' + selRecords[0].code + '&v=1'+'&isStage='+selRecords[0].isStage;
 
 
   });

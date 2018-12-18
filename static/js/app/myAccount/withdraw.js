@@ -31,6 +31,10 @@ $(function () {
             title: '取现金额',
             formatter: moneyFormat
         }, {
+            field: 'fee',
+            title: '取现手续费',
+            formatter: moneyFormat
+        }, {
             field: 'status',
             title: '状态',
             type: 'select',

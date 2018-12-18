@@ -2,9 +2,25 @@ $(function() {
 
     var code = getQueryString('code');
     var userId = getQueryString('userId');
+    var isStage = getQueryString('isStage');
     var view = getQueryString('v');
     var borrowCount,overdueCode,renewalCount;
-
+    var columns =  [{
+      field: 'approveDatetime',
+      title: '还款时间',
+      formatter: dateTimeFormat
+    }, {
+      field: 'amount',
+      title: '还款金额',
+      formatter: moneyFormat
+    }, {
+      field: 'type',
+      title: '还款方式',
+      type: "select",
+      key: "repay_apply_type",
+      keyCode:"623907",
+      formatter: Dict.getNameForList("repay_apply_type","623907")
+    }]
     var fields = [ {
         field: 'code1',
         title: '借款编号',
@@ -96,7 +112,23 @@ $(function() {
     }, {
         field: 'stageBatch',
         title: '分期次数'
-    }, {
+    },
+    //   {
+    //   field: 'stageCount',
+    //   title: '分期期数',
+    //   hidden: isStage === '0'
+    // }, {
+    //   field: 'stageCycle',
+    //   title: '分期天数',
+    //   hidden: isStage === '0'
+    // }, {
+    //   field: 'repayList',
+    //   title: '还款明细记录列表',
+    //   type: 'o2m',
+    //   columns: columns,
+    //   readonly: true
+    // },
+      {
         field: 'signDatetime',
         title: '签约时间',
         formatter: dateTimeFormat
