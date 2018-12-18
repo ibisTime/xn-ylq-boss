@@ -118,8 +118,11 @@ $(function () {
         },
         pageCode: '623085',
         beforeSearch: function (data) {
-            data['applyUser'] = data['mobile'];
-            delete data['mobile'];
+            if(data['mobile']) {
+                data['applyUser'] = data['mobile'];
+                delete data['mobile'];
+            }
+            return data;
         }
     });
 
