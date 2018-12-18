@@ -56,11 +56,13 @@ $(function() {
   }, {
     field: 'stageCount',
     title: '第几期',
-    hidden: type !== '1'
+    hidden: type !== '1',
+        readonly: view
   }, {
     field: 'days',
     title: '第几天',
-    hidden: type !== '1'
+    hidden: type !== '1',
+        readonly: view
   }, {
         field: 'repayList',
         title: '还款明细记录列表',
