@@ -65,24 +65,24 @@ $(function () {
         title: "注册地址",
         field: "province",
         formatter: function (v, data) {
-          return data.refereeWay ? data.refereeWay.url : '-';
-            // if (data.province) {
-            //     if (data.address) {
-            //         if (data.province == data.city) {
-            //             return data.city + data.area + data.address;
-            //         } else {
-            //             return data.province + data.city + data.area + data.address;
-            //         }
-            //     } else {
-            //         if (data.province == data.city) {
-            //             return data.city + data.area;
-            //         } else {
-            //             return data.province + data.city + data.area;
-            //         }
-            //     }
-            // } else {
-            //     return '-'
-            // }
+          // return data.refereeWay ? data.refereeWay.url : '-';
+            if (data.province) {
+                if (data.address) {
+                    if (data.province == data.city) {
+                        return data.city + data.area + data.address;
+                    } else {
+                        return data.province + data.city + data.area + data.address;
+                    }
+                } else {
+                    if (data.province == data.city) {
+                        return data.city + data.area;
+                    } else {
+                        return data.province + data.city + data.area;
+                    }
+                }
+            } else {
+                return '-'
+            }
         }
     }, {
         title: "注册时间",
