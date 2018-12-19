@@ -25,14 +25,18 @@ $(function () {
         title: '推荐人',
         type: 'select',
         formatter: function (v, data) {
+          if(data.refereeType === 'C') {
             if (data.refereeUser) {
-                var res2 = data.refereeUser.mobile;
-                if (res2) {
-                    return res2
-                } else {
-                    return "-"
-                }
+              var res2 = data.refereeUser.mobile;
+              if (res2) {
+                return res2
+              } else {
+                return "-"
+              }
             }
+          } else if(data.refereeType === 'W'){
+            return data.refereeWay ? data.refereeWay.name : '-';
+          }
         }
     }, {
         title: '是否黑名单',
