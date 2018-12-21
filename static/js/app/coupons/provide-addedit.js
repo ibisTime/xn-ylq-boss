@@ -16,13 +16,15 @@ $(function() {
             json: {
                 start: 1,
                 limit: 10000,
-                status: 1
+                status: 1,
+                type: 2
             }
         })
     ).then(function(res1, res2) {
         var data1 = {},
             data2 = {},
             data3 = { amount, startAmount, validDays, condition };
+
 
         res1.forEach(function(v, i) {
             data1[v.dkey] = v.dvalue;
@@ -31,6 +33,10 @@ $(function() {
         res2.list.forEach(function(v, i) {
             data2[v.code] = data1[v.type];
         });
+        data3["amount"] = res2.list[0].amount;
+        data3["startAmount"] = res2.list[0].startAmount;
+        data3["validDays"] = res2.list[0].validDays;
+        data3["condition"] = res2.list[0].condition;
 
         var fields = [{
             title: "登录名",
@@ -50,41 +56,28 @@ $(function() {
         }, {
             title: "优惠券",
             field: "type",
-            type: "select",
-            data: data2,
-            onChange: function(data) {
-                couponCode = data;
-                res2.list.forEach(function(v, i) {
-                    if (v.code == data) {
-                        data3["amount"] = v.amount;
-                        data3["startAmount"] = v.startAmount;
-                        data3["validDays"] = v.validDays;
-                        data3["condition"] = v.condition;
-                    };
-                });
-                $('#amount').text(moneyFormat(data3.amount));
-                $('#startAmount').text(moneyFormat(data3.startAmount));
-                $('#validDays').text(data3.validDays);
-                $('#condition').text(data3.condition);
-            }
+            value: '直送优惠券',
+            readonly: true
         }, {
             title: "额度",
             field: "amount",
-            amount: true,
-            readonly: view
+            readonly: view,
+            value: moneyFormat(data3.amount)
         }, {
             title: "起借额度",
             field: "startAmount",
-            amount: true,
-            readonly: view
+            readonly: view,
+            value: moneyFormat(data3.startAmount)
         }, {
             title: '有效天数（天）',
             field: 'validDays',
-            readonly: view
+            readonly: view,
+            value: data3.validDays
         }, {
             title: "获取条件(人/次)",
             field: "condition",
-            readonly: view
+            readonly: view,
+            value: data3.condition
         }, {
             title: '备注',
             field: 'remark'
@@ -98,7 +91,7 @@ $(function() {
             beforeSubmit: function(data) {
                 // data.userId = userId;
                 data.updater = getUserName();
-                data.couponCode = couponCode;
+                data.couponCode = res2.list[0].code;
                 return data
             }
         });
