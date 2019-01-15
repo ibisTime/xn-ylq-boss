@@ -63,20 +63,20 @@ function urlDispatch(code) {
 }
 
 function reqApi(options,updateType) {
-    var url = urlDispatch(options.code) + "/api";
+  var url = urlDispatch(options.code) + "/api";
     if(!updateType){
     	var commonParams = {
 	        token: sessionStorage.getItem('token') || '',
 	        updater: sessionStorage.getItem('userName'),
 	        systemCode: OSS.system,
-	        companyCode: sessionStorage.getItem('companyCode')
+	        companyCode: options.companyCode || sessionStorage.getItem('companyCode')
 	         //updaterId: sessionStorage.getItem('userId'),
 	    };
     }else{
     	var commonParams = {
 	        token: sessionStorage.getItem('token') || '',
 	        systemCode: OSS.system,
-	        companyCode: sessionStorage.getItem('companyCode')
+	        companyCode: options.companyCode || sessionStorage.getItem('companyCode')
 	         //updaterId: sessionStorage.getItem('userId'),
 	    };
     }

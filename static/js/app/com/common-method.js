@@ -1847,7 +1847,8 @@ function buildDetail(options) {
                                 code: i.detailCode || i.listCode || i.pageCode,
                                 json: params
                             }).then(function (d) {
-                                var data = (d && d.list && d.list[0]) || d[0] || d;
+                              console.log(d);
+                              var data = (d && d.list && d.list[0]) || d[0] || d;
                                 $('#' + i.field).html(data[i.valueName] || i.valueName.temp(data) || i.defaultOption);
                                 $('#' + i.field).attr('data-value', data[i.keyName]);
                             });

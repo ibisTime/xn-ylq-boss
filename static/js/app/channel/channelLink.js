@@ -5,33 +5,47 @@ $(function () {
         checkbox: true
     }, {
         field: "name",
-        title: "渠道商",
+        title: "链接名称",
         search: true
     }, {
-        field: "loginName",
-        title: "登录名"
+      field: "name1",
+      title: "所属渠道商",
+      search: true
     }, {
-      field: "urlCount",
-      title: "拥有链接数"
+        field: "productUrl",
+        title: "产品列表页链接"
+    }, {
+      field: "regUrl",
+      title: "注册页链接"
+    }, {
+      field: "productPointCount",
+      title: "产品列表页点击总数"
+    }, {
+      field: "regPointCount",
+      title: "注册页点击总数"
+    }, {
+      field: "userCount",
+      title: "注册总数"
     }, {
       field: "createDatetime",
       title: "开启时间",
       formatter: dateTimeFormat
     }, {
-      field: "status",
-      title: "状态",
-      type: 'select',
-      search: 'true',
-      key: 'user_status',
-      formatter: Dict.getNameForList('user_status'),
-    }, {
-      field: "remark",
+      field: "reamrk",
       title: "备注"
-    }];
+    }
+    // , {
+    //   field: "status",
+    //   title: "状态",
+    //   type: 'select',
+    //   search: 'true',
+    //   key: 'way_status',
+    //   formatter: Dict.getNameForList('way_status'),
+    // }
+    ];
     buildList({
-      columns: columns,
-      pageCode: '623205',
-      uid: ['userId']
+        columns: columns,
+        pageCode: '623155'
     });
 
   $('#deleteBtn').off("click").click(function () {
@@ -44,9 +58,9 @@ $(function () {
     var msg = selRecords[0].status === '0' ? '确定注销该渠道？' : '确定激活该渠道？';
     confirm(msg).then(function () {
       reqApi({
-        code: '623203',
+        code: '623253',
         json: {
-          userId: selRecords[0].userId
+          code: selRecords[0].code
         }
       }).then(function () {
         sucList();
