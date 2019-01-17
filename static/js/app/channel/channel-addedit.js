@@ -4,18 +4,25 @@ $(function() {
 
     var fields = [{
       field: "name",
-      title: "渠道名称",
-      required: true
+      title: "渠道商",
+      search: true
     }, {
       field: "loginName",
-      title: "登录名",
-      required: true
+      title: "登录名"
     }, {
-      field: "loginPwd",
-      title: "登录密码",
-      required: true,
-      readonly: userId,
-      hidden: userId
+      field: "urlCount",
+      title: "拥有链接数"
+    }, {
+      field: "createDatetime",
+      title: "开启时间",
+      formatter: dateTimeFormat
+    }, {
+      field: "status",
+      title: "状态",
+      type: 'select',
+      search: 'true',
+      key: 'user_status',
+      formatter: Dict.getNameForList('user_status'),
     }, {
       field: "remark",
       title: "备注"

@@ -4,13 +4,24 @@ $(function () {
         title: '',
         checkbox: true
     }, {
-        field: "name",
-        title: "链接名称",
-        search: true
+      field: "name",
+      title: "链接名称",
+      search: true
     }, {
       field: "name1",
       title: "所属渠道商",
-      search: true
+      formatter: function(v, d) {
+        return d.wayer ? d.wayer.name : '';
+      }
+    }, {
+      field: "userId",
+      title: "所属渠道商",
+      search: true,
+      type: 'select',
+      listCode: '623207',
+      keyName: 'userId',
+      valueName: 'name',
+      visible: false
     }, {
         field: "productUrl",
         title: "产品列表页链接"

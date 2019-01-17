@@ -101,7 +101,8 @@ $(function () {
         searchParams:{
             status: 3,
             isArchive: 0,
-            isOverdue: 0
+            isOverdue: 0,
+            isStage: 0
         },
         pageCode: '623085',
         singleSelect: false,

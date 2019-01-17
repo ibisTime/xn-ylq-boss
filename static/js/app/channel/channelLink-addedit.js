@@ -13,7 +13,13 @@ $(function() {
       listCode: '623207',
       valueName: 'name',
       keyName: 'userId',
+      params: {
+        status: '0'
+      },
       required: true
+    },{
+      field: "remark",
+      title: "备注"
     }];
 
     buildDetail({
