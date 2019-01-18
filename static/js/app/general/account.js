@@ -36,17 +36,17 @@ $(function() {
         columns: columns,
         pageCode: '623215'
     });
-  $('#editBtn').click(function () {
+  $('#editBtn').off('click').click(function () {
     var selRecords = $('#tableList').bootstrapTable('getSelections');
     if (selRecords.length <= 0) {
       toastr.info("请选择记录");
       return;
     }
 
-    if(selRecords.status !== '0') {
+    if(selRecords[0].status !== '0') {
       toastr.info('账号是待开启状态才能修改');
     } else {
-      window.location.href = "./account_addedit.htm?code=" + selRecords[0].code;
+      window.location.href = "./account_addedit.html?code=" + selRecords[0].code;
     }
 
   });

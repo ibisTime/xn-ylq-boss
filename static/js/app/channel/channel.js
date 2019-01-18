@@ -5,7 +5,7 @@ $(function () {
         checkbox: true
     }, {
         field: "name",
-        title: "渠道商",
+        title: "渠道名",
         search: true
     }, {
         field: "loginName",

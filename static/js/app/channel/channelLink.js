@@ -42,7 +42,7 @@ $(function () {
       title: "开启时间",
       formatter: dateTimeFormat
     }, {
-      field: "reamrk",
+      field: "remark",
       title: "备注"
     }
     // , {

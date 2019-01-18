@@ -4,18 +4,28 @@ $(function() {
 
     var fields = [{
       field: "name",
-      title: "渠道商",
-      search: true
+      title: "渠道名",
+      search: true,
+      required: true
     }, {
       field: "loginName",
-      title: "登录名"
+      title: "登录名",
+      required: true
+    }, {
+      field: "loginPwd",
+      title: "登录密码",
+      type: 'password',
+      required: true,
+      hidden: userId
     }, {
       field: "urlCount",
-      title: "拥有链接数"
+      title: "拥有链接数",
+      hidden: !userId
     }, {
       field: "createDatetime",
       title: "开启时间",
-      formatter: dateTimeFormat
+      formatter: dateTimeFormat,
+      hidden: !userId
     }, {
       field: "status",
       title: "状态",
@@ -23,6 +33,7 @@ $(function() {
       search: 'true',
       key: 'user_status',
       formatter: Dict.getNameForList('user_status'),
+      hidden: !userId
     }, {
       field: "remark",
       title: "备注"
