@@ -26,22 +26,22 @@
             <div class="tabbox">
                 <table>
                     <tr>
-                        <td>姓名：<i id="basic_info_user_name"></i></td>
-                        <td>身份证号码：<i id="basic_info_card_number"></i></td>
-                        <td>性别：<i id="basic_info_alipay_gender"></i></td>
-                        <td>出生地区：<i id="basic_info_birth_place"></i></td>
+                        <td>姓名：<i id="user_info_user_name"></i></td>
+                        <td>身份证号码：<i id="user_info_idcard_number"></i></td>
+                        <td>性别：<i id="user_info_alipay_gender"></i></td>
+                        <td>账号：<i id="user_info_mapping_id"></i></td>
                     </tr>
                     <tr>
-                        <td>账号是否实名：<i id="basic_info_is_realname"></i></td>
-                        <td>账户绑定邮箱：<i id="basic_info_alipay_email"></i></td>
-                        <td>账户绑定手机号码：<i id="basic_info_phone_number"></i></td>
-                        <td>账户注册至今月数：<i id="basic_info_register_month"></i></td>
+                        <td>账号是否实名：<i id="user_info_certified"></i></td>
+                        <td>账户绑定邮箱：<i id="user_info_email"></i></td>
+                        <td>账户绑定手机号码：<i id="user_info_phone_number"></i></td>
+                        <td>淘宝会员名：<i id="user_info_taobao_id"></i></td>
                     </tr>
                     <tr>
-                        <td>近6月支出总金额(元)：<i id="basic_info_total_expenses_amt_6m"></i></td>
-                        <td>近6月收入总金额(元)：<i id="basic_info_total_income_amt_6m"></i></td>
-                        <td>近6月信贷类还款总金额(元)：<i id="basic_info_total_rpy_amt_6mh"></i></td>
-                        <td>近6月发生资金来往人数：<i id="basic_info_fund_transe_6m"></i></td>
+                        <td>支付宝注册时间：<i id="user_info_register_time"></i></td>
+                        <!--<td>近6月收入总金额(元)：<i id="user_info_total_income_amt_6m"></i></td>-->
+                        <!--<td>近6月信贷类还款总金额(元)：<i id="user_info_total_rpy_amt_6mh"></i></td>-->
+                        <!--<td>近6月发生资金来往人数：<i id="user_info_fund_transe_6m"></i></td>-->
                     </tr>
                 </table>
             </div>
@@ -52,7 +52,7 @@
         </div>
 
         <div class="table">
-            <h5 class="littleTItle">2.1 总资产</h5>
+            <h5 class="littleTItle">2.1 资产状况</h5>
             <div class="tabbox">
                 <table id="table_consumption">
                     <tr>
@@ -61,98 +61,87 @@
                     </tr>
                     <tr>
                         <td>余额(元)</td>
-                        <td><i id="total_assets_balance"></i></td>
+                        <td><i id="wealth_yue"></i></td>
                     </tr>
                     <tr>
                         <td>余额宝余额(元)</td>
-                        <td><i id="total_assets_yu_e_bao"></i></td>
+                        <td><i id="wealth_yeb"></i></td>
                     </tr>
                     <tr>
                         <td>招财宝余额(元)</td>
-                        <td><i id="total_assets_zhao_cai_bao"></i></td>
+                        <td><i id="wealth_zcb"></i></td>
                     </tr>
                     <tr>
                         <td>基金余额(元)</td>
-                        <td><i id="total_assets_fund"></i></td>
+                        <td><i id="wealth_fund"></i></td>
                     </tr>
                     <tr>
                         <td>存金宝余额(元)</td>
-                        <td><i id="total_assets_cun_jin_bao"></i></td>
+                        <td><i id="wealth_cjb"></i></td>
                     </tr>
                     <tr>
                         <td>淘宝理财余额(元)</td>
-                        <td><i id="total_assets_taobao_finance"></i></td>
+                        <td><i id="wealth_taolicai"></i></td>
                     </tr>
                     <tr>
                         <td>花呗授信额度(元)</td>
-                        <td><i id="total_assets_huabai_limit"></i></td>
+                        <td><i id="wealth_huabai_limit"></i></td>
+                    </tr>
+                    <tr>
+                        <td>花呗当前可用额度(元)</td>
+                        <td><i id="wealth_huabai_balance"></i></td>
+                    </tr>
+                    <tr>
+                        <td>花呗是否逾期</td>
+                        <td><i id="wealth_huabei_overdue"></i></td>
+                    </tr>
+                    <tr>
+                        <td>花呗逾期金额 (元)</td>
+                        <td><i id="wealth_huabei_overdue_amount"></i></td>
+                    </tr>
+                    <tr>
+                        <td>花呗利息金额 (元)</td>
+                        <td><i id="wealth_huabei_overdue_interest"></i></td>
                     </tr>
                 </table>
             </div>
         </div>
-
-        <div class="title">
-            <h3>3.主要支出</h3>
-        </div>
-
         <div class="table">
-            <h5 class="littleTItle">3.1 总资产</h5>
+            <h5 class="littleTItle">2.2 借呗额度信息</h5>
             <div class="tabbox">
-                <table id="table_major_expenditure_repayment">
-                    <thead></thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="table">
-            <h5 class="littleTItle">3.2 消费</h5>
-            <div class="tabbox">
-                <table id="table_major_expenditure_consumption">
-                    <thead></thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="table">
-            <h5 class="littleTItle">3.3 转账-转出</h5>
-            <div class="tabbox">
-                <table id="table_major_expenditure_transfer_out_info">
-                    <thead></thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="table">
-            <h5 class="littleTItle">3.4 理财</h5>
-            <div class="tabbox">
-                <table id="table_major_expenditure_financial">
-                    <thead></thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="table">
-            <h5 class="littleTItle">3.5 其他</h5>
-            <div class="tabbox">
-                <table id="table_major_expenditure_other_expense">
-                    <thead></thead>
-                    <tbody></tbody>
+                <table id="table_alipayjiebei">
                 </table>
             </div>
         </div>
 
         <div class="title">
-            <h3>4.流入资金</h3>
+            <h3>3.其他信息</h3>
         </div>
 
         <div class="table">
-            <h5 class="littleTItle">4.1 借款</h5>
+            <h5 class="littleTItle">3.1 交易记录</h5>
             <div class="tabbox">
-                <table id="table_infolow_borrowed_funds">
+                <table id="table_tradeinfo">
+                    <thead></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="table">
+            <h5 class="littleTItle">3.2 银行卡信息</h5>
+            <div class="tabbox">
+                <table id="table_bankinfo">
+                    <thead>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="table">
+            <h5 class="littleTItle">3.3 收货地址信息</h5>
+            <div class="tabbox">
+                <table id="table_alipaydeliveraddresses">
                     <thead></thead>
                     <tbody></tbody>
                 </table>
@@ -160,9 +149,9 @@
         </div>
 
         <div class="table">
-            <h5 class="littleTItle">4.2 转账-转入</h5>
+            <h5 class="littleTItle">3.4 联系人</h5>
             <div class="tabbox">
-                <table id="table_infolow_transfer_in_info">
+                <table id="table_alipaycontact">
                     <thead></thead>
                     <tbody></tbody>
                 </table>
@@ -170,9 +159,23 @@
         </div>
 
         <div class="table">
-            <h5 class="littleTItle">4.3 退款</h5>
+            <h5 class="littleTItle">3.5 最近交易人</h5>
             <div class="tabbox">
-                <table id="table_infolow_refund_amount">
+                <table id="table_recenttraders">
+                    <thead></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--<div class="title">-->
+            <!--<h3>4.流入资金</h3>-->
+        <!--</div>-->
+
+        <div class="table">
+            <h5 class="littleTItle">3.6 水电煤缴费信息</h5>
+            <div class="tabbox">
+                <table id="table_jiaofeiinfo">
                     <thead></thead>
                     <tbody></tbody>
                 </table>
@@ -180,10 +183,11 @@
         </div>
 
         <div class="table">
-            <h5 class="littleTItle">4.4 其他</h5>
+            <h5 class="littleTItle">3.7 花呗和银行卡消费记录</h5>
             <div class="tabbox">
-                <table id="table_infolow_other_in_com">
-                    <thead></thead>
+                <table id="table_assetinfo">
+                    <thead>
+                    </thead>
                     <tbody></tbody>
                 </table>
             </div>

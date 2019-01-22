@@ -131,4 +131,88 @@ var DictList = {
         'cun_jin_bao_redeem_amt': '存金宝赎回金额(元)',
         'cun_jin_bao_redeem_cnt': '存金宝赎回笔数'
     },
+  // 交易记录
+  'tradeinfo': {
+    'mapping_id': '映射ID',
+    'trade_number': '支付宝交易号',
+    'trade_time': '交易时间',
+    'trade_location': '交易来源地',
+    'trade_type': '交易类型',
+    'counterparty': '交易对方',
+    'product_name': '商品名称',
+    'trade_amount': '交易金额',
+    'incomeorexpense': '表示交易支出或收入',
+    'trade_status': '交易状态',
+    'service_charge': '服务费',
+    'refund': '成功退款金额',
+    'comments': '交易备注',
+    'capital_status': '资金状态'
+  },
+  // 银行卡信息
+  'bankinfo': {
+    'mapping_id': '映射ID',
+    'active_date': '该银行卡绑定的时间',
+    'mobile': '该银行卡预留的手机号码',
+    'card_number': '该银行卡后4位',
+    'level': 'level',
+    'user_name': '该银行卡绑定的姓名',
+    'bank_name': '该银行卡的银行名称',
+    'card_type': '该银行卡类型',
+    'sign_id': '该银行卡在支付宝的一个编号',
+    'open_fpcard': '是否已开通快捷支付',
+    'provider_userid': '该银行卡在支付宝的加密标识'
+  },
+  // 收货地址信息
+  'alipaydeliveraddresses': {
+    'mapping_id': '映射ID',
+    'name': '收件人姓名',
+    'province': '省',
+    'city': '市',
+    'area': '区',
+    'address': '地址',
+    'phone_number': '收件人手机号码',
+    'full_address': '详细地址',
+    'post_code': '邮政编码',
+    'area_code': '行政区划代码'
+  },
+  // 联系人
+  'alipaycontact': {
+    'mapping_id': '映射ID',
+    'account': '我的联系人的支付宝账号',
+    'alipay_userid': '用户在支付宝中的用户ID',
+    'real_name': '我的联系人的真实姓名'
+  },
+  // 最近交易人
+  'recenttraders': {
+    'account': '最近交易人的支付宝账号',
+    'alipay_userid': '用户在支付宝中的用户ID',
+    'real_name': '最近交易人的真实姓名',
+    'nick_name' : '最近交易人的昵称'
+  },
+  // 水电煤缴费信息
+  'jiaofeiinfo': {
+    'mapping_id': '映射ID',
+    'balance': '水电煤账户余额',
+    'amount': '缴费金额',
+    'biz_type': '缴费类型',
+    'area' : '地区',
+    'charge_inst_name' : '收费单位',
+    'owner_name' : '户名',
+    'bill_key' : '缴费单号',
+    'last_remind_time' : '最后缴费提醒时间',
+    'user_address' : '缴费用户所在地'
+  },
+  // 花呗和银行卡消费记录
+  'assetinfo': {
+    'mapping_id': '映射ID',
+    'asset_type': '资产类型',
+    'bank_name': '银行名称英文缩写',
+    'card_type': '银行卡类型',
+    'card_number' : '银行卡尾号',
+    'trade_number' : '交易单号',
+    'trade_time' : '交易时间',
+    'trade_detail' : '交易详情',
+    'trade_amount' : '交易金额',
+    'trade_type' : '交易类型'
+  },
 }
